@@ -16,6 +16,8 @@ export const metadata = {
   title: "Ramon Burger",
   description: "Hamburgeria Ramon Burger",
 };
+  
+  
 
 export default function RootLayout({ children }) {
   return (
