@@ -1,0 +1,33 @@
+.boxHeader{
+
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    
+}
+
+.boxHeader nav ul{
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconBag{
+
+    width: 35px;
+    height: 35px;
+    color: var(--corpadrao);
+
+}
+
+.logo{
+
+    width: 200px;
+    height: 200px;
+
+}

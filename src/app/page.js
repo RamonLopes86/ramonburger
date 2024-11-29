@@ -1,74 +1,70 @@
-'use client'
+
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import React , {useState , useEffect} from "react";
-import array from "@/dados/dados";
-
-
-
-
-
+import Header from "@/components/sectionHeader/header";
 
 
 export default function Home() {
 
 
 
-  const [lista , setLista] = useState([])
+//   const [lista , setLista] = useState([])
 
-
- 
+//   const [botaoAtivo , setBotaoAtivo] = useState(null)
 
  
   
-  let filtro;
 
-  function exibirBebidas(param){
+ 
+  
+//   let filtro;
+
+//   function exibirBebidas(param){
    
 
-      if(param === 'bebida'){
+//       if(param === 'bebida'){
 
-     filtro =  array.filter((itens)=>{
+//      filtro =  array.filter((itens)=>{
    
-           return    itens.classe === 'bebida'
+//            return    itens.classe === 'bebida'
      
      
-         })
+//          })
      
      
-         setLista(filtro)
+//          setLista(filtro)
+//          setBotaoAtivo('bebida')
+        
+     
+//       }
          
-   
-       }
+      
+//     if(param === 'burger'){
 
+//        filtro =  array.filter((itens)=>{
 
-  
- 
-
-    if(param === 'burger'){
-
-       filtro =  array.filter((itens)=>{
-
-        return    itens.classe === 'burger'
+//         return    itens.classe === 'burger'
   
   
-      })
+//       })
   
-  
-      setLista(filtro)
+//       setLista(filtro)
+//       setBotaoAtivo('burger')
+      
+     
+//     }
 
 
-    }
-
-}
+//   }
 
 
-useEffect(()=>{
 
-  exibirBebidas('burger')
+// useEffect(()=>{
 
-},[])
+//   exibirBebidas('burger')
+
+// },[])
 
 
  
@@ -77,29 +73,8 @@ useEffect(()=>{
 
     <main>
 
-      <button  onClick={()=>exibirBebidas('bebida')}>bebidas</button>
-      
-      <button onClick={()=>exibirBebidas('burger')}>burger</button>
+        <Header/>
 
-        {
-
-          lista.map((itens)=>{
-
-             return(
-
-              <div key={itens.id}>
-                   <Image alt="imagens de bebida" src={itens.img}/>
-                   <p>{itens.nome}</p>
-              </div>
-
-             )
-
-
-          })
-         
-
-        }
-     
         
     </main>
   );
