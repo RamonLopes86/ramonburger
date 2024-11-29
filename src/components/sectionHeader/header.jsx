@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../../public/logosf.png'
+import menu from '../../../public/menu.png'
+import MenuEscondido from '../menuEscondido/menuEcondido';
+
 
 
 export default function Header(){
@@ -13,24 +16,37 @@ export default function Header(){
 
             <section className={estiloHeader.boxHeader}>
 
-                <Image className={estiloHeader.logo} alt='icone de uma sacola' src={logo}/>
+                <section className={estiloHeader.boxVisibile}>
 
-                <nav>
-                    <ul>
-                        <li>Reservas</li>
-                        <li>Serviços</li>
-                        <li>Cardápio</li>
-                        <li>Depoimentos</li>
-                    </ul>
-                </nav>
+                    <Image className={estiloHeader.logo} alt='icone de uma sacola' src={logo}/>
+                    <nav>
+                        <ul>
+                            <li>Reservas</li>
+                            <li>Serviços</li>
+                            <li>Cardápio</li>
+                            <li>Depoimentos</li>
+                        </ul>
+                    </nav>
+                    <section className={estiloHeader.boxBag}>
+                            <p>Meu Carrinho</p>
+                            <div className={estiloHeader.boxIconBag}>
+                                <FontAwesomeIcon className={estiloHeader.iconBag} icon={faBagShopping}/>
+                            </div>
+                    
+                    </section>
 
 
-                <section className={estiloHeader.boxBag}>
+                    <div className={estiloHeader.MenuLogoEcondido}>
 
-                        <p>Meu Carrinho</p>
-                        <FontAwesomeIcon className={estiloHeader.iconBag} icon={faBagShopping}/>
-                        
+                          <Image alt='imagem de um icone menu' className={estiloHeader.iconMenu} src={menu}/>
+                    </div>
+
                 </section>
+
+                
+                <MenuEscondido/>
+
+               
 
             </section>
 

@@ -1,0 +1,17 @@
+.boxEscondido{
+
+    display: none;
+}
+
+
+
+
+
+@media screen and (max-width:1440px) {
+
+    .boxEscondido{
+
+        display: block;
+    }
+
+}

@@ -1,13 +1,18 @@
-.boxHeader{
+.boxHeader .boxVisibile{
 
-
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 10px;
-    
+    justify-content: space-evenly;
+    font-family: var(--sans);
+    font-weight:lighter;
+
 }
+    
+    
+    
+
 
 .boxHeader nav ul{
 
@@ -15,7 +20,25 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 30px;
 }
+
+.boxHeader nav ul li{
+
+    font-size: 1.4rem;
+    color: var(--cormos);
+    cursor: pointer;
+    transform: translateY(0);
+    transition: transform 500ms;
+}
+
+.boxHeader nav ul li:hover{
+
+    color: var(--corpadrao);
+    transform: translateY(-8px);
+    transition: transform 500ms;
+}
+
 
 .iconBag{
 
@@ -27,7 +50,84 @@
 
 .logo{
 
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+
+}
+
+.boxBag{
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding:10px 40px;
+    border-radius: 10px;
+    color: var(--cormos);
+    font-size: 1.4rem;
+    transition: all 500ms;
+}
+
+.boxBag:hover{
+
+    background-color: var(--corpadrao);
+    transition: all 500ms;
+}
+
+.boxBag:hover > .boxIconBag .iconBag{
+
+    color: white;
+}
+
+.boxBag:hover p {
+
+    color: white;
+}
+
+
+
+.boxBag{
+
+    cursor: pointer;
+
+
+}
+
+.iconMenu{
+
+   background-color: var(--corpadrao);
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    
+}
+
+@media screen and (max-width:1040px) {
+
+        .boxHeader .boxVisibile {
+
+            justify-content: space-between;
+            padding: 0px 40px;
+        }
+
+        .boxHeader nav {
+
+            display:none;
+        }  
+
+        .boxHeader .boxBag{
+
+            display: none;
+        }
+        
+        .iconMenu{
+
+            display: block;
+        }
 
 }

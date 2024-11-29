@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 *{
 
   margin: 0;
@@ -11,5 +14,15 @@
 :root{
 
   --corpadrao:#24D0E0;
+  --corgeral:#FFFDF7;
+  --cormos:#f79139;
+  --sans:"Coming Soon" , cursive;
+  --rel:"Raleway" , sans-serif
+
+}
+
+main{
+
+  background-color: var(--corgeral);
 
 }
