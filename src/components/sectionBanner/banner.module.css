@@ -147,7 +147,7 @@
     background-color:var(--corpadrao);
     border-radius: 120px 180px 120px 180px ;
     position: relative;
-    min-height: 450px;
+    height: 450px;
     width: 450px;
 
 }
@@ -157,6 +157,7 @@
     position: absolute;
     left: -200px;
     top: 80px;
+    
 }
 
 .msg{
@@ -202,12 +203,109 @@
 }
 
 
-@media screen and (max-width:1320px) {
+@media screen and (max-width:1334px) {
+
+    .boxBanner{
+        width: 100%;
+       gap: 200px;
+    }
+
+    .boxBack{
+
+        width: 400px;
+        height: 400px;
+
+    }
+
+    .imgBurger{
+
+        width: 130%;
+        height: fit-content;
+    }
 
 
+
+    .boxTexto h1{
+
+       font-size: 4.9rem; 
+        
+    }
         
 
 }
+
+
+@media screen and (max-width:1220px) {
+
+    .boxBanner{
+
+      flex-direction: column;
+       gap: 50px;
+
+    }
+     
+      
+
+    .boxTexto{
+
+        text-align: center;
+        width: 100%;
+        gap: 35px;
+        
+    }
+
+
+    .boxTexto h1 {
+
+        font-size: 5rem;
+    }
+
+    
+
+    .boxBtn{
+
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    
+
+
+    .imgBurger{
+
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+
+
+
+}
+
+
+@media screen and (max-width:540px) {
+
+    .boxTexto h1 {
+
+        font-size: 4rem;
+    }
+
+    .boxBack{
+
+        max-width: 90vw;
+        border-radius: 80px 180px;
+        
+    }
+
+    .imgBurger{
+
+        width: 90vw;
+
+    }
+
+}   
+
 
 
 
