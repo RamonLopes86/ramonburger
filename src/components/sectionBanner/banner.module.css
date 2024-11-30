@@ -1,0 +1,32 @@
+.boxBanner{
+
+    background-image: url(../../../public/fundo.jpg);
+    min-height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sans);
+
+
+
+}
+
+.boxTexto{
+
+    max-width: 600px;
+    
+}
+
+.boxTexto h1{
+
+    font-size: 4rem;
+    
+}  
+
+
+
+    
