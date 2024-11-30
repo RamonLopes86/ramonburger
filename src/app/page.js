@@ -1,13 +1,23 @@
-
+'use client'
 
 import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "@/components/sectionHeader/header";
+import React , {useState , useEffect} from "react";
+import context from '@/context/context';
 
 
 export default function Home() {
 
+  const [menuOpen , setMenuOpen] = useState(styles.navClose)
 
+
+  function openMenu(){
+
+
+      setMenuOpen(menuOpen === styles.navClose ? styles.navOpen : styles.navClose)
+
+  }
 
 //   const [lista , setLista] = useState([])
 
@@ -70,10 +80,17 @@ export default function Home() {
  
   return (
 
-
     <main>
 
-        <Header/>
+      <context.Provider
+
+        value={{menuOpen , setMenuOpen , openMenu}}
+      >
+
+      <Header/>
+
+      </context.Provider>
+       
 
         
     </main>
