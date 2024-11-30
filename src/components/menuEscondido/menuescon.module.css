@@ -8,8 +8,8 @@
 .boxEscondido nav{
 
     overflow: hidden;
-    height: 250px;
-    transition: all 500ms linear;    
+   
+    
 }
 
 .boxEscondido nav ul{
@@ -41,14 +41,5 @@
 }
 
 
-.navOpen{
 
-    height: 250px;
-
-}
-
-.navClose{
-
-    height: 0;
-}
 

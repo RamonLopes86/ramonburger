@@ -58,7 +58,15 @@
 
     width: 150px;
     height: 150px;
+    transition: all 500ms linear;
+    cursor: pointer;
 
+}
+
+.logo:hover{
+
+    transform: scale(1.1);
+    transition: all 500ms linear;
 }
 
 .boxBag{
@@ -118,6 +126,9 @@
     cursor: pointer;
      
 }
+
+
+
     
 
 @media screen and (max-width:1040px) {
