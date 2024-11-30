@@ -6,8 +6,9 @@ import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../../public/logosf.png'
 import menu from '../../../public/menu.png'
 import MenuEscondido from '../menuEscondido/menuEcondido';
-import React , {useState , useEffect , useContext} from 'react';
-import context from '@/context/context';
+import hookContext from '@/hookContext/hookContext';
+
+
 
 
 
@@ -16,7 +17,16 @@ import context from '@/context/context';
 
 export default function Header(){
 
-        const {openMenu} = useContext(context)
+
+    const {menuOpen , setMenuOpen} = hookContext()
+
+
+    function exibirMenu(){
+
+        setMenuOpen(menuOpen === false ? true : false)
+
+    }
+
 
         return(
 
@@ -42,9 +52,16 @@ export default function Header(){
                     </section>
 
 
-                    <div onClick={openMenu} className={estiloHeader.MenuLogoEcondido}>
+                    <div onClick={exibirMenu} className={estiloHeader.MenuLogoEcondido}>
 
-                          <Image alt='imagem de um icone menu' className={estiloHeader.iconMenu} src={menu}/>
+                          {/* <Image alt='imagem de um icone menu' className={estiloHeader.iconMenu} src={menu}/> */}
+
+                          <div className={estiloHeader.boxGrid}>
+                              <div className={estiloHeader.quadrado}></div>
+                              <div className={estiloHeader.quadrado}></div>
+                              <div className={estiloHeader.quadrado}></div>
+                              <div className={estiloHeader.quadrado}></div>
+                          </div>
                     </div>
 
                 </section>

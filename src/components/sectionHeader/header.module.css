@@ -116,7 +116,7 @@
     display: none;
 }
 
-.iconMenu{
+/* .iconMenu{
 
    background-color: var(--corpadrao);
     width: 50px;
@@ -125,9 +125,90 @@
     border-radius: 5px;
     cursor: pointer;
      
+} */
+
+ .MenuLogoEcondido{
+
+    display: none;
+}
+
+.boxHeader .MenuLogoEcondido .boxGrid {
+
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    gap: 5px;
+    cursor: pointer;
+    
+
 }
 
 
+.boxHeader .MenuLogoEcondido .boxGrid > div{
+
+    animation-name: animaQuadrado;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+    
+    
+}
+
+
+.boxHeader .MenuLogoEcondido .boxGrid > div:nth-of-type(1){
+
+    animation-delay: 0ms;
+    transition: none;
+
+}
+
+.boxHeader .MenuLogoEcondido .boxGrid > div:nth-of-type(2){
+
+    animation-delay: 1.5s;
+    transition: none;
+
+}
+
+.boxHeader .MenuLogoEcondido .boxGrid > div:nth-of-type(3){
+
+    animation-delay: 3s;
+    transition: none;
+
+}
+
+.boxHeader .MenuLogoEcondido .boxGrid > div:nth-of-type(4){
+
+    animation-delay: 4.5s;
+    transition: none;
+
+}
+
+
+
+
+@keyframes animaQuadrado {
+
+    to{
+
+        background-color: var(--corpadrao);
+        transition: none;
+      
+
+    }
+
+}
+    
+        
+
+
+
+.boxHeader .MenuLogoEcondido .quadrado {
+
+    border: 2px solid var(--corpadrao);
+    border-radius: 3px;
+    width: 15px;
+    height: 15px;
+}
 
     
 

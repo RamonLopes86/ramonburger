@@ -1,20 +1,21 @@
 import estiloMenuEscon from './menuescon.module.css';
-import context from '@/context/context';
-import React , {useContext} from 'react';
+import hookContext from '@/hookContext/hookContext';
 
 
 
 export default function MenuEscondido(){
 
-    const {menuOpen} = useContext(context)
-    
+    const {close} = hookContext()
+
+
+
 
 
         return(
 
-            <section className={estiloMenuEscon.boxEscondido}>
+            <section  className={estiloMenuEscon.boxEscondido}>
 
-                    <nav className={`${estiloMenuEscon.navEscondido} ${menuOpen}`}>
+                    <nav style={close} className={`${estiloMenuEscon.navEscondido}`}>
 
                         <ul>
                             <li>Reservas</li>

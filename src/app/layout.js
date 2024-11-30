@@ -8,7 +8,7 @@ export const metadata = {
   description: "Hamburgeria Ramon Burger",
 
   icons:{
-    icon:'logo.png'
+    icon:'logosf.png'
   }
 
 
