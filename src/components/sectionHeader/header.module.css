@@ -1,3 +1,9 @@
+.boxHeader{
+
+    width: 100%;
+}
+
+
 .boxHeader .boxVisibile{
 
     width: 100%;
@@ -7,14 +13,14 @@
     justify-content: space-evenly;
     font-family: var(--sans);
     font-weight:lighter;
-
+   
 }
     
     
     
 
 
-.boxHeader nav ul{
+.boxHeader .navMenu ul{
 
     display:flex;
     flex-direction: row;
@@ -23,7 +29,7 @@
     gap: 30px;
 }
 
-.boxHeader nav ul li{
+.boxHeader .navMenu ul li{
 
     font-size: 1.4rem;
     color: var(--cormos);
@@ -32,7 +38,7 @@
     transition: transform 500ms;
 }
 
-.boxHeader nav ul li:hover{
+.boxHeader .navMenu ul li:hover{
 
     color: var(--corpadrao);
     transform: translateY(-8px);
@@ -95,6 +101,13 @@
 
 }
 
+
+
+.MenuLogoEcondido{
+
+    display: none;
+}
+
 .iconMenu{
 
    background-color: var(--corpadrao);
@@ -103,9 +116,9 @@
     padding: 6px;
     border-radius: 5px;
     cursor: pointer;
-    display: none;
-    
+     
 }
+    
 
 @media screen and (max-width:1040px) {
 
@@ -115,7 +128,7 @@
             padding: 0px 40px;
         }
 
-        .boxHeader nav {
+        .boxHeader .navMenu {
 
             display:none;
         }  
@@ -125,7 +138,7 @@
             display: none;
         }
         
-        .iconMenu{
+        .MenuLogoEcondido{
 
             display: block;
         }

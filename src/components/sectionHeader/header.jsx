@@ -1,4 +1,4 @@
-// 
+'use client'
 import estiloHeader from './header.module.css';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +6,7 @@ import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../../public/logosf.png'
 import menu from '../../../public/menu.png'
 import MenuEscondido from '../menuEscondido/menuEcondido';
+import React , {useState , useEffect} from 'react';
 
 
 
@@ -19,7 +20,7 @@ export default function Header(){
                 <section className={estiloHeader.boxVisibile}>
 
                     <Image className={estiloHeader.logo} alt='icone de uma sacola' src={logo}/>
-                    <nav>
+                    <nav className={estiloHeader.navMenu}>
                         <ul>
                             <li>Reservas</li>
                             <li>Serviços</li>
