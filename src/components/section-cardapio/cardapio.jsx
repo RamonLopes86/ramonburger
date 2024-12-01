@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBurger , faPizzaSlice , faDrumstickBite  ,faBacon , faMartiniGlassCitrus , faIceCream} from '@fortawesome/free-solid-svg-icons';
 import array from '@/dados/dados';
 import Image from 'next/image';
+import { cacheTag } from 'next/dist/server/use-cache/cache-tag';
 
 
 
@@ -15,11 +16,8 @@ export default function Cardapio(){
     const [categorias , setCategorias] = useState()
 
 
-    function exibircategoria(categ){
 
-      return  setCategorias(categ)
-
-    }
+   
 
 
 
@@ -37,6 +35,7 @@ export default function Cardapio(){
         
         )
 
+            setCategorias('burger')
 
         }
         
@@ -52,6 +51,8 @@ export default function Cardapio(){
 
         )
 
+        setCategorias('pizza')
+
        }
 
 
@@ -64,6 +65,8 @@ export default function Cardapio(){
 
         )
 
+        setCategorias('carne')
+
         }
 
         if(param === 'doce'){
@@ -74,6 +77,8 @@ export default function Cardapio(){
                 itens.classe === 'doce'
     
             )
+
+            setCategorias('doce')
     
             }
 
@@ -85,6 +90,8 @@ export default function Cardapio(){
                 itens.classe === 'bebida'
     
             )
+
+            setCategorias('bebida')
     
             }
     
@@ -119,11 +126,11 @@ export default function Cardapio(){
 
             <div className={estiloCardapio.boxButton}>
 
-                <button onClick={()=>exibirCardapio('burger')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faBurger}/> Burger</button>
-                <button onClick={()=>exibirCardapio('pizza')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faPizzaSlice}/>Pizza</button>
-                <button onClick={()=>exibirCardapio('carne')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faDrumstickBite}/>Churrasco</button>
-                <button onClick={()=>exibirCardapio('doce')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faIceCream} />Doces</button>
-                <button onClick={()=>exibirCardapio('bebida')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faMartiniGlassCitrus}/>Bebidas</button>
+                <button className={categorias === 'burger' ? estiloCardapio.mudaCor : estiloCardapio.mudaCorOff} onClick={()=>exibirCardapio('burger')}><FontAwesomeIcon className={`${estiloCardapio.iconButton}  `} icon={faBurger}/> Burger</button>
+                <button className={categorias === 'pizza' ? estiloCardapio.mudaCor : estiloCardapio.mudaCorOff}   onClick={()=>exibirCardapio('pizza')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faPizzaSlice}/>Pizza</button>
+                <button className={categorias === 'carne' ? estiloCardapio.mudaCor : estiloCardapio.mudaCorOff}  onClick={()=>exibirCardapio('carne')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faDrumstickBite}/>Churrasco</button>
+                <button className={categorias === 'doce' ? estiloCardapio.mudaCor : estiloCardapio.mudaCorOff} onClick={()=>exibirCardapio('doce')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faIceCream} />Doces</button>
+                <button className={categorias === 'bebida' ? estiloCardapio.mudaCor : estiloCardapio.mudaCorOff} onClick={()=>exibirCardapio('bebida')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faMartiniGlassCitrus}/>Bebidas</button>
 
 
             </div>
