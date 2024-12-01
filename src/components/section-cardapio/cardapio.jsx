@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBurger , faPizzaSlice , faDrumstickBite  ,faBagShopping , faMartiniGlassCitrus , faIceCream} from '@fortawesome/free-solid-svg-icons';
 import array from '@/dados/dados';
 import Image from 'next/image';
-import { cacheTag } from 'next/dist/server/use-cache/cache-tag';
+
 
 
 
