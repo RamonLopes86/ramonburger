@@ -1,0 +1,99 @@
+.boxCardapio{
+
+   text-align: center;
+    max-width:1500px;
+    margin: 0px auto;
+    min-height: 500px;
+    
+}
+
+.boxTitulo{
+
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boxTitulo h1{
+
+    font-size: 4.5rem;
+    text-decoration: underline 2px solid;
+    text-underline-offset: 10px;
+    font-family: var(--sans);
+    color: var(--cormos);
+   
+}
+
+.boxTitulo p {
+
+    font-size: 2rem;
+    font-family: var(--rel);
+}
+    
+
+
+.boxButton{
+
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 50px 0px 50px;
+    
+}
+
+.boxButton button {
+
+    width: 200px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+    font-size: 1.4rem;
+    outline: 1px solid var(--corpadrao);
+    border-radius: 10px;
+    transition: all 500ms linear;
+
+    
+    
+}
+
+
+
+.iconButton{
+
+   color: var(--corpadrao); 
+   width: 30px;
+   height: 30px; 
+   transition: all 500ms linear;
+}
+
+.boxButton button:hover{
+
+    background-color: var(--corpadrao);
+    color: white;
+    transition: all 500ms linear;
+
+
+}
+
+
+.boxButton button:hover > .iconButton{
+
+    color: white;
+    transition: all 500ms linear;
+
+}
+
+
+/* @media screen and (max-width:) {
+    
+} */

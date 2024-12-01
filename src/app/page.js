@@ -7,6 +7,7 @@ import React , {useState , useEffect} from "react";
 import ContextProvider from "@/context/contexProvider";
 import Apresentacao from "@/components/sectionBanner/banner";
 import Servicos from "@/components/section-serviços/servicos";
+import Cardapio from "@/components/section-cardapio/cardapio";
 
 
 export default function Home() {
@@ -82,6 +83,7 @@ export default function Home() {
           <Header/>
           <Apresentacao/>
           <Servicos/>
+          <Cardapio/>
 
       </ContextProvider>
 

@@ -10,8 +10,11 @@
 
 .boxServicos h1 {
 
-    text-transform: uppercase;
-    font-size: 3.5rem;
+
+    text-decoration: underline 2px solid;
+    text-underline-offset: 10px;
+    font-size: 4.5rem;
+    padding: 10px 0px;
     color: var(--cormos);
 
 }
@@ -92,6 +95,21 @@ min-height: 500px;
 }
 
 
+@media screen and (max-width:500px) {
+
+    .boxServicos > h1 {
+
+        font-size:12vw ;
+
+    }
+
+    .boxServicos > p {
+
+        font-size:8vw ;
+
+    }
+
+}
 
 @media screen and (max-width:420px) {
 
