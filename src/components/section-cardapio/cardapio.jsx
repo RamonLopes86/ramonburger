@@ -101,8 +101,10 @@ export default function Cardapio(){
                                     <div className={estiloCardapio.boxInfo}>
 
                                         <Image className={estiloCardapio.imageProdutos} alt={itens.nome} src={itens.img} />
-                                        <p>{itens.nome}</p>
-                                        <p>R$ {itens.preco},00</p>
+                                        <div className={estiloCardapio.boxTx}>
+                                            <p>{itens.nome}</p>
+                                            <p>R$ {itens.preco},00</p>
+                                        </div>
 
                                     
                                         <div className={estiloCardapio.boxHidden}>

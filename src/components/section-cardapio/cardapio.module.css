@@ -44,12 +44,12 @@
 }
 
 
-.card:hover > .boxInfo > p:nth-of-type(1){
+.card:hover > .boxInfo > .boxTx > p:nth-of-type(1){
 
     display: none;
 }
 
-.card:hover > .boxInfo > p:nth-of-type(2){
+.card:hover > .boxInfo > .boxTx > p:nth-of-type(2){
 
     color: white;
     padding-top: 10px;
@@ -69,7 +69,7 @@
     
 }
 
-.card > .boxInfo > p:nth-of-type(1){
+.card > .boxInfo > .boxTx > p:nth-of-type(1){
 
     text-transform: capitalize;
     font-size: 1.4rem;
@@ -81,7 +81,7 @@
 
 }
 
-.card > .boxInfo > p:nth-of-type(2){
+.card > .boxInfo > .boxTx > p:nth-of-type(2){
 
     font-size: 1.6rem;
     font-family: var(--sans);
@@ -226,9 +226,10 @@ overflow-x: auto;
 }
 
 
-.control p {
+.control > p {
 
     font-size: 1.2rem;
+
 }
 
 
@@ -301,12 +302,14 @@ color: white ;
 
         }
 
-        .card{
+        .card .boxInfo{
 
             display: flex;
             flex-direction: row;
+           
             gap: 10px;
             min-height: 150px;
+            
         }
 
         .imageProdutos{
@@ -316,5 +319,39 @@ color: white ;
             
             object-fit: cover;
         }
+
+        .boxTx{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .control{
+
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+       .card .boxInfo  .boxTx > p:nth-of-type(1){
+
+            font-size: 5vw;
+            
+        }
+      .card .boxInfo .boxTx > p:nth-of-type(2){
+
+           font-size: 5vw;
+            
+        }
+
+
+        .iconEscondido{
+
+            left: 55%;
+        }
+        
 
 }
