@@ -53,23 +53,40 @@
 
 .boxCardServ{
 
-width:400px;
-height: 500px;
+width:500px;
+min-height: 500px;
 
 
 }
 
 
+.boxCardServ h2 {
+
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.boxCardServ p {
+
+    font-family: var(--rel);
+    font-size: 1.4rem;
+}
 
 
-@media screen and (max-width:900px) {
+
+
+
+@media screen and (max-width:1080px) {
 
        
        .boximgServ{
 
             flex-wrap: wrap;
-       }   
-
+            gap: 40px;
+           
+       }  
+       
+      
 
       
 }
