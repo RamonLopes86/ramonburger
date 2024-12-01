@@ -33,7 +33,7 @@ export default function ContextProvider({children}){
 
             return ()=>{
 
-                window.removeEventListener('resize' . recolherMenu)
+                window.removeEventListener('resize' , recolherMenu)
             }
 
     },[])
