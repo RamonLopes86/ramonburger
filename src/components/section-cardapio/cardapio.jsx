@@ -1,7 +1,7 @@
 import estiloCardapio from './cardapio.module.css';
 import React , {useState , useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBurger , faPizzaSlice , faDrumstickBite  ,faBacon , faMartiniGlassCitrus , faIceCream} from '@fortawesome/free-solid-svg-icons';
+import { faBurger , faPizzaSlice , faDrumstickBite  ,faBagShopping , faMartiniGlassCitrus , faIceCream} from '@fortawesome/free-solid-svg-icons';
 import array from '@/dados/dados';
 import Image from 'next/image';
 import { cacheTag } from 'next/dist/server/use-cache/cache-tag';
@@ -40,9 +40,15 @@ export default function Cardapio(){
             )
     
     
-           )
+           ),
+
+
+           setCategorias(param)
 
        )
+
+
+       
 
 
     }
@@ -92,12 +98,44 @@ export default function Cardapio(){
 
                                 <div key={itens.id} className={estiloCardapio.card}>
 
-                                <Image className={estiloCardapio.imageProdutos} alt={itens.nome} src={itens.img} />
-                                <p>{itens.nome}</p>
-                                <p>{itens.preco}</p>
+                                    <div className={estiloCardapio.boxInfo}>
+
+                                        <Image className={estiloCardapio.imageProdutos} alt={itens.nome} src={itens.img} />
+                                        <p>{itens.nome}</p>
+                                        <p>R$ {itens.preco},00</p>
+
+                                    
+                                        <div className={estiloCardapio.boxHidden}>
+
+                                        
+                                            <div className={estiloCardapio.control}>
+
+                                                <button>-</button>
+                                                <p>0.00</p>
+                                                <button>+</button>
+                                              
+
+                                            </div>
+
+                                          
+                                               
+
+                                        </div>
+                                      
+
+
+
+
+                                    </div>
+
+
+                                    <FontAwesomeIcon className={estiloCardapio.iconEscondido} icon={faBagShopping}/>
+                                  
     
+                                </div>
+
+                                
     
-                            </div>
 
                             )
 
