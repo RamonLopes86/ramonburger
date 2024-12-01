@@ -12,6 +12,17 @@ export default function Cardapio(){
 
     const [ lista , setLista] = useState([])
 
+    const [categorias , setCategorias] = useState()
+
+
+    function exibircategoria(categ){
+
+      return  setCategorias(categ)
+
+    }
+
+
+
     let filtro;
 
     function exibirCardapio(param){
@@ -129,6 +140,7 @@ export default function Cardapio(){
                                 <div key={itens.id} className={estiloCardapio.card}>
 
                                 <Image className={estiloCardapio.imageProdutos} alt={itens.nome} src={itens.img} />
+                                <p>{itens.nome}</p>
                                 <p>{itens.preco}</p>
     
     

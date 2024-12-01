@@ -4,7 +4,33 @@
     max-width:1500px;
     margin: 0px auto;
     min-height: 500px;
+
     
+}
+
+
+.cardapio{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(250px ,1fr));
+    gap: 20px;
+    padding: 40px 20px 0px 20px;
+
+}
+
+.imageProdutos{
+
+    width: 100%;
+    height: fit-content;
+    border-radius: 10px;
+    
+}
+
+.card{
+
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .boxTitulo{
@@ -118,6 +144,28 @@ overflow-x: auto;
 }
 
 
-/* @media screen and (max-width:) {
-    
-} */
+@media screen and (max-width:420px) {
+
+        .cardapio{
+
+            grid-template-columns: 1fr
+
+        }
+
+        .card{
+
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            min-height: 150px;
+        }
+
+        .imageProdutos{
+
+            width: 70%;
+            height: 150px;
+            
+            object-fit: cover;
+        }
+
+}
