@@ -15,7 +15,7 @@ export default function Cardapio(){
 
     const [categorias , setCategorias] = useState()
 
-    
+    const [count , setCount] = useState(0)
 
 
    
@@ -100,10 +100,10 @@ export default function Cardapio(){
 
                                     <div className={estiloCardapio.boxInfo}>
 
-                                        <Image className={estiloCardapio.imageProdutos} alt={itens.nome} src={itens.img} />
+                                        <Image  className={estiloCardapio.imageProdutos} alt={itens.nome} src={itens.img} />
                                         <div className={estiloCardapio.boxTx}>
                                             <p>{itens.nome}</p>
-                                            <p>R$ {itens.preco},00</p>
+                                            <p>R$ {itens.preco}</p>
                                         </div>
 
                                     
@@ -113,7 +113,7 @@ export default function Cardapio(){
                                             <div className={estiloCardapio.control}>
 
                                                 <button>-</button>
-                                                <p>0.00</p>
+                                                <p>{count}</p>
                                                 <button>+</button>
                                               
 

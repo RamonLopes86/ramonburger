@@ -21,11 +21,14 @@
 .imageProdutos{
 
     
-    height: fit-content;
+
     border-radius: 10px;
+    
     width: 100%;
+    object-fit: cover;
     
 }
+    
 
 .card{
 
@@ -34,6 +37,7 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px gray;
     position: relative;
+    
 }
 
     
@@ -67,6 +71,15 @@
     display: block;
    
     
+}
+
+.card .boxInfo{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 400px;
 }
 
 .card > .boxInfo > .boxTx > p:nth-of-type(1){
@@ -334,6 +347,7 @@ color: white ;
             flex-direction:column;
             align-items: center;
             justify-content: space-around;
+           
         }
 
        .card .boxInfo  .boxTx > p:nth-of-type(1){
@@ -350,8 +364,44 @@ color: white ;
 
         .iconEscondido{
 
-            left: 55%;
+            left: 50%;
+        }
+
+
+        .imageProdutos{
+
+            width: 50%;
+
         }
         
+
+}
+
+
+@media screen and (max-width:345px) {
+
+  .card  .boxInfo{
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .control{
+        flex-direction: row;
+    }
+
+    .card > .iconEscondido{
+        left: auto; 
+        right: 0px;
+        bottom: 0px;
+       
+        
+    }
+
+   .card .boxInfo .imageProdutos{
+
+        width: 100%;
+        
+    }
 
 }
