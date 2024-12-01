@@ -1,12 +1,18 @@
 import estiloBanner from './banner.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import hamburger from '../../../public/burgerBanner.png'
+import hamburger from '../../../public/burgerBanner.png';
+import insta from '../../../public/insta.png';
+import wpp from '../../../public/wpp.png';
+import yt from '../../../public/yt.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone , faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Apresentacao(){
+
+
+    let iconRedes = [insta , wpp , yt]
 
         return(
 
@@ -24,7 +30,23 @@ export default function Apresentacao(){
                                 <button>Ver cardápio</button>
                                 <Link className={estiloBanner.link} href={''}><button><FontAwesomeIcon className={estiloBanner.iconPhone} icon={faPhone}/> 7199126-5530</button></Link>
                           
-                        </div>      
+                        </div>  
+
+                        <div className={estiloBanner.boxRedes}>
+
+                                {
+
+                                    iconRedes.map((icones)=>{
+
+                                        return(
+
+                                            <Image className={estiloBanner.iconRede} alt='icones das redes sociais' src={icones}/>
+                                        )
+
+                                    })
+                                }
+
+                        </div>    
                            
                             
 
@@ -39,7 +61,7 @@ export default function Apresentacao(){
 
                                 <div className={estiloBanner.msg}>
 
-                                    <p> <FontAwesomeIcon className={estiloBanner.aspas} icon={faQuoteLeft}/> Entrega rápida e funcionários simpáticos. A comida chegou quente e muito saborosa" <FontAwesomeIcon className={estiloBanner.aspas} icon={faQuoteRight}/> </p>
+                                    <p> <FontAwesomeIcon className={estiloBanner.aspas} icon={faQuoteLeft}/> Entrega rápida e funcionários simpáticos. A comida chegou quente e muito saborosa <FontAwesomeIcon className={estiloBanner.aspas} icon={faQuoteRight}/> </p>
                                     <span>Ramon Lopes</span>
 
                                 </div>

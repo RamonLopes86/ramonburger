@@ -192,6 +192,33 @@
     color: var(--corpadrao);
 }
 
+.boxRedes{
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.iconRede{
+
+    inline-size:45px;
+    height: 45px;
+    cursor: pointer;
+    transition: all 500ms linear;
+    
+}
+
+
+.iconRede:hover{
+
+    transform: scale(1.1);
+    transition: all 500ms linear;
+
+}
+
+
+
 @keyframes animaPhone {
 
 
@@ -230,6 +257,9 @@
        font-size: 4.9rem; 
         
     }
+
+
+ 
         
 
 }
@@ -279,7 +309,12 @@
     }
 
 
+    .boxRedes{
 
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 
 }
 
@@ -289,6 +324,12 @@
     .boxTexto h1 {
 
         font-size: 4rem;
+    }
+
+    .msg p {
+
+        font-size: 1rem;
+        padding-bottom: 5px;
     }
 
     .boxBack{
