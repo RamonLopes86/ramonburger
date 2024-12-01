@@ -36,11 +36,11 @@ export default function Apresentacao(){
 
                                 {
 
-                                    iconRedes.map((icones)=>{
+                                    iconRedes.map((icones , index)=>{
 
                                         return(
 
-                                            <Image className={estiloBanner.iconRede} alt='icones das redes sociais' src={icones}/>
+                                            <Image key={index} className={estiloBanner.iconRede} alt='icones das redes sociais' src={icones}/>
                                         )
 
                                     })

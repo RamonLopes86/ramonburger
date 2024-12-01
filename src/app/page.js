@@ -6,6 +6,7 @@ import Header from "@/components/sectionHeader/header";
 import React , {useState , useEffect} from "react";
 import ContextProvider from "@/context/contexProvider";
 import Apresentacao from "@/components/sectionBanner/banner";
+import Servicos from "@/components/section-serviços/servicos";
 
 
 export default function Home() {
@@ -80,6 +81,7 @@ export default function Home() {
 
           <Header/>
           <Apresentacao/>
+          <Servicos/>
 
       </ContextProvider>
 

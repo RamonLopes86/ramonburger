@@ -1,0 +1,69 @@
+.boxServicos {
+
+    width: 100%;
+    text-align: center;
+    font-family: var(--sans);
+    padding: 100px 10px;
+
+   
+}
+
+.boxServicos h1 {
+
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: var(--cormos);
+
+}
+
+.boxServicos > p {
+
+   font-size: 2rem;
+   font-family: var(--rel);
+   font-weight: 600;
+   color: rgba(0, 0, 0, 0.753);
+
+}
+
+
+.imageServ{
+
+  width: 100%;
+  height:fit-content;
+  aspect-ratio: 4/4;
+
+
+}
+
+
+ .boximgServ {
+
+    padding: 50px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:40px;
+   
+    
+}
+
+
+.boxCardServ{
+
+flex-basis: 400px;
+height: 500px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+
+
+}
+
+
+
+
+
+
