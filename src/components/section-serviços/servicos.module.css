@@ -31,9 +31,9 @@
   width: 100%;
   height:fit-content;
   aspect-ratio: 4/4;
-
-
 }
+
+
 
 
  .boximgServ {
@@ -43,8 +43,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     gap:40px;
+    
    
     
 }
@@ -52,16 +53,43 @@
 
 .boxCardServ{
 
-flex-basis: 400px;
+width:400px;
 height: 500px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
 
 
 }
 
+
+
+
+@media screen and (max-width:900px) {
+
+       
+       .boximgServ{
+
+            flex-wrap: wrap;
+       }   
+
+
+      
+}
+
+
+
+@media screen and (max-width:420px) {
+
+        .boxCardServ{
+
+            width: 100%;
+            
+            height: fit-content;
+        }
+
+}
+        
+        
+
+        
 
 
 
