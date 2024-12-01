@@ -104,7 +104,7 @@ overflow-x: auto;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    
+    color:black;
     font-size: 1.4rem;
     border: 1px solid var(--corpadrao);
     border-radius: 10px;
