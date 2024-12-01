@@ -15,88 +15,34 @@ export default function Cardapio(){
 
     const [categorias , setCategorias] = useState()
 
+    
 
 
    
 
 
 
-    let filtro;
 
     function exibirCardapio(param){
 
 
-       if(param === 'burger'){
 
-         filtro = array.filter((itens)=>
-        
-        
-            itens.classe === 'burger'
-        
-        )
-
-            setCategorias('burger')
-
-        }
-        
+       return (
 
 
+        setLista(
 
-       if(param === 'pizza'){
-
-        filtro = array.filter((itens)=>
-        
-        
-            itens.classe === 'pizza'
-
-        )
-
-        setCategorias('pizza')
-
-       }
-
-
-       if(param === 'carne'){
-
-        filtro = array.filter((itens)=>
-        
-        
-            itens.classe === 'carne'
-
-        )
-
-        setCategorias('carne')
-
-        }
-
-        if(param === 'doce'){
-
-            filtro = array.filter((itens)=>
+            array.filter((info)=>
             
+                
+                info.classe === param
             
-                itens.classe === 'doce'
-    
             )
-
-            setCategorias('doce')
     
-            }
-
-        if(param === 'bebida'){
-
-            filtro = array.filter((itens)=>
-            
-            
-                itens.classe === 'bebida'
     
-            )
+           )
 
-            setCategorias('bebida')
-    
-            }
-    
-
-       return setLista(filtro)
+       )
 
 
     }
