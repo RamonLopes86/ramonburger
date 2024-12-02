@@ -2,8 +2,9 @@ import estiloCardapio from './cardapio.module.css';
 import React , {useState , useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBurger , faPizzaSlice , faDrumstickBite  ,faBagShopping , faMartiniGlassCitrus , faIceCream , faArrowRight} from '@fortawesome/free-solid-svg-icons';
-import array from '@/dados/dados';
+
 import Image from 'next/image';
+import hookContext from '@/hookContext/hookContext';
 
 
 
@@ -11,119 +12,11 @@ import Image from 'next/image';
 
 export default function Cardapio(){
 
-    const [ lista , setLista] = useState([])
+   const {lista , exibirCardapio , adicionar , categorias , extendMenu , cond } = hookContext()
 
-    const [categorias , setCategorias] = useState()
-
-    const [showSlice , setShowSlice] = useState(4)
-    
-    const [textBtnMostrar , setTxtBtnMostrar] = useState('ver mais')
-    
-    const [mudaSeta , setMudaSeta] = useState(null)
-
-    const [cond , setCond] = useState(false)
-
-
-    function exibirCardapio(param){
-
-        const filtro = array.filter((info)=>{
-
-
-            return info.classe === param
-
-        })
-
-
-      const res =   filtro.map((itens)=>{
-
-            return {
-
-                ...itens, 
-                count:0
-            }
-
-                
-
-            
-
-        })
-
-       
-        setLista(res)
-       
-        setCategorias(param)
-
-
-    }
-
+   
 
     
-
-    function adicionar(op , id){
-
-
-        setLista(
-
-            listaAtual => listaAtual.map((itens)=>{
-
-                if(itens.id === id){
-
-                    if(op === 'soma'){
-
-                        return {
-
-                            ...itens,
-                            count:itens.count + 1
-                        }
-
-                    }
-
-                    if(op === 'subtrair'){
-
-                        return{
-
-                            ...itens,
-                            count: itens.count <= 0 ? 0 : itens.count - 1
-
-                        }
-                    }
-
-                    
-                }
-
-                return itens;
-
-            })
-
-            
-        
-        )
-
-        
-       
-    }
-
-
-
-    function extendMenu(){
-
-
-      setCond(cond === false ? true : false)
-
-    }
-        
-      
-    
-
-    useEffect(()=>{
-
-
-        exibirCardapio('burger')
-        
-
-       
-    },[])
-
 
 
 
