@@ -21,6 +21,8 @@ export default function Cardapio(){
     
     const [mudaSeta , setMudaSeta] = useState(null)
 
+    const [cond , setCond] = useState(false)
+
 
     function exibirCardapio(param){
 
@@ -106,11 +108,7 @@ export default function Cardapio(){
     function extendMenu(){
 
 
-       setShowSlice(showSlice === 4 ? 50 : 4)
-
-       setTxtBtnMostrar(textBtnMostrar === 'ver mais' ? 'ver menos' : 'ver mais')
-        
-       setMudaSeta(mudaSeta === null ? estiloCardapio.setaRotate : null)
+      setCond(cond === false ? true : false)
 
     }
         
@@ -206,7 +204,7 @@ export default function Cardapio(){
 
                             )
 
-                    }).splice(0,showSlice)
+                    }).splice(0, cond ? 50 : 4)
 
                     }
 
@@ -216,7 +214,7 @@ export default function Cardapio(){
 
                     <div className={estiloCardapio.boxMostrarMais}>
                         
-                        <button onClick={extendMenu} className={estiloCardapio.btnMostrar}>{textBtnMostrar}<FontAwesomeIcon className={`${estiloCardapio.iconSeta} ${mudaSeta}`} icon={faArrowRight}/> </button>
+                        <button onClick={extendMenu} className={estiloCardapio.btnMostrar}>{cond ? 'ver menos' : 'ver mais'}<FontAwesomeIcon className={`${estiloCardapio.iconSeta} ${cond ? estiloCardapio.setaRotate : null}`} icon={faArrowRight}/> </button>
                     
                     </div>
 

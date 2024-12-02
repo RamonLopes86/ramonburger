@@ -30,7 +30,7 @@ export default function Header(){
 
         return(
 
-            <section className={estiloHeader.boxHeader}>
+            <section id='idHeader' className={estiloHeader.boxHeader}>
 
                 <section className={estiloHeader.boxVisibile}>
 

@@ -287,6 +287,7 @@ overflow-x: auto;
    display: flex;
    flex-direction: row;
    align-items: center;
+   
    gap: 10px;
    
 }
@@ -294,20 +295,38 @@ overflow-x: auto;
 
 .control > p {
 
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.808);
 
 }
 
 
 .control button{
 
-    width: 50px;
+    width: 40px;
     height: 40px;
     border: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.493);
+    border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    
 }
+
+.control button:active{
+
+
+    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.493);
+    transform: translateY(1px);
+
+}
+
+
+
 
 
 
@@ -320,10 +339,14 @@ overflow-x: auto;
     padding: 10px;
     cursor: pointer;
     position: absolute;
-    right: 0px;
-    bottom:0px;   
+    right: 3px;
+    bottom:3px;
+    background-color: var(--cormos);
+    border-radius: 50%;   
     display: none;
+    color: white;
 
+    
 }
 
 
