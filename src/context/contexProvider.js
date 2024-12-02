@@ -106,37 +106,6 @@ export default function ContextProvider({children}){
 
    
 
-    function addCarrinho(id){
-
-        
-
-        setLista(
-
-
-            listaAtual => listaAtual.map((itens)=>{
-
-                if(itens.id === id){
-
-                    return {
-
-                        count:itens.count + 1
-
-                    }
-
-
-                }
-
-
-                return console.log(itens)
-
-            })
-
-        )
-
-        
-        
-    }  
-
    
 
 
@@ -165,7 +134,7 @@ export default function ContextProvider({children}){
 
             exibirCardapio('burger')
 
-            addCarrinho()
+        
 
 
 
