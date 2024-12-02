@@ -15,75 +15,94 @@ export default function Cardapio(){
 
     const [categorias , setCategorias] = useState()
 
-    const [count , setCount] = useState(0)
-
-    const [index , setIndex] = useState()
-
-
    
-
-
+    
 
 
     function exibirCardapio(param){
 
+        const filtro = array.filter((info)=>{
 
 
-       return (
+            return info.classe === param
+
+        })
+
+
+      const res =   filtro.map((itens)=>{
+
+            return {
+
+                ...itens, 
+                count:0
+            }
+
+                
+
+            
+
+        })
+
+       
+        setLista(res)
+       
+        setCategorias(param)
+
+
+    }
+
+
+       
+
+
+
+
+    function adicionar(op , id){
 
 
         setLista(
 
-            array.filter((info)=>
+            listaAtual => listaAtual.map((itens)=>{
+
+                if(itens.id === id){
+
+                    if(op === 'soma'){
+
+                        return {
+
+                            ...itens,
+                            count:itens.count + 1
+                        }
+
+                    }
+
+                    if(op === 'subtrair'){
+
+                        return{
+
+                            ...itens,
+                            count: itens.count <= 0 ? 0 : itens.count - 1
+
+                        }
+                    }
+
+                    
+                }
+
+                return itens;
+
+            })
+
             
-                
-                info.classe === param
-            
-            )
-    
-    
-           ),
-
-
-           setCategorias(param)
-
-       )
-
-
-       
-
-
-    }
-
-
-    function adicionar(op){
-
-       
-            if(op === 'somar'){
-
-                setCount(
-    
-                      numeroAtual => numeroAtual + 1
         
-                )
-    
-            }
+        )
 
-
-            if(op === 'subtrair'){
-
-                setCount(
-
-                    numeroAtual => numeroAtual <=0 ? numeroAtual =  0 : numeroAtual -1 
-
-                )
-
-            }
-
+        
+       
+    }
         
       
      
-    }
 
 
 
@@ -148,9 +167,9 @@ export default function Cardapio(){
                                         
                                             <div className={estiloCardapio.control}>
 
-                                                <button onClick={()=>adicionar('subtrair')}>-</button>
-                                                <p>{count}</p>
-                                                <button onClick={()=> adicionar('somar')}>+</button>
+                                                <button onClick={()=>adicionar('subtrair' , itens.id)}>-</button>
+                                                <p>{itens.count}</p>
+                                                <button onClick={()=> adicionar('soma' , itens.id)}>+</button>
                                               
 
                                             </div>
