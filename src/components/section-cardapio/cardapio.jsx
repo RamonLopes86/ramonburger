@@ -17,6 +17,8 @@ export default function Cardapio(){
 
     const [count , setCount] = useState(0)
 
+    const [index , setIndex] = useState()
+
 
    
 
@@ -54,11 +56,45 @@ export default function Cardapio(){
     }
 
 
+    function adicionar(op){
+
+       
+            if(op === 'somar'){
+
+                setCount(
+    
+                      numeroAtual => numeroAtual + 1
+        
+                )
+    
+            }
+
+
+            if(op === 'subtrair'){
+
+                setCount(
+
+                    numeroAtual => numeroAtual <=0 ? numeroAtual =  0 : numeroAtual -1 
+
+                )
+
+            }
+
+        
+      
+     
+    }
+
+
+
+
     useEffect(()=>{
 
 
         exibirCardapio('burger')
+        
 
+       
     },[])
 
 
@@ -96,7 +132,7 @@ export default function Cardapio(){
 
                             return(
 
-                                <div key={itens.id} className={estiloCardapio.card}>
+                                <div  key={itens.id} className={estiloCardapio.card}>
 
                                     <div className={estiloCardapio.boxInfo}>
 
@@ -112,9 +148,9 @@ export default function Cardapio(){
                                         
                                             <div className={estiloCardapio.control}>
 
-                                                <button>-</button>
+                                                <button onClick={()=>adicionar('subtrair')}>-</button>
                                                 <p>{count}</p>
-                                                <button>+</button>
+                                                <button onClick={()=> adicionar('somar')}>+</button>
                                               
 
                                             </div>
