@@ -1,16 +1,20 @@
 import context from "./context";
 import React , {useEffect, useState} from "react";
 import array from "@/dados/dados";
+import Cardapio from "@/components/section-cardapio/cardapio";
 
 
 
 export default function ContextProvider({children}){
 
 
-   
-
 
     const [menuOpen , setMenuOpen] = useState(false)
+    const [ lista , setLista] = useState([])
+    const [categorias , setCategorias] = useState()
+    const [cond , setCond] = useState(false)
+
+    const [addCarrinho , setAddCarrinho] = useState([])
 
 
     const close = {
@@ -19,11 +23,23 @@ export default function ContextProvider({children}){
         transition:'all 500ms linear'
     }
 
-    const [ lista , setLista] = useState([])
-    const [categorias , setCategorias] = useState()
-    const [cond , setCond] = useState(false)
 
+    const value = {
 
+        menuOpen , 
+        setMenuOpen,
+        close,
+        lista ,
+        exibirCardapio ,
+        adicionar ,
+        categorias , 
+        setCategorias , 
+        extendMenu , 
+        cond,
+        add,
+        addCarrinho
+           
+        }
     
 
     function exibirCardapio(param){
@@ -45,15 +61,13 @@ export default function ContextProvider({children}){
             }
 
                 
-
-            
-
         })
 
-       
-        setLista(res)
-       
-        setCategorias(param)
+        
+         setLista(res)
+        
+         setCategorias(param)
+            
 
 
     }
@@ -104,10 +118,61 @@ export default function ContextProvider({children}){
     }
 
 
-   
+
+
+    // function add(id){
+
+    //  const filtro =  lista.filter((itens)=>{
+
+    //        return  id === itens.id
+
+    //     })
+
+
+    //     const mapear =   filtro.map((i)=>{
+
+    //         return  i
+
+    //   })
+
+
+    //     setAddCarrinho([mapear.concat(...addCarrinho)])
+    
+    // }
+
+    function add(id){
+
+        setLista(
+
+
+            listaAtual => listaAtual.map((itens , id)=>{
+
+
+                if(itens.id === id){
+
+
+                    return{
+
+                        count:itens.count + 1
+
+                    }
+
+                }
+
+
+
+            })
+
+
+        )
+
+
+    }
+      
+      
+       
 
    
-
 
     function extendMenu(){
 
@@ -127,6 +192,7 @@ export default function ContextProvider({children}){
         }
 
     }
+
 
     useEffect(()=>{
 
@@ -149,13 +215,11 @@ export default function ContextProvider({children}){
     return (
 
             <context.Provider
-
-                value={{menuOpen , setMenuOpen , close , lista , exibirCardapio , adicionar , categorias , setCategorias , extendMenu , cond }}
-            
+            value={value}
             >
 
-
             {children}
+            
 
             </context.Provider>
 

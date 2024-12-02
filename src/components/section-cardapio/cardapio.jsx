@@ -12,7 +12,7 @@ import hookContext from '@/hookContext/hookContext';
 
 export default function Cardapio(){
 
-   const {lista , exibirCardapio , adicionar , categorias , extendMenu , cond } = hookContext()
+   const {lista , exibirCardapio , adicionar , categorias , extendMenu , cond , add } = hookContext()
 
    
 
@@ -87,7 +87,7 @@ export default function Cardapio(){
                                     </div>
 
 
-                                    <FontAwesomeIcon className={estiloCardapio.iconEscondido} icon={faBagShopping}/>
+                                    <FontAwesomeIcon onClick={()=>add(itens.id)} className={estiloCardapio.iconEscondido} icon={faBagShopping}/>
                                   
     
                                 </div>

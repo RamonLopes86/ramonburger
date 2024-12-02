@@ -1,9 +1,13 @@
 import estiloSac from './sacola.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import hookContext from '@/hookContext/hookContext';
 
 
 export default function SacolaCompras(){
+
+        const {addCarrinho} = hookContext()
+
 
 
         return(
@@ -13,9 +17,35 @@ export default function SacolaCompras(){
                 
             <FontAwesomeIcon className={estiloSac.iconSacola} icon={faBagShopping}/>
 
-            <p className={estiloSac.contador}></p>
+           
+
+                {
+
+                    addCarrinho.map((info , index)=>{
+
+                        
+                        return (
+
+                            <p key={index} className={estiloSac.contador}>
+
+                                {console.log(info)}
+                            </p>
+
+                        )
+
+                    })
+
+                }
+
+
+               
+
+
+        
 
             </button>
+
+            
             
             
 
