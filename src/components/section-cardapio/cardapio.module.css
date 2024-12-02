@@ -15,7 +15,60 @@
     grid-template-columns: repeat(auto-fit , minmax(250px ,1fr));
     gap: 20px;
     padding: 40px 20px 0px 20px;
+    overflow: hidden;
+    transition: all 500ms linear;
+    
+}
 
+
+.boxMostrarMais{
+
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnMostrar{
+
+    width: 200px;
+    padding: 12px;
+    border: none;
+    text-transform: uppercase;
+    font-family: var(--rel);
+    cursor: pointer;
+    font-weight: bolder;
+    background-color: var(--cormos);
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 8px;
+}
+    
+.iconSeta{
+
+    transform: rotate(90deg) translateX(0);
+    animation-name: moveSeta;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+
+@keyframes moveSeta {
+
+    to{
+
+        transform: rotate(90deg) translateX(8px);
+        transition: all 500ms linear;
+    }
 }
 
 .imageProdutos{
@@ -291,11 +344,23 @@ color: white ;
 }
 
 
-
 .mudaCorOff{
 
     background-color: white;
 }
+
+
+
+.setaRotate{
+
+  animation: none;
+  transform: rotate(-90deg);
+
+}
+
+    
+
+
 
 
 @media screen and (max-width:1130px) {

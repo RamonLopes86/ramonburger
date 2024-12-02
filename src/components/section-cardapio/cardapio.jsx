@@ -1,7 +1,7 @@
 import estiloCardapio from './cardapio.module.css';
 import React , {useState , useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBurger , faPizzaSlice , faDrumstickBite  ,faBagShopping , faMartiniGlassCitrus , faIceCream} from '@fortawesome/free-solid-svg-icons';
+import { faBurger , faPizzaSlice , faDrumstickBite  ,faBagShopping , faMartiniGlassCitrus , faIceCream , faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import array from '@/dados/dados';
 import Image from 'next/image';
 
@@ -15,8 +15,11 @@ export default function Cardapio(){
 
     const [categorias , setCategorias] = useState()
 
-   
+    const [showSlice , setShowSlice] = useState(4)
     
+    const [textBtnMostrar , setTxtBtnMostrar] = useState('ver mais')
+    
+    const [mudaSeta , setMudaSeta] = useState(null)
 
 
     function exibirCardapio(param){
@@ -52,10 +55,7 @@ export default function Cardapio(){
     }
 
 
-       
-
-
-
+    
 
     function adicionar(op , id){
 
@@ -100,12 +100,22 @@ export default function Cardapio(){
         
        
     }
+
+
+
+    function extendMenu(){
+
+
+       setShowSlice(showSlice === 4 ? 50 : 4)
+
+       setTxtBtnMostrar(textBtnMostrar === 'ver mais' ? 'ver menos' : 'ver mais')
+        
+       setMudaSeta(mudaSeta === null ? estiloCardapio.setaRotate : null)
+
+    }
         
       
-     
-
-
-
+    
 
     useEffect(()=>{
 
@@ -143,7 +153,7 @@ export default function Cardapio(){
             </div>
 
 
-            <section className={estiloCardapio.cardapio}>
+            <section className={`${estiloCardapio.cardapio}`} >
 
                     {
 
@@ -196,7 +206,7 @@ export default function Cardapio(){
 
                             )
 
-                    })
+                    }).splice(0,showSlice)
 
                     }
 
@@ -204,7 +214,11 @@ export default function Cardapio(){
             </section>
 
 
-
+                    <div className={estiloCardapio.boxMostrarMais}>
+                        
+                        <button onClick={extendMenu} className={estiloCardapio.btnMostrar}>{textBtnMostrar}<FontAwesomeIcon className={`${estiloCardapio.iconSeta} ${mudaSeta}`} icon={faArrowRight}/> </button>
+                    
+                    </div>
 
 
         </section>
