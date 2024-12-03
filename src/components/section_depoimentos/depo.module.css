@@ -1,0 +1,183 @@
+.boxDepoimentos{
+
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit , 500px);
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    font-family: var(--rel);
+    
+
+}
+
+.boxImagePizza{
+
+    background-color: rgba(0, 255, 255, 0.514);
+    width: 350px;
+    height: 350px;
+    position: relative;
+    border-radius: 120px;
+   
+}
+
+
+.imgPizza{
+
+    width: 600px;
+    height: fit-content;
+    position: absolute;
+    left: -100px;
+    top: 20px;
+    
+}
+
+.boxTxDepoimentos{
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+
+
+}
+
+.boxTxDepoimentos h2 {
+
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var(--cormos);
+    padding-bottom: 20px;
+}
+
+.boxTxDepoimentos > p {
+
+    font-size: 2rem;
+    font-weight: 600;
+    padding-bottom: 40px;
+
+}
+
+
+.boxAvatarTexto{
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: flex-start;
+   gap: 10px;
+    
+}
+
+.boxAvatarTexto .avatar{
+
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+   
+}
+
+.boxAvaliacao h3{
+
+    font-size: 1.5rem;
+
+}
+
+.stars{
+
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.boxStars{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+}
+
+.boxStars span {
+
+
+    color: black;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+
+.iconStars{
+
+    color: var(--cormos);
+}
+
+
+.depoimentos{
+
+    padding-top: 20px;
+}
+
+
+.depoimentos p {
+
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 600;
+}
+
+.aspas{
+
+ color: var(--cormos);
+ font-size: 2.5rem;
+ padding: 8px 0px;
+}
+
+.aspas:last-of-type{
+
+    float: right;
+}
+
+
+.navegacao {
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+
+}
+
+.navegacao div {
+
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.603);
+    align-content: center;
+    text-align: center;
+    border-radius: 8px;
+   font-weight: 600;
+   font-size: 1.4rem;
+   cursor: pointer;
+   transition: all 300ms linear;
+   outline: 1px solid var(--cormos);
+   
+}
+
+.navegacao div:hover {
+
+    background-color: var(--cormos);
+    transition: all 300ms linear;
+    color: white;
+
+}
+
+
+

@@ -3,7 +3,8 @@ import img1 from '../../public/imgdep1.jpg'
 import img2 from '../../public/imgdep2.jpg'
 import img3 from '../../public/imgdep3.jpg'
 import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons"
-import { faStar } from "@fortawesome/free-solid-svg-icons"
+
+
 const arrayDep = [
 
 

@@ -1,8 +1,10 @@
 import context from "./context";
 import React , {useEffect, useState} from "react";
 import array from "@/dados/dados";
+import arrayDep from "@/dados/depoimento";
 import Cardapio from "@/components/section-cardapio/cardapio";
 import hookContext from "@/hookContext/hookContext";
+
 
 
 
@@ -20,6 +22,7 @@ export default function ContextProvider({children}){
     const [txMsg , setTxMsg] = useState(null)
     const [alertMsg , setAlertMsg] = useState(false)
     const [corAlert , setCorAlert] = useState(false)
+    const [arrayDepo , setArrayDepo] = useState([])
 
   
 
@@ -56,7 +59,9 @@ export default function ContextProvider({children}){
         setMostrarSacola,
         txMsg,
        alertMsg,
-       corAlert
+       corAlert,
+       arrayDepo
+        
        
     
        
@@ -274,6 +279,23 @@ export default function ContextProvider({children}){
 
 
     }
+
+
+
+    function  exibirDepoiento(param){
+
+        const filtroDepo = arrayDep.filter((info)=>{
+
+
+            return info.id === param
+
+        })
+
+
+        setArrayDepo(filtroDepo)
+
+
+    }
          
 
 
@@ -282,7 +304,8 @@ export default function ContextProvider({children}){
             window.addEventListener('resize' , recolherMenu)
 
             exibirCardapio('burger')
-
+            
+            exibirDepoiento('1')
         
 
 

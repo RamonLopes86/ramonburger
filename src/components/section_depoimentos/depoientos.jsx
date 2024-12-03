@@ -3,11 +3,12 @@ import Image from 'next/image';
 import pizza from '../../../public/pizzaGrande.png'
 import teste from '../../../public/imgdep1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar , faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import hookContext from '@/hookContext/hookContext';
 
 export default function Depoimentos(){
 
-
+    const {arrayDepo} = hookContext()
 
 
 
@@ -16,11 +17,17 @@ export default function Depoimentos(){
         <section className={estiloDepo.boxDepoimentos}>
 
 
-           <section className={estiloDepo.boxImagePizza}>
-                
-                <Image width={500}  height={500} src={pizza}/>
+      
 
-           </section>
+            
+                   <section className={estiloDepo.boxImagePizza}>
+
+                   
+                        <Image className={estiloDepo.imgPizza} alt='imagem de uma pizza saborosa' src={pizza}/>
+
+                   </section>
+              
+         
 
             <section  className={estiloDepo.boxTxDepoimentos}>
 
@@ -29,16 +36,17 @@ export default function Depoimentos(){
 
                 <div className={estiloDepo.boxAvatarTexto}>
 
-                    <Image alt='imagem de uma pizza saborosa' src={teste}/>
+                    <Image className={estiloDepo.avatar} alt='imagem de um cliente' src={teste}/>
+
                     <div className={estiloDepo.boxAvaliacao}>
 
                         <h3>Ana Júlia</h3>
                         <div className={estiloDepo.boxStars}>
                                 <div className={estiloDepo.stars}>
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
+                                <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar}/>
+                                <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar}/>
+                                <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar}/>
+                                <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar}/>
                                 </div>
 
                                 <span>4.0</span>
@@ -50,18 +58,26 @@ export default function Depoimentos(){
 
                 <div className={estiloDepo.depoimentos}>
                   
-                  <p>
-                  A comida estava excelente e o serviço gentil nos surpreendeu! Dica: reserve umas 3 horas para ter uma experiência incrível.
-                  </p>
+              
+
+                    <FontAwesomeIcon className={estiloDepo.aspas} icon={faQuoteLeft}/> 
+
+                        <p> A comida estava excelente e o serviço gentil nos surpreendeu! Dica: reserve umas 3 horas para ter uma experiência incrível.</p>
+
+                    <FontAwesomeIcon className={estiloDepo.aspas} icon={faQuoteRight}/>
+
+                 
 
                 </div>
 
 
+
+
                 <div className={estiloDepo.navegacao}>
 
-                    <div><p>1</p></div>
-                    <div><p>2</p></div>
-                    <div><p>3</p></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
 
                 </div>
 
