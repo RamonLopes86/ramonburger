@@ -23,6 +23,7 @@ export default function ContextProvider({children}){
     const [alertMsg , setAlertMsg] = useState(false)
     const [corAlert , setCorAlert] = useState(false)
     const [arrayDepo , setArrayDepo] = useState([])
+    const [corBtnDepo , setCorBtnDepo] = useState('')
 
   
 
@@ -60,7 +61,9 @@ export default function ContextProvider({children}){
         txMsg,
        alertMsg,
        corAlert,
-       arrayDepo
+       arrayDepo,
+       exibirDepoimento,
+       corBtnDepo
         
        
     
@@ -282,17 +285,18 @@ export default function ContextProvider({children}){
 
 
 
-    function  exibirDepoiento(param){
+    function  exibirDepoimento(paramDep){
 
         const filtroDepo = arrayDep.filter((info)=>{
 
 
-            return info.id === param
+            return info.id === paramDep
 
         })
 
 
         setArrayDepo(filtroDepo)
+        setCorBtnDepo(paramDep)
 
 
     }
@@ -305,7 +309,7 @@ export default function ContextProvider({children}){
 
             exibirCardapio('burger')
             
-            exibirDepoiento('1')
+            exibirDepoimento(1)
         
 
 
