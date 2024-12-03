@@ -4,52 +4,53 @@ import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import hookContext from '@/hookContext/hookContext';
 
 
+
 export default function SacolaCompras(){
 
-        const {addCarrinho} = hookContext()
+      
+        const {carrinho} = hookContext()
+
+        const itensSomados = carrinho.map((itens)=>{
+
+                return itens.count
+
+        }).reduce((acc , it)=>{
 
 
+            return acc + it
 
+        },0)
+
+
+    
         return(
 
             
-            <button className={estiloSac.btnSacola}>
-                
-            <FontAwesomeIcon className={estiloSac.iconSacola} icon={faBagShopping}/>
+                <button className={estiloSac.btnSacola}>
+                    
+                <FontAwesomeIcon className={estiloSac.iconSacola} icon={faBagShopping}/>
 
-           
+                        <p className={estiloSac.contador}>
+                            {
+                              itensSomados
+                            } 
+                        </p>
 
-                {
+                </button>
 
-                    addCarrinho.map((info , index)=>{
+            )
 
-                        
-                        return (
+            }
 
-                            <p key={index} className={estiloSac.contador}>
-
-                                {console.log(info)}
-                            </p>
-
-                        )
-
-                    })
-
-                }
+            
 
 
-               
 
 
         
 
-            </button>
 
             
             
             
 
-
-        )
-
-}

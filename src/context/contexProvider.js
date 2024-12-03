@@ -5,6 +5,7 @@ import Cardapio from "@/components/section-cardapio/cardapio";
 
 
 
+
 export default function ContextProvider({children}){
 
 
@@ -14,7 +15,9 @@ export default function ContextProvider({children}){
     const [categorias , setCategorias] = useState()
     const [cond , setCond] = useState(false)
 
-    const [addCarrinho , setAddCarrinho] = useState([])
+    const [carrinho , setCarrinho] = useState([])
+
+  
 
 
     const close = {
@@ -36,8 +39,10 @@ export default function ContextProvider({children}){
         setCategorias , 
         extendMenu , 
         cond,
-        add,
-        addCarrinho
+        carrinho,
+        setCarrinho,
+        adcionarAoCarrinho
+       
            
         }
     
@@ -69,8 +74,8 @@ export default function ContextProvider({children}){
          setCategorias(param)
             
 
-
     }
+
 
 
     function adicionar(op , id){
@@ -120,64 +125,14 @@ export default function ContextProvider({children}){
 
 
 
-    // function add(id){
-
-    //  const filtro =  lista.filter((itens)=>{
-
-    //        return  id === itens.id
-
-    //     })
-
-
-    //     const mapear =   filtro.map((i)=>{
-
-    //         return  i
-
-    //   })
-
-
-    //     setAddCarrinho([mapear.concat(...addCarrinho)])
-    
-    // }
-
-    function add(id){
-
-        setLista(
-
-
-            listaAtual => listaAtual.map((itens , id)=>{
-
-
-                if(itens.id === id){
-
-
-                    return{
-
-                        count:itens.count + 1
-
-                    }
-
-                }
-
-
-
-            })
-
-
-        )
-
-
-    }
-      
-      
-       
-
-   
-
     function extendMenu(){
 
 
-        setCond(cond === false ? true : false)
+        setCond(
+
+            estadoAtual => !estadoAtual
+
+        )
   
       }
 
@@ -192,6 +147,60 @@ export default function ContextProvider({children}){
         }
 
     }
+
+
+    function adcionarAoCarrinho(item){
+
+
+        setCarrinho((carrinhoAtual)=> {
+
+            
+            const itemCarrinho = carrinhoAtual.find((produtos)=>{
+
+                produtos.id === item.id
+
+            })
+
+
+            if(itemCarrinho){
+
+                return(
+
+                    carrinhoAtual.map((produtos)=>{
+
+                        if(produtos.id === item.id){
+
+                            return{...produtos , count:produtos.count + item.count}
+
+                        }  
+                        
+                        
+
+                    })
+
+                )
+
+            }else{
+
+                return[...carrinhoAtual , {...item , count:item.count}]
+
+            }
+
+
+        })
+
+
+          
+
+    }
+         
+
+           
+
+            
+
+
+
 
 
     useEffect(()=>{
