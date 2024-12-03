@@ -2,9 +2,11 @@ import estiloCardapio from './cardapio.module.css';
 import React , {useState , useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBurger , faPizzaSlice , faDrumstickBite  ,faBagShopping , faMartiniGlassCitrus , faIceCream , faArrowRight} from '@fortawesome/free-solid-svg-icons';
-
 import Image from 'next/image';
+import formatarMoeda from '@/funcoesUteis/formatMoeda';
 import hookContext from '@/hookContext/hookContext';
+import Alerta from '../alertAdcionarItem/alerta';
+
 
 
 
@@ -12,7 +14,7 @@ import hookContext from '@/hookContext/hookContext';
 
 export default function Cardapio(){
 
-   const {lista , exibirCardapio , adicionar , categorias , extendMenu , cond , adcionarAoCarrinho } = hookContext()
+   const {lista , exibirCardapio , adicionar , categorias , extendMenu , cond , adcionarAoCarrinho , mostrarSacola } = hookContext()
 
    
 
@@ -59,7 +61,7 @@ export default function Cardapio(){
                                         <Image  className={estiloCardapio.imageProdutos} alt={itens.nome} src={itens.img} />
                                         <div className={estiloCardapio.boxTx}>
                                             <p>{itens.nome}</p>
-                                            <p>R$ {itens.preco}</p>
+                                            <p>{formatarMoeda(itens.preco , 'BRL')}</p>
                                         </div>
 
                                     
@@ -113,6 +115,12 @@ export default function Cardapio(){
                     
                     </div>
 
+
+
+                    <Alerta/>
+
+                    
+                    
 
         </section>
 

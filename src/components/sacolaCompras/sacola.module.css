@@ -10,7 +10,7 @@
      bottom: 80px;
      right: 5px;
      cursor: pointer;
-    
+     
      
      
  
@@ -25,13 +25,14 @@
 
     & .contador{
 
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         border-radius: 50%;
-        background-color: red;
+        background-color: var(--corpadrao);
+        color: white;
         position: absolute;
-        top: 0;
-        left: -7px;
+        top: -3px;
+        left: -10px;
         align-content: center;
         text-align: center;
  

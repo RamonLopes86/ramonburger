@@ -14,8 +14,12 @@ export default function ContextProvider({children}){
     const [ lista , setLista] = useState([])
     const [categorias , setCategorias] = useState()
     const [cond , setCond] = useState(false)
-
     const [carrinho , setCarrinho] = useState([])
+    const [mostrarSacola , setMostrarSacola] = useState(false)
+    const [alertMsg , setAlertMsg] = useState(false)
+    const [txMsg , setTxMsg] = useState(null)
+ 
+
 
   
 
@@ -26,6 +30,8 @@ export default function ContextProvider({children}){
         transition:'all 500ms linear'
     }
 
+
+   
 
     const value = {
 
@@ -41,10 +47,19 @@ export default function ContextProvider({children}){
         cond,
         carrinho,
         setCarrinho,
-        adcionarAoCarrinho
+        adcionarAoCarrinho,
+        mostrarSacola,
+        setMostrarSacola,
+        alertMsg,
+        setAlertMsg,
+        txMsg,
+        setTxMsg
+
+
+        }
+       
        
            
-        }
     
 
     function exibirCardapio(param){
@@ -149,58 +164,109 @@ export default function ContextProvider({children}){
     }
 
 
-    function adcionarAoCarrinho(item){
+    function adcionarAoCarrinho(itemCarrinhoInicial){
 
 
-        setCarrinho((carrinhoAtual)=> {
+        setCarrinho(
 
-            
-            const itemCarrinho = carrinhoAtual.find((produtos)=>{
+            carrinho =>{
 
-                produtos.id === item.id
+                return carrinho.concat({...itemCarrinhoInicial , count:itemCarrinhoInicial.count})
+            },
 
-            })
+          
+
+        )
 
 
-            if(itemCarrinho){
+            if(  itemCarrinhoInicial.count > 0 ){
 
-                return(
+                setTxMsg('item adicionado ao carrinho')
+                setAlertMsg(true)
+                setMostrarSacola(true)
+                
 
-                    carrinhoAtual.map((produtos)=>{
 
-                        if(produtos.id === item.id){
+              setTimeout(()=>{
 
-                            return{...produtos , count:produtos.count + item.count}
+                    setAlertMsg(false)
 
-                        }  
-                        
-                        
+                },2000)
 
-                    })
 
-                )
-
+                
             }else{
 
-                return[...carrinhoAtual , {...item , count:item.count}]
+                setTxMsg('adicione ao menos um item')
+                setAlertMsg(true)
+               
+
+                setTimeout(()=>{
+
+                    setAlertMsg(false)
+
+                },2000)
 
             }
 
+           
+              
 
-        })
+        
+            
+
+        // setCarrinho((carrinhoAtual)=> {
+
+        //     // return[...carrinhoAtual , {...itemCarrinhoInicial , count:item.count}]
+            
+        //     // return carrinhoAtual.concat({...itemCarrinhoInicial , count:itemCarrinhoInicial.count})
 
 
           
 
-    }
-         
+
+        //     // const itemCarrinho = carrinhoAtual.find((produtos)=>{
+
+        //     //     produtos.id === item.id
+
+        //     // })
+
+
+        //     // if(itemCarrinho){
+
+        //     //     return(
+
+        //     //         carrinhoAtual.map((produtos)=>{
+
+        //     //             if(produtos.id === item.id){
+
+
+        //     //                 return console.log(produtos.count)
+
+        //     //                 // return{...produtos , count: 1 + item.count}
+
+        //     //             }  
+                        
+                        
+
+        //     //         })
+
+                  
+
+        //     //     )
+
+        //     // }else{
+
+        //     //     return[...carrinhoAtual , {...item , count:item.count}]
+
+        //     // }
 
            
-
-            
-
+        // })
 
 
+    }
+         
 
 
     useEffect(()=>{

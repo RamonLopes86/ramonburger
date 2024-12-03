@@ -1,0 +1,36 @@
+.boxAlerta .cardAlerta{
+
+    background-color:rgb(2, 199, 2);
+    width: 300px;
+    padding:12px 20px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    text-transform: uppercase;
+    color: white;
+    font-family: var(--rel);
+    font-size: 0.9rem;
+    border-radius: 5px;
+    font-weight: 600;
+ 
+    
+}
+
+
+
+.alertOn{
+
+    /* transform:  translateX(0);
+    opacity: 1;
+    transition: all 800ms linear; */
+}
+
+.alertOff{
+
+    
+    /* transform: translateX(20vw);
+    opacity: 0;
+    transition: all 800ms linear; */
+}
+
+
