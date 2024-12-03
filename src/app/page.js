@@ -10,6 +10,7 @@ import Servicos from "@/components/section-serviços/servicos";
 import Cardapio from "@/components/section-cardapio/cardapio";
 import BtnTopo from "@/components/buttonTopo/buttonTopo";
 import SacolaCompras from "@/components/sacolaCompras/sacola";
+import Depoimentos from "@/components/section_depoimentos/depoientos";
 
 
 export default function Home() {
@@ -27,9 +28,10 @@ export default function Home() {
           <Apresentacao/>
           <Servicos/>
           <Cardapio/>
+          <Depoimentos/>
+
 
           <BtnTopo/>
-
           <SacolaCompras/>
 
       </ContextProvider>
@@ -38,9 +40,12 @@ export default function Home() {
 
     </main>
 
-     
+
 );
        
 
         
 }
+
+
+     
