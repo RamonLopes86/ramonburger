@@ -1,5 +1,6 @@
 import hookContext from '@/hookContext/hookContext';
 import estiloAletra from './alerta.module.css';
+import React , {useState} from 'react';
 
 
 
@@ -7,22 +8,21 @@ import estiloAletra from './alerta.module.css';
 export default function Alerta() {
 
 
-    const { alertMsg , txMsg } = hookContext()
+   const {txMsg , alertMsg , corAlert} = hookContext()
 
 
 
 
     return (
 
-        alertMsg && (
-
-            <section className={`${estiloAletra.boxAlerta}`}>
+    
+            <section   className={`${estiloAletra.boxAlerta} ${alertMsg ? estiloAletra.alertOn : estiloAletra.alertOff} ${corAlert ? estiloAletra.corAlertOff : estiloAletra.corAlertOn} `}>
 
                 <span className={estiloAletra.cardAlerta}>{txMsg}</span>
 
             </section>
 
-        ) 
+   
            
 
     )

@@ -2,6 +2,7 @@ import context from "./context";
 import React , {useEffect, useState} from "react";
 import array from "@/dados/dados";
 import Cardapio from "@/components/section-cardapio/cardapio";
+import hookContext from "@/hookContext/hookContext";
 
 
 
@@ -16,10 +17,9 @@ export default function ContextProvider({children}){
     const [cond , setCond] = useState(false)
     const [carrinho , setCarrinho] = useState([])
     const [mostrarSacola , setMostrarSacola] = useState(false)
-    const [alertMsg , setAlertMsg] = useState(false)
     const [txMsg , setTxMsg] = useState(null)
- 
-
+    const [alertMsg , setAlertMsg] = useState(false)
+    const [corAlert , setCorAlert] = useState(false)
 
   
 
@@ -29,6 +29,10 @@ export default function ContextProvider({children}){
         height :menuOpen ? '250px' : '0px',
         transition:'all 500ms linear'
     }
+
+
+
+
 
 
    
@@ -50,13 +54,15 @@ export default function ContextProvider({children}){
         adcionarAoCarrinho,
         mostrarSacola,
         setMostrarSacola,
-        alertMsg,
-        setAlertMsg,
         txMsg,
-        setTxMsg
-
-
+       alertMsg,
+       corAlert
+       
+    
+       
         }
+
+
        
        
            
@@ -184,6 +190,7 @@ export default function ContextProvider({children}){
                 setTxMsg('item adicionado ao carrinho')
                 setAlertMsg(true)
                 setMostrarSacola(true)
+                setCorAlert(false)
                 
 
 
@@ -191,7 +198,7 @@ export default function ContextProvider({children}){
 
                     setAlertMsg(false)
 
-                },2000)
+                },1500)
 
 
                 
@@ -199,13 +206,14 @@ export default function ContextProvider({children}){
 
                 setTxMsg('adicione ao menos um item')
                 setAlertMsg(true)
+                setCorAlert(true)
                
 
                 setTimeout(()=>{
 
                     setAlertMsg(false)
 
-                },2000)
+                },1500)
 
             }
 
