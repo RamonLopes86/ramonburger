@@ -1,19 +1,26 @@
+import hookContext from '@/hookContext/hookContext';
 import estiloStatus from './status.module.css';
 
 
 export default function StatusPedido() {
+
+
+    const {goPageRevisar} = hookContext()
+
 
     return (
 
         <section className={estiloStatus.statusPedido}>
 
             <div className={estiloStatus.status}>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
+                <div className={estiloStatus.numero}>1</div>
+                <div className={estiloStatus.traco}></div>
+                <div className={estiloStatus.numero}>2</div>
+                <div className={estiloStatus.traco}></div>
+                <div className={estiloStatus.numero}>3</div>
             </div>
 
-            <button>Fechar</button>
+            <button className={estiloStatus.btnFechar} onClick={goPageRevisar}>Fechar</button>
 
         </section>
 

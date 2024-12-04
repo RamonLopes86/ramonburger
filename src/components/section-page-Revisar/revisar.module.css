@@ -1,25 +1,36 @@
 .sectionPaiRevisar{
 
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-   
-
-    background-color: white;
+    background-color: var(--corgeral);
+    font-family: var(--rell);
+    padding: 0px 15px;
     
 }
+   
+ 
+.boxFilho{
+
+    max-width: 1200px;
+    margin: 100px auto;
+}
 
 
-.Aparecer{
+/* caso crie um  componente carrinho  */
 
-display: block;
+.boxCarrinho{
+
+
+    
 
 }
 
-.Sumir{
 
-display: none;
 
-}
+/* fim do style carrinho */
+    
+
+

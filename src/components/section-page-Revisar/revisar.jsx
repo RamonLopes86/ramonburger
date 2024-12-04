@@ -19,42 +19,36 @@ export default function RevisarPedido(){
 
         <section className={estiloRev.sectionPaiRevisar}>
 
-            <StatusPedido/>
+            <section className={estiloRev.boxFilho}>
 
-            <section className={estiloRev.boxCarrinho}>
 
-                <h2>Seu Carrinho : </h2>
+                <StatusPedido/>
 
-                <div className={estiloRev.ItensCarrinho}>
-
-                    <div className={estiloRev.cardCarrinho}>
-
-                        {/* <Image alt={'nome da imagem'} src={null} /> */}
-                        <h3>Hamburger</h3>
-                        <p>R$79,00</p>
-
-                    </div>
-
-                    <div className={estiloRev.boxCountRevisar}>
-
-                        <div className={estiloRev.boxAddItens}>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                
+                <section className={estiloRev.boxCarrinho}>
+                    <h2>Seu Carrinho : </h2>
+                    <div className={estiloRev.ItensCarrinho}>
+                        <div className={estiloRev.cardCarrinho}>
+                            {/* <Image alt={'nome da imagem'} src={null} /> */}
+                            <h3>Hamburger</h3>
+                            <p>R$79,00</p>
                         </div>
-
-                        <button>x</button>
-
+                        <div className={estiloRev.boxCountRevisar}>
+                            <div className={estiloRev.boxAddItens}>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <button>x</button>
+                        </div>
                     </div>
+                </section>
 
 
-                </div>
+                <SubTotal/>
 
 
             </section>
-
-        
-            <SubTotal/>
        
              
 
