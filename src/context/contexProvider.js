@@ -30,7 +30,7 @@ export default function ContextProvider({children}){
 
     const close = {
 
-        height :menuOpen ? '250px' : '0px',
+        height :menuOpen ? '200px' : '0px',
         transition:'all 500ms linear'
     }
 

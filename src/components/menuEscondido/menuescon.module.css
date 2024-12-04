@@ -4,7 +4,7 @@
     font-size: 1.3rem;
     color: var(--cormos);
     text-transform: uppercase;
-    border-bottom: 1px solid var(--corpadrao);
+   
 }
 
 .boxEscondido nav{
@@ -24,8 +24,9 @@
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content: flex-end;
+    
 }
    
    
@@ -33,7 +34,7 @@
 .boxEscondido nav ul .linkEscondido  {
 
     width:calc(100% - 20px);
-    text-align: center;
+    margin: 0px 10px;
     transition: all 500ms;
     cursor: pointer;
     border-radius: 10px;
@@ -42,12 +43,12 @@
 
 .boxEscondido nav ul .linkEscondido li  {
 
-    text-align: center;
+  
     transition: all 500ms;
     cursor: pointer;
     border-radius: 10px;
     padding: 10px;
- 
+    text-align: left;
 }
 
 
@@ -58,6 +59,15 @@
     color: white;
 }
 
+
+
+@media screen and (max-width:1040px) {
+
+    .boxEscondido nav{
+
+        border-bottom: 1px solid var(--corpadrao);
+    }
+}
 
 
 
