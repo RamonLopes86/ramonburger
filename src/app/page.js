@@ -11,6 +11,7 @@ import Cardapio from "@/components/section-cardapio/cardapio";
 import BtnTopo from "@/components/buttonTopo/buttonTopo";
 import SacolaCompras from "@/components/sacolaCompras/sacola";
 import Depoimentos from "@/components/section_depoimentos/depoientos";
+import RevisarPedido from "@/components/section-page-Revisar/revisar";
 
 
 export default function Home() {
@@ -24,18 +25,18 @@ export default function Home() {
 
       <ContextProvider>
 
-      <section className={styles.PagePrincipal}>
+     
         
                   <Header/>
                   <Apresentacao/>
                   <Servicos/>
                   <Cardapio/>
                   <Depoimentos/>
-        
-        
                   <BtnTopo/>
                   <SacolaCompras/>
-      </section>
+        
+                  <RevisarPedido/>
+    
 
         
 

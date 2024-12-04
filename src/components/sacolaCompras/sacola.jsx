@@ -8,7 +8,7 @@ import hookContext from '@/hookContext/hookContext';
 export default function SacolaCompras(){
 
       
-        const {carrinho , mostrarSacola} = hookContext()
+        const {carrinho , mostrarSacola , goPageRevisar} = hookContext()
 
         const itensSomados = carrinho.map((itens)=>{
 
@@ -28,7 +28,7 @@ export default function SacolaCompras(){
 
             mostrarSacola && (
 
-                <button className={estiloSac.btnSacola}>
+                <button onClick={goPageRevisar} className={estiloSac.btnSacola}>
                     
                 <FontAwesomeIcon className={estiloSac.iconSacola} icon={faBagShopping}/>
 

@@ -25,6 +25,8 @@ export default function ContextProvider({children}){
     const [arrayDepo , setArrayDepo] = useState([])
     const [corBtnDepo , setCorBtnDepo] = useState('')
 
+    const [pgRevisar , setPgRevisar] = useState(false)
+
   
 
 
@@ -58,7 +60,9 @@ export default function ContextProvider({children}){
        corAlert,
        arrayDepo,
        exibirDepoimento,
-       corBtnDepo
+       corBtnDepo,
+       pgRevisar,
+       goPageRevisar
         
         }
        
@@ -277,6 +281,8 @@ export default function ContextProvider({children}){
 
 
 
+
+
     function  exibirDepoimento(paramDep){
 
         const filtroDepo = arrayDep.filter((info)=>{
@@ -292,7 +298,16 @@ export default function ContextProvider({children}){
 
 
     }
-         
+
+
+    function goPageRevisar(){
+
+
+        setPgRevisar(estadoAtual => !estadoAtual)
+
+    }
+       
+    
 
 
     useEffect(()=>{

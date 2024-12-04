@@ -25,6 +25,7 @@
 main{
 
   background-color: var(--corgeral);
+  position: relative;
  
 
 }

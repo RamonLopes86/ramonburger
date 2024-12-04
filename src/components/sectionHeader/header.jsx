@@ -19,7 +19,7 @@ import Link from 'next/link';
 export default function Header(){
 
 
-    const {setMenuOpen , carrinho , mostrarSacola} = hookContext()
+    const {setMenuOpen , carrinho , mostrarSacola , goPageRevisar} = hookContext()
 
 
     function exibirMenu(){
@@ -62,7 +62,7 @@ export default function Header(){
                             </Link>
                         </ul>
                     </nav>
-                    <section className={estiloHeader.boxBag}>
+                    <section onClick={goPageRevisar} className={estiloHeader.boxBag}>
                             <p>Meu Carrinho</p>
                             <div className={estiloHeader.boxIconBag}>
 
