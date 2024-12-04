@@ -24,15 +24,20 @@ export default function Home() {
 
       <ContextProvider>
 
-          <Header/>
-          <Apresentacao/>
-          <Servicos/>
-          <Cardapio/>
-          <Depoimentos/>
+      <section className={styles.PagePrincipal}>
+        
+                  <Header/>
+                  <Apresentacao/>
+                  <Servicos/>
+                  <Cardapio/>
+                  <Depoimentos/>
+        
+        
+                  <BtnTopo/>
+                  <SacolaCompras/>
+      </section>
 
-
-          <BtnTopo/>
-          <SacolaCompras/>
+        
 
       </ContextProvider>
 

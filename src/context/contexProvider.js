@@ -2,8 +2,8 @@ import context from "./context";
 import React , {useEffect, useState} from "react";
 import array from "@/dados/dados";
 import arrayDep from "@/dados/depoimento";
-import Cardapio from "@/components/section-cardapio/cardapio";
-import hookContext from "@/hookContext/hookContext";
+
+
 
 
 
@@ -60,15 +60,9 @@ export default function ContextProvider({children}){
        exibirDepoimento,
        corBtnDepo
         
+        }
        
     
-       
-        }
-
-
-       
-       
-           
     
 
     function exibirCardapio(param){
