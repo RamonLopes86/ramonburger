@@ -1,8 +1,10 @@
 .boxEscondido{
 
-    font-family: var(--sans);
-    font-size: 1.4rem;
+    font-family: var(--rell);
+    font-size: 1.3rem;
     color: var(--cormos);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--corpadrao);
 }
 
 .boxEscondido nav{
@@ -10,6 +12,12 @@
     overflow: hidden;
    
     
+}
+
+.linkEscondido{
+
+    width: 100%;
+    color: var(--corpadrao)
 }
 
 .boxEscondido nav ul{
@@ -22,18 +30,28 @@
    
    
 
-.boxEscondido nav ul li {
+.boxEscondido nav ul .linkEscondido  {
 
     width:calc(100% - 20px);
     text-align: center;
     transition: all 500ms;
     cursor: pointer;
     border-radius: 10px;
+    
+}
+
+.boxEscondido nav ul .linkEscondido li  {
+
+    text-align: center;
+    transition: all 500ms;
+    cursor: pointer;
+    border-radius: 10px;
     padding: 10px;
+ 
 }
 
 
-.boxEscondido nav ul li:hover{
+.boxEscondido nav ul .linkEscondido li:hover{
 
     background-color: var(--corpadrao);
     transition: all 500ms;

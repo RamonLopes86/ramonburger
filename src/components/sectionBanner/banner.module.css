@@ -84,8 +84,15 @@
 .boxBtn .link{
 
     text-decoration: none;
-
+    
 }
+
+.boxBtn .link > button {
+
+    color: var(--corpadrao);
+}
+
+
 
 .boxBtn .link button {
 

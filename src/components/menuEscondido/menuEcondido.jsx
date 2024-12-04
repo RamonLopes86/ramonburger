@@ -1,5 +1,6 @@
 import estiloMenuEscon from './menuescon.module.css';
 import hookContext from '@/hookContext/hookContext';
+import Link from 'next/link';
 
 
 
@@ -18,10 +19,18 @@ export default function MenuEscondido(){
                     <nav style={close} className={`${estiloMenuEscon.navEscondido}`}>
 
                         <ul>
-                            <li>Reservas</li>
-                            <li>Serviços</li>
-                            <li>Cardápio</li>
-                            <li>Depoimentos</li>
+                            <Link className={estiloMenuEscon.linkEscondido} href={''}>
+                                <li>Reservas</li>
+                            </Link>
+                            <Link className={estiloMenuEscon.linkEscondido} href={''}>
+                                <li>Serviços</li>
+                            </Link>
+                            <Link className={estiloMenuEscon.linkEscondido} href={'#idcardapio'}>
+                                <li>Cardápio</li>
+                            </Link>
+                            <Link className={estiloMenuEscon.linkEscondido} href={'#iddepoimentos'}>
+                                <li>Depoimentos</li>
+                            </Link>
                         </ul>
 
                     </nav>

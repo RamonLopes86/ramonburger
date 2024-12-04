@@ -24,7 +24,7 @@ export default function Cardapio(){
 
     return(
 
-        <section className={estiloCardapio.boxCardapio}>
+        <section id='idcardapio' className={estiloCardapio.boxCardapio}>
             
             <section className={estiloCardapio.boxTitulo}>
 

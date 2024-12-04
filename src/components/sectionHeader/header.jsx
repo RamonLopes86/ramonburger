@@ -4,9 +4,10 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../../public/logosf.png'
-import menu from '../../../public/menu.png'
 import MenuEscondido from '../menuEscondido/menuEcondido';
 import hookContext from '@/hookContext/hookContext';
+import Link from 'next/link';
+
 
 
 
@@ -18,15 +19,24 @@ import hookContext from '@/hookContext/hookContext';
 export default function Header(){
 
 
-    const {menuOpen , setMenuOpen} = hookContext()
+    const {setMenuOpen , carrinho , mostrarSacola} = hookContext()
 
 
     function exibirMenu(){
 
-        setMenuOpen(menuOpen === false ? true : false)
+        setMenuOpen(estadoAtual => !estadoAtual)
 
     }
 
+
+    const itensSomados = carrinho.reduce((acc , itens)=> {
+
+       return acc + itens.count
+
+    },0)
+    
+
+    console.log(itensSomados)
 
         return(
 
@@ -34,18 +44,32 @@ export default function Header(){
 
                 <section className={estiloHeader.boxVisibile}>
 
-                    <Image className={estiloHeader.logo} alt='icone de uma sacola' src={logo}/>
+                    <Image className={estiloHeader.logo} alt='logo do food on-line' src={logo}/>
+                    
                     <nav className={estiloHeader.navMenu}>
                         <ul>
-                            <li>Reservas</li>
-                            <li>Serviços</li>
-                            <li>Cardápio</li>
-                            <li>Depoimentos</li>
+                            <Link href={''}>
+                                <li>Reservas</li>
+                            </Link>
+                            <Link href={''}>
+                                <li>Serviços</li>
+                            </Link>
+                            <Link href={'#idcardapio'}>
+                                <li>Cardápio</li>
+                            </Link>
+                            <Link href={'#iddepoimentos'}>
+                                <li>Depoimentos</li>
+                            </Link>
                         </ul>
                     </nav>
                     <section className={estiloHeader.boxBag}>
                             <p>Meu Carrinho</p>
                             <div className={estiloHeader.boxIconBag}>
+
+                                {
+                                    mostrarSacola &&  <p className={estiloHeader.countBag}>{itensSomados}</p>
+                                }
+
                                 <FontAwesomeIcon className={estiloHeader.iconBag} icon={faBagShopping}/>
                             </div>
                     
@@ -54,8 +78,7 @@ export default function Header(){
 
                     <div onClick={exibirMenu} className={estiloHeader.MenuLogoEcondido}>
 
-                          {/* <Image alt='imagem de um icone menu' className={estiloHeader.iconMenu} src={menu}/> */}
-
+                        
                           <div className={estiloHeader.boxGrid}>
                               <div className={estiloHeader.quadrado}></div>
                               <div className={estiloHeader.quadrado}></div>

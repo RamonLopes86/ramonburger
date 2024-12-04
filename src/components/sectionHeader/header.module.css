@@ -11,7 +11,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    font-family: var(--sans);
+    font-family: var(--rell);
     font-weight:lighter;
    
 }
@@ -30,8 +30,8 @@
 }
 
 .boxHeader .navMenu ul li{
-
-    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-size: 1.3em;
     color: var(--cormos);
     cursor: pointer;
     transform: translateY(0);
@@ -80,15 +80,39 @@
     padding:10px 40px;
     border-radius: 10px;
     color: var(--cormos);
-    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
     transition: all 500ms;
 }
+    
 
 .boxBag:hover{
 
     background-color: var(--corpadrao);
     transition: all 500ms;
 }
+
+.boxIconBag{
+
+    position: relative;
+}
+
+.countBag{
+
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: -2px;
+    left: -6px;
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: var(--cormos);
+    color: white;
+    align-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+}
+  
 
 .boxBag:hover > .boxIconBag .iconBag{
 

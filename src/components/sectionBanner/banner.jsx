@@ -6,7 +6,7 @@ import insta from '../../../public/insta.png';
 import wpp from '../../../public/wpp.png';
 import yt from '../../../public/yt.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone , faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { faPhone , faQuoteLeft, faQuoteRight , faWhatsapp } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Apresentacao(){
@@ -28,7 +28,7 @@ export default function Apresentacao(){
                         <div className={estiloBanner.boxBtn}>
 
                                 <button>Ver cardápio</button>
-                                <Link className={estiloBanner.link} href={''}><button><FontAwesomeIcon className={estiloBanner.iconPhone} icon={faPhone}/> 7199126-5530</button></Link>
+                                <Link className={estiloBanner.link} href={"https://wa.me/5571991265530"} target='_Blank'><button><FontAwesomeIcon className={estiloBanner.iconPhone} icon={faPhone}/> 7199126-5530</button></Link>
                           
                         </div>  
 

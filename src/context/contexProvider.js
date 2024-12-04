@@ -192,6 +192,57 @@ export default function ContextProvider({children}){
 
         )
 
+        //um outra forma da logica mas robusta:
+        // setCarrinho((carrinhoAtual)=> {
+
+        //     // return[...carrinhoAtual , {...itemCarrinhoInicial , count:item.count}]
+            
+        //     // return carrinhoAtual.concat({...itemCarrinhoInicial , count:itemCarrinhoInicial.count})
+
+
+          
+
+
+        //     const itemCarrinho = carrinhoAtual.find((produtos)=>{
+
+        //         produtos.id === itemCarrinhoInicial.id
+
+        //     })
+
+
+        //     if(itemCarrinho){
+
+        //         return(
+
+        //             carrinhoAtual.map((produtos)=>{
+
+        //                 if(produtos.id === itemCarrinhoInicial.id){
+
+
+        //                     return console.log(produtos.count)
+
+        //                     // return{...produtos , count: 1 + item.count}
+
+        //                 }  
+                        
+                        
+
+        //             })
+
+                  
+
+        //         )
+
+        //     }else{
+
+        //         return[...carrinhoAtual , {...itemCarrinhoInicial , count:itemCarrinhoInicial.count}]
+
+        //     }
+
+           
+        // })
+
+
 
             if(  itemCarrinhoInicial.count > 0 ){
 
@@ -231,55 +282,7 @@ export default function ContextProvider({children}){
         
             
 
-        // setCarrinho((carrinhoAtual)=> {
-
-        //     // return[...carrinhoAtual , {...itemCarrinhoInicial , count:item.count}]
-            
-        //     // return carrinhoAtual.concat({...itemCarrinhoInicial , count:itemCarrinhoInicial.count})
-
-
-          
-
-
-        //     // const itemCarrinho = carrinhoAtual.find((produtos)=>{
-
-        //     //     produtos.id === item.id
-
-        //     // })
-
-
-        //     // if(itemCarrinho){
-
-        //     //     return(
-
-        //     //         carrinhoAtual.map((produtos)=>{
-
-        //     //             if(produtos.id === item.id){
-
-
-        //     //                 return console.log(produtos.count)
-
-        //     //                 // return{...produtos , count: 1 + item.count}
-
-        //     //             }  
-                        
-                        
-
-        //     //         })
-
-                  
-
-        //     //     )
-
-        //     // }else{
-
-        //     //     return[...carrinhoAtual , {...item , count:item.count}]
-
-        //     // }
-
-           
-        // })
-
+       
 
     }
 

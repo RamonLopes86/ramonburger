@@ -1,10 +1,10 @@
 import estiloDepo from './depo.module.css';
 import Image from 'next/image';
 import pizza from '../../../public/pizzaGrande.png'
-import teste from '../../../public/imgdep1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faQuoteLeft, faQuoteRight , faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import hookContext from '@/hookContext/hookContext';
+
 
 
 
@@ -23,12 +23,9 @@ export default function Depoimentos() {
 
 
 
-    
-
-
     return (
 
-        <section className={estiloDepo.boxDepoimentos}>
+        <section id='iddepoimentos' className={estiloDepo.boxDepoimentos}>
 
 
 
@@ -48,7 +45,7 @@ export default function Depoimentos() {
                     arrayDepo.map((infos) => {
 
                         
-                        console.log(infos.stars.map((i , icons)=> icons[i]))
+                    
                        
                        
                         return (

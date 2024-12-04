@@ -2,7 +2,7 @@
 
     width: 100%;
     text-align: center;
-    font-family: var(--sans);
+    font-family: var(--rell);
     padding: 100px 10px;
 
    
@@ -11,11 +11,11 @@
 .boxServicos h1 {
 
 
-    text-decoration: underline 2px solid;
-    text-underline-offset: 10px;
-    font-size: 4.5rem;
+    font-size: 3rem;
     padding: 10px 0px;
+    text-transform: uppercase;
     color: var(--cormos);
+ 
 
 }
 
@@ -25,6 +25,7 @@
    font-family: var(--rel);
    font-weight: 600;
    color: rgba(0, 0, 0, 0.753);
+   
 
 }
 
@@ -65,8 +66,9 @@ min-height: 500px;
 
 .boxCardServ h2 {
 
-    text-transform: uppercase;
+  
     font-size: 2rem;
+    color: var(--corpadrao);
 }
 
 .boxCardServ p {
