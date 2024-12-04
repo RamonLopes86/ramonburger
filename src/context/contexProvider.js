@@ -62,7 +62,8 @@ export default function ContextProvider({children}){
        exibirDepoimento,
        corBtnDepo,
        pgRevisar,
-       goPageRevisar
+       goPageRevisar,
+       excluirItemPedido
         
         }
        
@@ -174,66 +175,34 @@ export default function ContextProvider({children}){
     function adcionarAoCarrinho(itemCarrinhoInicial){
 
 
-        setCarrinho(
-
-            carrinho =>{
-
-                return carrinho.concat({...itemCarrinhoInicial , count:itemCarrinhoInicial.count})
-            },
-
-          
-
-        )
-
+        
         //um outra forma da logica mas robusta:
-        // setCarrinho((carrinhoAtual)=> {
-
-        //     // return[...carrinhoAtual , {...itemCarrinhoInicial , count:item.count}]
-            
-        //     // return carrinhoAtual.concat({...itemCarrinhoInicial , count:itemCarrinhoInicial.count})
-
-
-          
-
-
-        //     const itemCarrinho = carrinhoAtual.find((produtos)=>{
-
-        //         produtos.id === itemCarrinhoInicial.id
-
-        //     })
-
-
-        //     if(itemCarrinho){
-
-        //         return(
-
-        //             carrinhoAtual.map((produtos)=>{
-
-        //                 if(produtos.id === itemCarrinhoInicial.id){
-
-
-        //                     return console.log(produtos.count)
-
-        //                     // return{...produtos , count: 1 + item.count}
-
-        //                 }  
-                        
-                        
-
-        //             })
-
-                  
-
-        //         )
-
-        //     }else{
-
-        //         return[...carrinhoAtual , {...itemCarrinhoInicial , count:itemCarrinhoInicial.count}]
-
-        //     }
-
-           
-        // })
+       
+        setCarrinho((carrinhoAtual) => {
+            // Verificar se o item já está no carrinho
+            const itemCarrinho = carrinhoAtual.find((produtos) => produtos.id === itemCarrinhoInicial.id);
+    
+            if (itemCarrinho) {
+                // Se o item já existir, atualize a quantidade
+                return (
+                    carrinhoAtual.map((produtos) => {
+                        if (produtos.id === itemCarrinhoInicial.id) {
+                            return {
+                                ...produtos,
+                                count: produtos.count + itemCarrinhoInicial.count
+                            };
+                        }
+                        return produtos;
+                    })
+                );
+            } else {
+                // Se o item não existir, adicione um novo item ao carrinho
+                return [
+                    ...carrinhoAtual,
+                    { ...itemCarrinhoInicial, count: itemCarrinhoInicial.count }
+                ];
+            }
+        });
 
 
 
@@ -304,6 +273,24 @@ export default function ContextProvider({children}){
 
 
         setPgRevisar(estadoAtual => !estadoAtual)
+
+    }
+
+
+    function excluirItemPedido(id){
+
+         setCarrinho(
+
+            carrinho.filter((itens)=>
+
+                itens.id !== id
+   
+   
+           )
+   
+
+         )
+
 
     }
        

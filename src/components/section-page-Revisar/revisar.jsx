@@ -3,7 +3,8 @@ import StatusPedido from '../statusPedido/statusPedido';
 import SubTotal from '../sub-Total/subTotal';
 import hookContext from '@/hookContext/hookContext';
 import Image from 'next/image';
-import img1 from '../../../public/pizza1.jpg'
+import formatarMoeda from '@/funcoesUteis/formatMoeda';
+
 
 
 
@@ -12,8 +13,11 @@ import img1 from '../../../public/pizza1.jpg'
 
 export default function RevisarPedido(){
 
-    const {pgRevisar , goPageRevisar , carrinho} = hookContext()
+    const {pgRevisar , carrinho , excluirItemPedido } = hookContext()
+
+
     
+
 
     return(
 
@@ -31,23 +35,37 @@ export default function RevisarPedido(){
 
                     <h2>Seu Carrinho : </h2>
 
-                    <div className={estiloRev.itensCarrinho}>
-                        <div className={estiloRev.cardCarrinho}>
-                            <Image className={estiloRev.imgProd} alt={'nome da imagem'} src={img1} />
-                            <div className={estiloRev.boxNomeItens}>
-                                <h3>Hamburger</h3>
-                                <p>R$79,00</p>
-                            </div>
+                   {
+
+                    carrinho.map((itens,index)=>{
+
+                        return(
+
+                            <div key={index} className={estiloRev.itensCarrinho}>
+                                <div className={estiloRev.cardCarrinho}>
+                                    <Image className={estiloRev.imgProd} alt={'nome da imagem'} src={itens.img} />
+                                    <div className={estiloRev.boxNomeItens}>
+                                        <h3>{itens.nome}</h3>
+                                        <p>{formatarMoeda(itens.preco , 'BRL')}</p>
+                                    </div>
+                                </div>
+                                <div className={estiloRev.boxCountRevisar}>
+                                    <div className={estiloRev.boxAddItens}>
+                                        <div>-</div>
+                                        <div>{itens.count}</div>
+                                        <div>+</div>
+                                    </div>
+                                          
+                                        
+                                    <button onClick={()=>excluirItemPedido(itens.id)}>x</button>
+                                </div>
                         </div>
-                        <div className={estiloRev.boxCountRevisar}>
-                            <div className={estiloRev.boxAddItens}>
-                                <div>-</div>
-                                <div>0</div>
-                                <div>+</div>
-                            </div>
-                            <button>x</button>
-                        </div>
-                    </div>
+
+                        )
+
+                    })
+
+                   }
 
 
                 </section>
