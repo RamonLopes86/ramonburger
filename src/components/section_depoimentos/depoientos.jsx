@@ -29,81 +29,45 @@ export default function Depoimentos() {
 
 
 
-            {
-
-                arrayDepo.map((infos) => {
-
-                    {console.log(infos)}
-
-                    return (
-
-                      
-
-                        <section key={infos.id} className={estiloDepo.boxTxDepoimentos}>
-
-                        <h2>Depoimentos</h2>
-                        <p>O que dizem sobre nós ?</p>
-
-                        <div className={estiloDepo.boxAvatarTexto}>
-
-                            <Image className={estiloDepo.avatar} alt='imagem de um cliente' src={infos.img} />
-
-                            <div className={estiloDepo.boxAvaliacao}>
-
-                                <h3>{infos.nome}</h3>
-                                <div className={estiloDepo.boxStars}>
-                                    <div className={estiloDepo.stars}>
-                                        <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
-                                        <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
-                                        <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
-                                        <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
+        
+                {
+                    arrayDepo.map((infos) => {
+                        {console.log(infos)}
+                        return (
+                
+                            <section key={infos.id} className={estiloDepo.boxTxDepoimentos}>
+                            <h2>Depoimentos</h2>
+                            <p>O que dizem sobre nós ?</p>
+                            <div className={estiloDepo.boxAvatarTexto}>
+                                <Image className={estiloDepo.avatar} alt='imagem de um cliente' src={infos.img} />
+                                <div className={estiloDepo.boxAvaliacao}>
+                                    <h3>{infos.nome}</h3>
+                                    <div className={estiloDepo.boxStars}>
+                                        <div className={estiloDepo.stars}>
+                                            <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
+                                            <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
+                                            <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
+                                            <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
+                                        </div>
+                                        <span>{infos.nota}</span>
                                     </div>
-
-                                    <span>{infos.nota}</span>
                                 </div>
-
                             </div>
-
-                        </div>
-
-                        <div className={estiloDepo.depoimentos}>
-
-
-
-                            <FontAwesomeIcon className={estiloDepo.aspas} icon={faQuoteLeft} />
-
-                            <p>{infos.dep}</p>
-
-                            <FontAwesomeIcon className={estiloDepo.aspas} icon={faQuoteRight} />
-
-
-
-                        </div>
-
-
-
-
-                        <div className={estiloDepo.navegacao}>
-
-                            <div className={corBtnDepo === 1 ? estiloDepo.corbtn : null}  onClick={()=> exibirDepoimento(1)}>1</div>
-                            <div className={corBtnDepo === 2 ? estiloDepo.corbtn : null} onClick={()=> exibirDepoimento(2)}>2</div>
-                            <div className={corBtnDepo === 3 ? estiloDepo.corbtn : null} onClick={()=> exibirDepoimento(3)}>3</div>
-
-                        </div>
-
-
-
-                    </section>
-
-
-
-                    )
-
-
-                })
-
-
-            }
+                            <div className={estiloDepo.depoimentos}>
+                                <FontAwesomeIcon className={estiloDepo.aspas} icon={faQuoteLeft} />
+                                <p>{infos.dep}</p>
+                                <FontAwesomeIcon className={estiloDepo.aspas} icon={faQuoteRight} />
+                            </div>
+                            <div className={estiloDepo.navegacao}>
+                                <div className={corBtnDepo === 1 ? estiloDepo.corbtn : null}  onClick={()=> exibirDepoimento(1)}>1</div>
+                                <div className={corBtnDepo === 2 ? estiloDepo.corbtn : null} onClick={()=> exibirDepoimento(2)}>2</div>
+                                <div className={corBtnDepo === 3 ? estiloDepo.corbtn : null} onClick={()=> exibirDepoimento(3)}>3</div>
+                            </div>
+                        </section>
+                        )
+                    })
+                }
+            
 
         </section>
 

@@ -190,3 +190,116 @@
 
 
 
+@media screen and (max-width:1300px) {
+
+   .imgPizza{
+
+    left: 0;
+    width: 500px;
+    height: fit-content;
+
+   }
+}
+
+
+
+@media screen and (max-width:1130px) {
+
+
+    .boxDepoimentos{
+
+        gap: 10px;
+    }
+
+}
+
+
+@media screen and (max-width:1045px) {
+
+    
+
+    .boxDepoimentos{
+
+        grid-template-columns: 1fr;
+        gap: 100px;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .boxTxDepoimentos{
+
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .depoimentos{
+
+        max-width: 500px;
+        margin: 0px auto;
+        padding: 0px 5px;
+    }
+
+    .boxAvatarTexto{
+
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+}
+
+
+@media screen and ( max-width:680px) {
+
+
+    .boxTxDepoimentos > p {
+
+       font-size: 7vw;
+        
+    }
+
+    .boxImagePizza{
+
+        max-width: 60vw;
+        height: 200px;
+        
+    }
+
+    .imgPizza{
+
+        max-width: 80vw;
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+    }
+
+    .depoimentos{
+
+        width: 100%;
+        text-align: center;
+        
+    }
+
+   
+    .aspas:nth-of-type(1){
+
+        display: block;
+        
+    }
+
+    .depoimentos p {
+
+        padding: 20px 10px;
+
+    }
+
+
+
+
+}
+

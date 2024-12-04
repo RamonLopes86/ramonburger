@@ -40,7 +40,7 @@
 
 .alertOff{
 
-    transform: translateX(50vw);
+    transform: translateX(100vw);
     transition: all 200ms linear;
   
     width: 300px;
