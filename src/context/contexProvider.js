@@ -36,11 +36,6 @@ export default function ContextProvider({children}){
 
 
 
-
-
-
-   
-
     const value = {
 
         menuOpen , 
