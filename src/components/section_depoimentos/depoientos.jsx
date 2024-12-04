@@ -3,13 +3,27 @@ import Image from 'next/image';
 import pizza from '../../../public/pizzaGrande.png'
 import teste from '../../../public/imgdep1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faQuoteLeft, faQuoteRight , faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import hookContext from '@/hookContext/hookContext';
+
+
 
 export default function Depoimentos() {
 
     const { arrayDepo , exibirDepoimento , corBtnDepo } = hookContext()
 
+
+    const icons = 
+
+        {
+            Star:faStar,
+            Storke:faStarHalfStroke
+
+        }
+
+
+
+    
 
 
     return (
@@ -32,7 +46,11 @@ export default function Depoimentos() {
         
                 {
                     arrayDepo.map((infos) => {
-                        {console.log(infos)}
+
+                        
+                        console.log(infos.stars.map((i , icons)=> icons[i]))
+                       
+                       
                         return (
                 
                             <section key={infos.id} className={estiloDepo.boxTxDepoimentos}>
@@ -43,12 +61,27 @@ export default function Depoimentos() {
                                 <div className={estiloDepo.boxAvaliacao}>
                                     <h3>{infos.nome}</h3>
                                     <div className={estiloDepo.boxStars}>
+
                                         <div className={estiloDepo.stars}>
-                                            <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
-                                            <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
-                                            <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
-                                            <FontAwesomeIcon className={estiloDepo.iconStars} icon={faStar} />
+
+                                            {
+
+                                                infos.stars.map((icone , index)=>{
+
+                                                    return(
+
+                                                        <FontAwesomeIcon className={estiloDepo.iconStars} key={index} icon={icons[icone]}/>
+                                                    )
+
+                                                })
+
+                                            }
+
+
+                                        
                                         </div>
+                                      
+                                           
                                         <span>{infos.nota}</span>
                                     </div>
                                 </div>
