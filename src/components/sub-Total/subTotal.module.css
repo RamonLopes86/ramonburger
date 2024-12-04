@@ -1,0 +1,63 @@
+.boxSubTotal{
+
+    float: right;
+    font-family: var(--rel);
+    position: relative;
+}
+
+.boxValores{
+
+    padding: 0px 10px;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.boxValores h2 {
+
+    padding: 10px 0px;
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.733);
+    
+}
+
+
+
+.boxValores p {
+
+    font-size: 1.1rem;
+    color: gray;
+    font-weight: 700;
+}
+
+.boxValores h3{
+
+    color: rgba(0, 0, 0, 0.733);
+    padding: 10px 0px;
+}
+    
+   
+
+.boxSubTotal button{
+
+    position: absolute;
+    right: 10px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.5rem;
+    background-color: var(--corpadrao);
+    color: white;
+    border-radius: 10px;
+    transition: background-color 300ms linear;
+    cursor: pointer;
+
+}
+
+.boxSubTotal button:hover{
+
+
+    background-color: white;
+    outline: 1px solid var(--corpadrao);
+    transition: bacground-color 300ms linear;
+    color: var(--corpadrao);
+
+}

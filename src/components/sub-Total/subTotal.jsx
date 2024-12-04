@@ -12,16 +12,19 @@ export default function SubTotal(){
 
         <section className={estiloSubTotal.boxSubTotal}>
 
-             <div>
+             <div className={estiloSubTotal.boxValores}>
 
             <h2>Subtotal: R$ 150,00</h2>
             <p><FontAwesomeIcon icon={faMotorcycle}/> Entrega: + R$ 5,00  </p>
-            <h2>Total: R$ 155,00</h2>
+            <h3>Total: R$ 155,00</h3>
+
+
+           
 
             </div>   
 
+           
             <button>Continuar</button>
-        
 
 
         </section>
