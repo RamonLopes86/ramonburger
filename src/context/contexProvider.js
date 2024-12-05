@@ -205,6 +205,7 @@ export default function ContextProvider({children}){
                 }else{
 
                     return [...carrinho]
+                    
                 }
             }
         });
@@ -225,10 +226,17 @@ export default function ContextProvider({children}){
               setTimeout(()=>{
 
                     setAlertMsg(false)
+                    itemCarrinhoInicial.count = 0
+                   
+
+                    
 
                 },1500)
 
 
+              
+
+              
                 
             }else{
 
@@ -240,20 +248,23 @@ export default function ContextProvider({children}){
                 setTimeout(()=>{
 
                     setAlertMsg(false)
+                   
 
                 },1500)
+
+
+             
 
             }
 
            
-              
-
+         
         
+        }
             
 
        
 
-    }
 
 
 

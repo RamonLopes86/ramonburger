@@ -14,7 +14,7 @@ import Alerta from '../alertAdcionarItem/alerta';
 
 export default function Cardapio(){
 
-   const {lista , exibirCardapio , adicionar , categorias , extendMenu , cond , adcionarAoCarrinho , mostrarSacola } = hookContext()
+   const {lista , exibirCardapio , adicionar , categorias , extendMenu , cond , adcionarAoCarrinho  } = hookContext()
 
    
 

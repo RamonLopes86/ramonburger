@@ -4,7 +4,7 @@ import SubTotal from '../sub-Total/subTotal';
 import hookContext from '@/hookContext/hookContext';
 import Image from 'next/image';
 import formatarMoeda from '@/funcoesUteis/formatMoeda';
-import { useEffect } from 'react';
+
 
 
 
@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 
 export default function RevisarPedido(){
 
-    const {pgRevisar , carrinho , excluirItemPedido , setMostrarSacola } = hookContext()
+    const {pgRevisar , carrinho , excluirItemPedido , adicionar , lista } = hookContext()
 
 
 
@@ -57,9 +57,9 @@ export default function RevisarPedido(){
                                 </div>
                                 <div className={estiloRev.boxCountRevisar}>
                                     <div className={estiloRev.boxAddItens}>
-                                        <div>-</div>
+                                        <div onClick={()=> adicionar('subtrair' , itens.id)}>-</div>
                                         <div>{itens.count}</div>
-                                        <div>+</div>
+                                        <div onClick={()=>adicionar('soma' , itens.id)}>+</div>
                                     </div>
                                           
                                         
