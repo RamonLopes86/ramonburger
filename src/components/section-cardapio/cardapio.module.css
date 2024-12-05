@@ -78,7 +78,7 @@
     border-radius: 10px;
     width: 100%;
     object-fit: cover;
-    image-rendering: optimizeSpeed;
+    image-rendering:pixelated;
    
     
 }
