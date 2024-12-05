@@ -5,6 +5,8 @@ import hookContext from '@/hookContext/hookContext';
 import Image from 'next/image';
 import formatarMoeda from '@/funcoesUteis/formatMoeda';
 import CarriinhoVazio from '../carrinhoVazio/carrinhoVazio';
+import PageEndereco from '../section-page-endereço/pageEndereco';
+
 
 
 
@@ -15,7 +17,7 @@ import CarriinhoVazio from '../carrinhoVazio/carrinhoVazio';
 
 export default function RevisarPedido() {
 
-    const { pgRevisar, carrinho, excluirItemPedido, adicionar, adcionarPageRevisar } = hookContext()
+    const { pgRevisar, carrinho, excluirItemPedido, adicionar, adcionarPageRevisar , pgEndereco } = hookContext()
 
 
 
@@ -95,9 +97,18 @@ export default function RevisarPedido() {
                     <SubTotal />
 
 
+                    
+
+
                 </section>
 
 
+               {
+                pgEndereco && (
+
+                    <PageEndereco/>
+                )
+               }
 
             </section>
 

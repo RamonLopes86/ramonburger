@@ -5,7 +5,7 @@ import estiloStatus from './status.module.css';
 export default function StatusPedido() {
 
 
-    const {goPageRevisar , ballStatusRev1} = hookContext()
+    const {goPageRevisar} = hookContext()
 
 
     

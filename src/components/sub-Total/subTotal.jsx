@@ -10,7 +10,7 @@ import formatarMoeda from '@/funcoesUteis/formatMoeda';
 
 export default function SubTotal(){
 
-    const {carrinho} = hookContext()
+    const {carrinho , goPageEndereco} = hookContext()
 
     let taxa = 5
 
@@ -47,7 +47,7 @@ export default function SubTotal(){
             </div>   
 
            
-            <button>Continuar</button>
+            <button onClick={goPageEndereco}>Continuar</button>
 
 
         </section>

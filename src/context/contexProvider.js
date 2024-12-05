@@ -26,7 +26,8 @@ export default function ContextProvider({children}){
     const [arrayDepo , setArrayDepo] = useState([])
     const [corBtnDepo , setCorBtnDepo] = useState('')
     const [pgRevisar , setPgRevisar] = useState(false)
-    const [ballStatusRev1 , setBallStatusRev1] = useState(false)
+    const [pgEndereco , setPageEndereco] = useState(false)
+   
 
 
   
@@ -35,7 +36,7 @@ export default function ContextProvider({children}){
     const close = {
 
         height :menuOpen ? '200px' : '0px',
-        transition:'all 500ms linear'
+        transition:'all 200ms linear'
     }
 
 
@@ -67,7 +68,9 @@ export default function ContextProvider({children}){
        goPageRevisar,
        excluirItemPedido,
        adcionarPageRevisar,
-       ballStatusRev1
+       pgEndereco,
+       goPageEndereco
+      
        
         
         }
@@ -384,10 +387,20 @@ export default function ContextProvider({children}){
          }))
 
          
-        setBallStatusRev1(true)
+    
         
 
     }
+
+    function goPageEndereco(){
+
+        setPageEndereco(estadoAtual => !estadoAtual)
+
+    }
+    
+
+    
+    
        
 
 
