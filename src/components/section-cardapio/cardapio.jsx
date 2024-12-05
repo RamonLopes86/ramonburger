@@ -59,9 +59,12 @@ export default function Cardapio(){
                                     <div className={estiloCardapio.boxInfo}>
 
                                         <Image  className={estiloCardapio.imageProdutos} alt={itens.nome} src={itens.img} />
+
                                         <div className={estiloCardapio.boxTx}>
-                                            <p>{itens.nome}</p>
-                                            <p>{formatarMoeda(itens.preco , 'BRL')}</p>
+                                          
+                                                <p>{itens.nome}</p>
+                                                <p>{formatarMoeda(itens.preco , 'BRL')}</p>
+                                            
                                         </div>
 
                                     

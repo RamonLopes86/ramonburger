@@ -25,7 +25,7 @@ export default function SubTotal(){
 
     const semTaxa = teste.reduce((acc  , it)=>{
 
-        return acc + it.preco
+        return acc  + (it.preco * it.count)
 
     },0)
 

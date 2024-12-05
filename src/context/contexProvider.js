@@ -176,16 +176,15 @@ export default function ContextProvider({children}){
 
 
         
-        //um outra forma da logica mas robusta:
-       
-        setCarrinho((carrinhoAtual) => {
+        setCarrinho((carrinho) => {
             // Verificar se o item já está no carrinho
-            const itemCarrinho = carrinhoAtual.find((produtos) => produtos.id === itemCarrinhoInicial.id);
+            
+            const itemCarrinho = carrinho.find((produtos) => produtos.id === itemCarrinhoInicial.id);
     
             if (itemCarrinho) {
                 // Se o item já existir, atualize a quantidade
                 return (
-                    carrinhoAtual.map((produtos) => {
+                    carrinho.map((produtos) => {
                         if (produtos.id === itemCarrinhoInicial.id) {
                             return {
                                 ...produtos,
@@ -198,7 +197,7 @@ export default function ContextProvider({children}){
             } else {
                 // Se o item não existir, adicione um novo item ao carrinho
                 return [
-                    ...carrinhoAtual,
+                    ...carrinho,
                     { ...itemCarrinhoInicial, count: itemCarrinhoInicial.count }
                 ];
             }
