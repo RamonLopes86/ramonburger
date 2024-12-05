@@ -32,7 +32,21 @@
     overflow: auto;
     border-bottom: 1px solid rgba(128, 128, 128, 0.397);
     margin-bottom: 10px;
-    padding: 0px 10px;
+    padding: 0px 10px ;
+}
+
+
+.boxCarrinho::-webkit-scrollbar{
+
+    background-color:white;
+    width: 6px;
+}
+
+.boxCarrinho::-webkit-scrollbar-thumb{
+
+    background-color: var(--corpadrao);
+    border-radius: 10px;
+    width: 6px;
 }
 
 .boxCarrinho h2 {

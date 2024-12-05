@@ -23,15 +23,11 @@ export default function SubTotal(){
 
     })
 
-    const semTaxa = teste.reduce((acc  , it)=>{
-
-        return acc  + (it.preco * it.count)
-
-    },0)
+   
 
     const valorSomado = teste.reduce((acc , it)=>{
 
-            return acc + it.preco 
+            return acc + (it.preco * it.count)
 
     },0)
 
@@ -41,7 +37,7 @@ export default function SubTotal(){
 
              <div className={estiloSubTotal.boxValores}>
 
-            <h2>Subtotal: {formatarMoeda(semTaxa , 'BRL')}</h2>
+            <h2>Subtotal: {formatarMoeda(valorSomado , 'BRL')}</h2>
             <p><FontAwesomeIcon icon={faMotorcycle}/> Entrega: + R$ 5,00  </p>
             <h3>Total: {formatarMoeda(valorSomado + taxa , 'BRL')}</h3>
 
