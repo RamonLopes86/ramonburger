@@ -196,13 +196,21 @@ export default function ContextProvider({children}){
                 );
             } else {
                 // Se o item não existir, adicione um novo item ao carrinho
-                return [
-                    ...carrinho,
-                    { ...itemCarrinhoInicial, count: itemCarrinhoInicial.count }
-                ];
+                if(itemCarrinhoInicial.count > 0){
+
+                    return [
+                        ...carrinho,
+                        { ...itemCarrinhoInicial, count: itemCarrinhoInicial.count }
+                    ];
+                }else{
+
+                    return [...carrinho]
+                }
             }
         });
 
+
+            
 
 
             if(  itemCarrinhoInicial.count > 0 ){
@@ -273,7 +281,20 @@ export default function ContextProvider({children}){
 
         setPgRevisar(estadoAtual => !estadoAtual)
 
+        
+        const m = carrinho.some((i)=>{
+
+           return i.count > 0
+
+        })
+
+
+        setMostrarSacola(m)
+
     }
+       
+
+
 
 
     function excluirItemPedido(id){

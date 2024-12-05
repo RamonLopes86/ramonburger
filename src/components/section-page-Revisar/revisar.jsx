@@ -4,6 +4,7 @@ import SubTotal from '../sub-Total/subTotal';
 import hookContext from '@/hookContext/hookContext';
 import Image from 'next/image';
 import formatarMoeda from '@/funcoesUteis/formatMoeda';
+import { useEffect } from 'react';
 
 
 
@@ -13,10 +14,13 @@ import formatarMoeda from '@/funcoesUteis/formatMoeda';
 
 export default function RevisarPedido(){
 
-    const {pgRevisar , carrinho , excluirItemPedido } = hookContext()
+    const {pgRevisar , carrinho , excluirItemPedido , setMostrarSacola } = hookContext()
 
 
-    
+
+
+  
+
 
 
     return(
@@ -38,6 +42,8 @@ export default function RevisarPedido(){
                    {
 
                     carrinho.map((itens,index)=>{
+
+                      
 
                         return(
 
@@ -61,9 +67,14 @@ export default function RevisarPedido(){
                                 </div>
                         </div>
 
+
+                            
+
                         )
 
                     })
+
+
 
                    }
 

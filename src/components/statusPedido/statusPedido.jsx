@@ -8,6 +8,8 @@ export default function StatusPedido() {
     const {goPageRevisar} = hookContext()
 
 
+    
+
     return (
 
         <section className={estiloStatus.statusPedido}>
