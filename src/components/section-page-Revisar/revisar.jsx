@@ -12,87 +12,87 @@ import formatarMoeda from '@/funcoesUteis/formatMoeda';
 
 
 
-export default function RevisarPedido(){
+export default function RevisarPedido() {
 
-    const {pgRevisar , carrinho , excluirItemPedido , adicionar , lista } = hookContext()
-
-
-
-
-  
+    const { pgRevisar, carrinho, excluirItemPedido, adicionar, adcionarPageRevisar } = hookContext()
 
 
 
-    return(
-
-      pgRevisar && (
-
-        <section className={estiloRev.sectionPaiRevisar}>
-
-            <section className={estiloRev.boxFilho}>
 
 
-                <StatusPedido/>
 
-                
-                <section className={estiloRev.boxCarrinho}>
 
-                    <h2>Seu Carrinho : </h2>
 
-                   {
+    return (
 
-                    carrinho.map((itens,index)=>{
+        pgRevisar && (
 
-                      
+            <section className={estiloRev.sectionPaiRevisar}>
 
-                        return(
+                <section className={estiloRev.boxFilho}>
 
-                            <div key={index} className={estiloRev.itensCarrinho}>
-                                <div className={estiloRev.cardCarrinho}>
-                                    <Image className={estiloRev.imgProd} alt={'nome da imagem'} src={itens.img} />
-                                    <div className={estiloRev.boxNomeItens}>
-                                        <h3>{itens.nome}</h3>
-                                        <p>{formatarMoeda(itens.preco , 'BRL')}</p>
+
+                    <StatusPedido />
+
+
+                    <section className={estiloRev.boxCarrinho}>
+
+                        <h2>Seu Carrinho : </h2>
+
+                        {
+
+                            carrinho.map((itens, index) => {
+
+
+
+                                return (
+
+                                    <div key={index} className={estiloRev.itensCarrinho}>
+                                        <div className={estiloRev.cardCarrinho}>
+                                            <Image className={estiloRev.imgProd} alt={'nome da imagem'} src={itens.img} />
+                                            <div className={estiloRev.boxNomeItens}>
+                                                <h3>{itens.nome}</h3>
+                                                <p>{formatarMoeda(itens.preco, 'BRL')}</p>
+                                            </div>
+                                        </div>
+                                        <div className={estiloRev.boxCountRevisar}>
+                                            <div className={estiloRev.boxAddItens}>
+                                                <div onClick={() => adcionarPageRevisar('subtrair', itens.id)}>-</div>
+                                                <div>{itens.count}</div>
+                                                <div onClick={() => adcionarPageRevisar('soma', itens.id)}>+</div>
+                                            </div>
+
+
+                                            <button onClick={() => excluirItemPedido(itens.id)}>x</button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className={estiloRev.boxCountRevisar}>
-                                    <div className={estiloRev.boxAddItens}>
-                                        <div onClick={()=> adicionar('subtrair' , itens.id)}>-</div>
-                                        <div>{itens.count}</div>
-                                        <div onClick={()=>adicionar('soma' , itens.id)}>+</div>
-                                    </div>
-                                          
-                                        
-                                    <button onClick={()=>excluirItemPedido(itens.id)}>x</button>
-                                </div>
-                        </div>
-
-
-                            
-
-                        )
-
-                    })
 
 
 
-                   }
+
+                                )
+
+                            })
+
+
+
+                        }
+
+
+                    </section>
+
+
+                    <SubTotal />
 
 
                 </section>
 
 
-                <SubTotal/>
-
 
             </section>
-       
-             
-
-        </section>
 
 
-      )
+        )
 
 
     )

@@ -63,7 +63,8 @@ export default function ContextProvider({children}){
        corBtnDepo,
        pgRevisar,
        goPageRevisar,
-       excluirItemPedido
+       excluirItemPedido,
+       adcionarPageRevisar
         
         }
        
@@ -143,6 +144,45 @@ export default function ContextProvider({children}){
 
         
        
+    }
+
+
+    function adcionarPageRevisar(op , id){
+
+
+    setCarrinho(
+
+        carrinho=> carrinho.map((it)=>{
+
+
+            if(it.id === id){
+
+                if(op === 'soma'){
+
+                    return{
+                        ...it,
+                        count:it.count + 1
+                    }
+
+                }
+                if(op === 'subtrair'){
+
+                    return{
+
+                        ...it,
+                        count:it.count === 0 ? it.count = 0 : it.count - 1
+                    }
+                }
+
+            }
+
+            return it;
+
+        })
+
+    )
+
+
     }
 
 
