@@ -23,11 +23,17 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-   background-color: white;
+    background-color: white;
     text-align: center;
     align-content: center;
     box-shadow: 0px 0px 5px gray;
 
+}
+
+.status .numero:nth-of-type(1){
+
+    background-color: var(--cormos);
+    color: white;
 }
 
 .status .traco{
@@ -36,6 +42,11 @@
     height: 1px;
     background-color: white;
     box-shadow: 0px 0px 5px gray;
+}
+
+.status .traco:nth-of-type(2){
+
+    background-color: var(--cormos);
 }
 
 
@@ -60,3 +71,6 @@
     color: white;
     transition:  background-color 300ms linear;
 }
+
+
+

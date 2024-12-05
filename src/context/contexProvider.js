@@ -26,6 +26,7 @@ export default function ContextProvider({children}){
     const [arrayDepo , setArrayDepo] = useState([])
     const [corBtnDepo , setCorBtnDepo] = useState('')
     const [pgRevisar , setPgRevisar] = useState(false)
+    const [ballStatusRev1 , setBallStatusRev1] = useState(false)
 
 
   
@@ -65,7 +66,9 @@ export default function ContextProvider({children}){
        pgRevisar,
        goPageRevisar,
        excluirItemPedido,
-       adcionarPageRevisar
+       adcionarPageRevisar,
+       ballStatusRev1
+       
         
         }
        
@@ -374,14 +377,15 @@ export default function ContextProvider({children}){
         setPgRevisar(estadoAtual => !estadoAtual)
 
         
-        const m = carrinho.some((i)=>{
+        setMostrarSacola(carrinho.some((i)=>{
 
-           return i.count > 0
+            return i.count > 0
+ 
+         }))
 
-        })
-
-
-        setMostrarSacola(m)
+         
+        setBallStatusRev1(true)
+        
 
     }
        
