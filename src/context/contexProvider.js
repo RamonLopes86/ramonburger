@@ -9,6 +9,7 @@ import arrayDep from "@/dados/depoimento";
 
 
 
+
 export default function ContextProvider({children}){
 
 
@@ -24,8 +25,8 @@ export default function ContextProvider({children}){
     const [corAlert , setCorAlert] = useState(false)
     const [arrayDepo , setArrayDepo] = useState([])
     const [corBtnDepo , setCorBtnDepo] = useState('')
-
     const [pgRevisar , setPgRevisar] = useState(false)
+
 
   
 
@@ -123,12 +124,18 @@ export default function ContextProvider({children}){
 
                     if(op === 'subtrair'){
 
+                        
                         return{
 
                             ...itens,
                             count: itens.count <= 0 ? 0 : itens.count - 1
-
+                           
                         }
+
+                        
+
+                        
+                    
                     }
 
                     
@@ -136,15 +143,23 @@ export default function ContextProvider({children}){
 
                 return itens;
 
+
+
             })
+
+
+            
+        )
+
+    }
+
+            
 
             
         
-        )
 
         
        
-    }
 
 
     function adcionarPageRevisar(op , id){
@@ -167,23 +182,48 @@ export default function ContextProvider({children}){
                 }
                 if(op === 'subtrair'){
 
-                    return{
+                    if(it.count <= 1){
 
-                        ...it,
-                        count:it.count === 0 ? it.count = 0 : it.count - 1
+                        excluirItemPedido(id)
+                      
+
+                         return {
+                            ...it,
+                            count:0
+                         }
+                    }else{
+
+
+                        return{
+
+                            ...it,
+                            count:it.count - 1
+                        }
                     }
+
+
+                   
+
+
                 }
+
+        
 
             }
 
             return it;
 
-        })
-
-    )
-
-
-    }
+            
+                    })
+            
+                )
+            
+            
+                }
+           
+                
+            
+          
 
 
 
@@ -283,7 +323,7 @@ export default function ContextProvider({children}){
                 setTxMsg('adicione ao menos um item')
                 setAlertMsg(true)
                 setCorAlert(true)
-               
+              
 
                 setTimeout(()=>{
 

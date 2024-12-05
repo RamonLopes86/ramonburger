@@ -4,6 +4,7 @@ import SubTotal from '../sub-Total/subTotal';
 import hookContext from '@/hookContext/hookContext';
 import Image from 'next/image';
 import formatarMoeda from '@/funcoesUteis/formatMoeda';
+import CarriinhoVazio from '../carrinhoVazio/carrinhoVazio';
 
 
 
@@ -45,7 +46,9 @@ export default function RevisarPedido() {
 
 
 
+
                                 return (
+
 
                                     <div key={index} className={estiloRev.itensCarrinho}>
                                         <div className={estiloRev.cardCarrinho}>
@@ -61,22 +64,19 @@ export default function RevisarPedido() {
                                                 <div>{itens.count}</div>
                                                 <div onClick={() => adcionarPageRevisar('soma', itens.id)}>+</div>
                                             </div>
-
-
                                             <button onClick={() => excluirItemPedido(itens.id)}>x</button>
                                         </div>
                                     </div>
 
-
-
-
                                 )
+
 
                             })
 
 
 
                         }
+
 
 
                     </section>
@@ -98,3 +98,26 @@ export default function RevisarPedido() {
     )
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
