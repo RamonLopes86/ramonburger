@@ -20,10 +20,6 @@ export default function RevisarPedido() {
 
 
 
-
-
-
-
     return (
 
         pgRevisar && (
@@ -39,6 +35,7 @@ export default function RevisarPedido() {
                     <section className={estiloRev.boxCarrinho}>
 
                         <h2>Seu Carrinho : </h2>
+
 
                         {
 
@@ -76,6 +73,8 @@ export default function RevisarPedido() {
 
 
                         }
+
+
 
 
 
