@@ -56,6 +56,8 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+   
+  
 }
 
 
@@ -69,8 +71,8 @@
 
 .imgProd{
 
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 8px;
     
     
@@ -135,6 +137,8 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    
+   
 }
 
 .boxCountRevisar > button {
@@ -161,3 +165,60 @@
     
 
 
+@media screen and ( max-width:500px) {
+
+    .boxCarrinho{
+
+
+            height: 300px;
+     }
+
+    
+    .imgProd{
+
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        
+        
+    }
+
+    .boxNomeItens{
+
+        & h3{
+
+            font-size: 4vw;
+        }
+
+        & p{
+
+            font-size: 4vw;
+        }
+    }
+
+    .boxAddItens{
+
+        width: 80px;
+    }
+
+    .boxCountRevisar > button {
+
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+
+    }
+
+
+}
+
+
+@media screen and (max-width:360px){
+
+    .boxAddItens{
+
+        width: 60px;
+    }
+
+
+}
