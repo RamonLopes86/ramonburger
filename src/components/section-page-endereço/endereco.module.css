@@ -1,10 +1,25 @@
 .boxEndereco{
 
     position: fixed;
-    top: 0;
+    top:0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: var(--corgeral);
 
+}
+
+.boxEndereco h1 {
+
+    padding: 20px 0px;
+
+}
+
+
+.boxFilho{
+
+    margin-top: 150px;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0px 20px;
 }

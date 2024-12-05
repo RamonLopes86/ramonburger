@@ -1,0 +1,133 @@
+.boxFormulario {
+
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: auto;
+
+    gap: 10px;
+    
+}
+
+
+
+.boxFormulario label {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    color: rgba(0, 0, 0, 0.555);
+    font-size:1.2rem;
+    font-weight: bold;
+}
+
+.boxFormulario label input{
+
+    width: 100%;
+    padding: 20px;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.425);
+    border-radius: 10px;
+    outline: none;
+}
+
+.boxFormulario label select{
+
+    width: 100%;
+    padding: 20px;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.425);
+    border-radius: 10px;
+    outline: none;
+    
+}
+
+.boxFormulario label select .listaEstados {
+
+    font-size: 1.2rem;
+
+}   
+
+
+.boxFormulario label:nth-of-type(1) .boxBusca {
+
+   
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    
+    
+    
+
+    & .iconLupa{
+
+        position: absolute;
+        display: block;
+        background-color: var(--corpadrao);
+        width: 30px;
+        height: 30px;
+        padding:6px;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        top: 7px;
+        right:7px;
+    }
+
+
+    
+}
+
+
+.boxFormulario label:nth-of-type(1){
+
+
+
+}
+
+.boxFormulario label:nth-of-type(2){
+
+
+
+}
+
+.boxFormulario label:nth-of-type(3){
+
+
+
+ }
+ 
+ .boxFormulario label:nth-of-type(4){
+
+
+    
+ }
+
+
+ .boxFormulario label:nth-of-type(5){
+
+ 
+    
+ }
+
+ .boxFormulario label:nth-of-type(6){
+
+  
+ }
+
+ .boxFormulario label:nth-of-type(7){
+
+  
+ }
+ 
+
+
+
+ @media screen and (max-width: 820px) {
+
+
+
+ }

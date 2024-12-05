@@ -1,5 +1,7 @@
 import hookContext from '@/hookContext/hookContext';
 import estiloEnd from './endereco.module.css';
+import StatusPedido from '../statusPedido/statusPedido';
+import Formulario from '../Formulário/formulario';
 
 
 
@@ -14,10 +16,16 @@ export default function PageEndereco(){
 
         <section className={estiloEnd.boxEndereco}>
 
-
-                <h1>endereço</h1>
+            <section className={estiloEnd.boxFilho}>
 
                 <button onClick={goPageEndereco}>voltar</button>
+
+                <h1>Endereço de Entraga:</h1>
+
+                <Formulario/>
+
+            </section>
+
 
 
         </section>
