@@ -1,0 +1,32 @@
+.boxCarVazio{
+
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+   
+}
+
+.iconBagVazio{
+
+    width: 30px;
+    height: 30px;
+    background-color: var(--cormos);
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+    
+
+}
+
+.boxConteudo{
+
+    width: 100%;
+    text-align: center;
+   
+}
+
+.boxConteudo p {
+
+    margin-top: 5px;
+}

@@ -11,7 +11,10 @@ export default function CarriinhoVazio(){
 
         <section className={estiloCarVazio.boxCarVazio}>
 
-                <FontAwesomeIcon className={estiloCarVazio.iconBagVazio} icon={faBagShopping}/>
+                <div className={estiloCarVazio.boxConteudo}>
+                    <FontAwesomeIcon className={estiloCarVazio.iconBagVazio} icon={faBagShopping}/>
+                    <p>Seu carrinho está vazio : (</p>
+                </div>
         
         </section>
 

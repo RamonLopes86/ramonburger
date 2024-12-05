@@ -186,11 +186,12 @@ export default function ContextProvider({children}){
 
                         excluirItemPedido(id)
                       
-
                          return {
                             ...it,
                             count:0
                          }
+
+                        
                     }else{
 
 

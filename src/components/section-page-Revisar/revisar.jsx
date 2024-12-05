@@ -39,13 +39,17 @@ export default function RevisarPedido() {
 
                         {
 
+                           carrinho.length > 0 ? (
+
+
                             carrinho.map((itens, index) => {
-
-
 
 
                                 return (
 
+                                 
+
+                                      
 
                                     <div key={index} className={estiloRev.itensCarrinho}>
                                         <div className={estiloRev.cardCarrinho}>
@@ -65,17 +69,24 @@ export default function RevisarPedido() {
                                         </div>
                                     </div>
 
+
+                             
+
+                              
+
                                 )
-
-
+                                                            
+                                                    
                             })
 
 
+                           ):(
+
+                               <CarriinhoVazio/>
+                           )
+                                                
 
                         }
-
-
-
 
 
                     </section>
@@ -97,6 +108,16 @@ export default function RevisarPedido() {
     )
 
 }
+                            
+
+                           
+
+
+
+
+
+
+
 
 
 
