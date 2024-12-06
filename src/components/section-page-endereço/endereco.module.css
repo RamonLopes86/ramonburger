@@ -5,21 +5,25 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--corgeral);
+    background-color: white
 
 }
 
 .boxEndereco h1 {
 
     padding: 20px 0px;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.692);
 
 }
 
 
 .boxFilho{
 
-    margin-top: 150px;
+  
     max-width: 1200px;
-    margin: 100px auto;
-    padding: 0px 20px;
+    margin: 0px auto;
+   padding: 0px 20px;
+    margin-top: 100px;
+  
 }

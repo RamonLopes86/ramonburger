@@ -1,14 +1,15 @@
 import hookContext from '@/hookContext/hookContext';
 import estiloEnd from './endereco.module.css';
-import StatusPedido from '../statusPedido/statusPedido';
 import Formulario from '../Formulário/formulario';
+import StatusEndereco from '../statusEndereco/statusEndereco';
+import SubTotal from '../sub-Total/subTotal';
 
 
 
 export default function PageEndereco(){
 
 
-    const {goPageEndereco} = hookContext()
+    const {goPageEndereco , goPageRevisar} = hookContext()
 
 
     return(
@@ -16,17 +17,26 @@ export default function PageEndereco(){
 
         <section className={estiloEnd.boxEndereco}>
 
+        
+
             <section className={estiloEnd.boxFilho}>
 
-                <button onClick={goPageEndereco}>voltar</button>
+                <StatusEndereco/>
 
                 <h1>Endereço de Entraga:</h1>
-
+               
                 <Formulario/>
+
+
+                <SubTotal/>
 
             </section>
 
 
+           
+
+
+           
 
         </section>
 

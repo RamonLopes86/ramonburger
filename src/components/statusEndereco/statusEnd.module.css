@@ -1,0 +1,95 @@
+.statusPedido{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.status{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+}
+
+
+.status .numero{
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    align-content: center;
+    box-shadow: 0px 0px 5px gray;
+
+}
+
+.status .numero:nth-of-type(1){
+
+    background-color: var(--cormos);
+    color: white;
+}
+
+.status .traco{
+
+    width: 20px;
+    height: 1px;
+    background-color: white;
+    box-shadow: 0px 0px 5px gray;
+}
+
+.status .traco:nth-of-type(2){
+
+    background-color: var(--cormos);
+}
+
+.status .numero:nth-of-type(3){
+
+    background-color: var(--cormos);
+    color: white;
+}
+
+.status .traco{
+
+    width: 20px;
+    height: 1px;
+    background-color: white;
+    box-shadow: 0px 0px 5px gray;
+}
+
+.status .traco:nth-of-type(4){
+
+    background-color: var(--cormos);
+}
+
+
+.btnFechar{
+
+    width: 100px;
+    border: none;
+    padding: 10px 0px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.623);
+    font-size: 1.3rem;
+    border-radius: 10px;
+    transition:  background-color 300ms linear;
+    cursor: pointer;
+
+}
+
+
+.btnFechar:hover{
+
+    background-color: var(--corpadrao);
+    color: white;
+    transition:  background-color 300ms linear;
+}
+
+
+

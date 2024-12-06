@@ -18,8 +18,10 @@
  
 .boxFilho{
 
+    margin-top: 150px;
     max-width: 1200px;
     margin: 100px auto;
+   padding: 0px 20px;
 }
 
 
