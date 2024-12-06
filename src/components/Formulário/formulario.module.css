@@ -3,9 +3,9 @@
     width: 100%;
     
    
-    min-height: 434px;
+    height: 434px;
     margin-bottom: 10px;
-    padding: 0px 10px ;
+    padding: 0px 10px 20px 10px ;
     position: relative;
     border-bottom: 1px solid rgba(128, 128, 128, 0.658);
 }
@@ -116,13 +116,19 @@
 
  @media screen and (max-width: 820px) {
 
+        
+    .boxFormulario{
+
+        height: fit-content;
+    }
+    
 
     .boxFormulario .boxFilhoForm{
 
         grid-template-columns: 1fr;
         gap:10px;
         overflow: auto;
-        height: 400px;
+        height: 150px;
         padding: 0px 10px 20px 10px;
     }
 
@@ -152,7 +158,9 @@
 
     .boxFormulario .boxFilhoForm{
         
-            height: 300px;
+            height: 200px;
     }
 
  }
+
+

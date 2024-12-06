@@ -48,6 +48,7 @@ export default function SubTotal(){
 
            
             <button onClick={goPageEndereco}>Continuar</button>
+            
 
 
         </section>
