@@ -36,7 +36,7 @@ export default function Formulario() {
                     Cep
                     <div className={estiloFor.boxBusca}>
 
-                        <input value={inputCep} onChange={(ev) => setInputCep(ev.target.value)} autoComplete='off' type="text" name="cep" id="idcep" />
+                        <input value={inputCep === undefined ? '' : inputCep} onChange={(ev) => setInputCep(ev.target.value)} autoComplete='off' type="text" name="cep" id="idcep" />
 
 
                         <FontAwesomeIcon onClick={exibirCep} className={estiloFor.iconLupa} icon={faMagnifyingGlass} />

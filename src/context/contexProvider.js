@@ -484,12 +484,18 @@ export default function ContextProvider({children}){
             setLocalidade(data.localidade)
             setBairro(data.bairro)
             setLogradouro(data.logradouro)
+
+            if(data.erro){
+
+                alert('cep nao encontrado')
+
+            }
             
           
             
         } catch (error) {
             
-            console.log(error.message)
+            console.log(error)
 
         }   
 
