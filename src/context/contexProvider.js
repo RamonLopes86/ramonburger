@@ -36,6 +36,7 @@ export default function ContextProvider({children}){
     const [animaAlertCep , setAnimaAlertCep] = useState(false)
     const [msgAlertCep , setMsgAlertCep] = useState('')
     const [styleMsgCep , setStyleMsgCep] = useState()
+    const [alterNomeContinuar , setAlterNomeContinuar] = useState('Continuar')
     
    
 
@@ -91,7 +92,8 @@ export default function ContextProvider({children}){
        setLocalidade,
        animaAlertCep,
        msgAlertCep,
-       styleMsgCep
+       styleMsgCep,
+       alterNomeContinuar
     
         }
       
@@ -401,6 +403,7 @@ export default function ContextProvider({children}){
          
          
         setBtnVoltar(false)
+        setAlterNomeContinuar('Continuar')
 
         
     }
@@ -412,6 +415,8 @@ export default function ContextProvider({children}){
         
         setBtnVoltar(true)
 
+        setAlterNomeContinuar('Revisar pedido')
+
         
     }  
     
@@ -422,6 +427,7 @@ export default function ContextProvider({children}){
 
             setPgRevisar(true)
             setBtnVoltar(false)
+           
 
         }
         
@@ -430,6 +436,7 @@ export default function ContextProvider({children}){
 
             setPageEndereco(false)
             setBtnVoltar(false)
+            setAlterNomeContinuar('Continuar')
         }
 
     }
@@ -515,16 +522,7 @@ export default function ContextProvider({children}){
             }
 
 
-            
-
-
-
-            
-
-
-         
-
-
+    
 
 
         } catch (error) {

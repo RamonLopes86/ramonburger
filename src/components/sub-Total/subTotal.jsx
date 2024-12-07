@@ -10,7 +10,7 @@ import formatarMoeda from '@/funcoesUteis/formatMoeda';
 
 export default function SubTotal(){
 
-    const {carrinho , goPageEndereco , btnVoltar , goBack } = hookContext()
+    const {carrinho , goPageEndereco , btnVoltar , goBack , alterNomeContinuar } = hookContext()
 
     let taxa = 5
 
@@ -50,7 +50,7 @@ export default function SubTotal(){
             <div className={estiloSubTotal.boxBotoes}>
 
                 <button onClick={goBack} className={btnVoltar ? estiloSubTotal.btnOn : estiloSubTotal.btnOff} >voltar</button>
-                <button onClick={goPageEndereco}>Continuar</button>
+                <button onClick={goPageEndereco}>{alterNomeContinuar}</button>
                
             
             </div>

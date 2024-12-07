@@ -17,7 +17,7 @@ import PageEndereco from '../section-page-endereço/pageEndereco';
 
 export default function RevisarPedido() {
 
-    const { pgRevisar, carrinho, excluirItemPedido, adicionar, adcionarPageRevisar , pgEndereco } = hookContext()
+    const { pgRevisar, carrinho, excluirItemPedido, adicionar, adcionarPageRevisar , pgEndereco  } = hookContext()
 
 
 
