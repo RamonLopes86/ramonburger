@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import estados from '@/dados/dadosEstados';
 import hookContext from '@/hookContext/hookContext';
+import arrayDep from '@/dados/depoimento';
 
 
 
@@ -12,12 +13,12 @@ export default function Formulario() {
 
 
 
-    const {inputCep , setInputCep} = hookContext()
+    const { inputCep, setInputCep, exibirCep , arrCep } = hookContext()
 
 
 
-
-
+    
+   
 
     return (
 
@@ -28,14 +29,17 @@ export default function Formulario() {
 
             <section className={estiloFor.boxFilhoForm}>
 
+
+            
+
                 <label htmlFor="idcep">
                     Cep
                     <div className={estiloFor.boxBusca}>
 
-                        <input value={inputCep} onChange={({target})=> setInputCep(target.value)} autoComplete='off'  type="text" name="cep" id="idcep" />
+                        <input value={inputCep} onChange={({ target }) => setInputCep(target.value)} autoComplete='off' type="text" name="cep" id="idcep" />
 
 
-                        <FontAwesomeIcon className={estiloFor.iconLupa} icon={faMagnifyingGlass} />
+                        <FontAwesomeIcon onClick={exibirCep} className={estiloFor.iconLupa} icon={faMagnifyingGlass} />
 
                     </div>
                 </label>
@@ -43,12 +47,12 @@ export default function Formulario() {
 
                 <label htmlFor="idendereco">
                     Endereço
-                    <input autoComplete='off' type="text" name="endereco" id="idendereco" />
+                    <input value={arrCep.logradouro} autoComplete='off' type="text" name="endereco" id="idendereco" />
                 </label>
 
                 <label htmlFor="idbairro">
                     Bairro
-                    <input autoComplete='off' type="text" name="endereco" id="idbairro" />
+                    <input value={arrCep.bairro} autoComplete='off' type="text" name="endereco" id="idbairro" />
                 </label>
 
                 <label htmlFor="idnumero">
@@ -58,7 +62,7 @@ export default function Formulario() {
 
                 <label htmlFor="idcidade">
                     Cidade
-                    <input autoComplete='off' type="text" name="cidade" id="idcidade" />
+                    <input value={arrCep.localidade} autoComplete='off' type="text" name="cidade" id="idcidade" />
                 </label>
 
                 <label htmlFor="idcomplemento">
@@ -90,7 +94,7 @@ export default function Formulario() {
                 </label>
 
 
-
+                
 
 
             </section>
@@ -98,6 +102,10 @@ export default function Formulario() {
 
 
         </section>
+                
+
+
+
 
 
 

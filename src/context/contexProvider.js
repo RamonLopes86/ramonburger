@@ -30,7 +30,9 @@ export default function ContextProvider({children}){
     const [pgEndereco , setPageEndereco] = useState(false)
     const [btnVoltar , setBtnVoltar] = useState(false)
     const [inputCep , setInputCep] = useState('')
-    
+    const [arrCep , setArrCep] = useState('')
+   
+   
 
 
   
@@ -77,7 +79,10 @@ export default function ContextProvider({children}){
        goBack,
        goBackEndereco,
        inputCep,
-       setInputCep
+       setInputCep,
+       exibirCep,
+       arrCep,
+      
       
        
         
@@ -167,14 +172,6 @@ export default function ContextProvider({children}){
 
     }
 
-            
-
-            
-        
-
-        
-       
-
 
     function adcionarPageRevisar(op , id){
 
@@ -237,12 +234,7 @@ export default function ContextProvider({children}){
                 }
            
                 
-            
-          
-
-
-
-
+        
     function extendMenu(){
 
 
@@ -358,12 +350,6 @@ export default function ContextProvider({children}){
         }
             
 
-       
-
-
-
-
-
 
     function  exibirDepoimento(paramDep){
 
@@ -474,6 +460,35 @@ export default function ContextProvider({children}){
 
     }
        
+
+    async function exibirCep(){
+
+
+     
+        try {
+
+            
+
+            const response = await axios.get(`http://viacep.com.br/ws/${inputCep}/json/`) 
+            
+          
+
+            const {data} = response
+            setArrCep(data)
+         
+          
+            
+        } catch (error) {
+            
+            console.log(error.message)
+
+        }   
+
+
+
+
+
+    }
     
 
 
