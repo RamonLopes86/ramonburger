@@ -30,12 +30,12 @@ export default function ContextProvider({children}){
     const [pgEndereco , setPageEndereco] = useState(false)
     const [btnVoltar , setBtnVoltar] = useState(false)
     const [inputCep , setInputCep] = useState('')
-    const [arrCep , setArrCep] = useState('')
+    const [localidade , setLocalidade] = useState('')
+    const [bairro , setBairro] = useState('')
+    const[logradouro , setLogradouro] = useState('')
    
    
-
-
-  
+   
 
 
     const close = {
@@ -81,7 +81,13 @@ export default function ContextProvider({children}){
        inputCep,
        setInputCep,
        exibirCep,
-       arrCep,
+       localidade,
+       bairro,
+       logradouro,
+       setBairro,
+       setLogradouro,
+       setLocalidade
+    
       
       
        
@@ -474,8 +480,11 @@ export default function ContextProvider({children}){
           
 
             const {data} = response
-            setArrCep(data)
-         
+          
+            setLocalidade(data.localidade)
+            setBairro(data.bairro)
+            setLogradouro(data.logradouro)
+            
           
             
         } catch (error) {

@@ -13,7 +13,7 @@ export default function Formulario() {
 
 
 
-    const { inputCep, setInputCep, exibirCep , arrCep } = hookContext()
+    const { inputCep, setInputCep, exibirCep ,  localidade , bairro , logradouro , setLocalidade , setBairro , setLogradouro } = hookContext()
 
 
 
@@ -36,7 +36,7 @@ export default function Formulario() {
                     Cep
                     <div className={estiloFor.boxBusca}>
 
-                        <input value={inputCep} onChange={({ target }) => setInputCep(target.value)} autoComplete='off' type="text" name="cep" id="idcep" />
+                        <input value={inputCep} onChange={(ev) => setInputCep(ev.target.value)} autoComplete='off' type="text" name="cep" id="idcep" />
 
 
                         <FontAwesomeIcon onClick={exibirCep} className={estiloFor.iconLupa} icon={faMagnifyingGlass} />
@@ -47,12 +47,12 @@ export default function Formulario() {
 
                 <label htmlFor="idendereco">
                     Endereço
-                    <input value={arrCep.logradouro} autoComplete='off' type="text" name="endereco" id="idendereco" />
+                    <input onChange={(ev)=> setLogradouro(ev.target.value)} value={logradouro}  autoComplete='off' type="text" name="endereco" id="idendereco" />
                 </label>
 
                 <label htmlFor="idbairro">
                     Bairro
-                    <input value={arrCep.bairro} autoComplete='off' type="text" name="endereco" id="idbairro" />
+                    <input onChange={(ev)=> setBairro(ev.target.value)} value={bairro}    autoComplete='off' type="text" name="endereco" id="idbairro" />
                 </label>
 
                 <label htmlFor="idnumero">
@@ -62,7 +62,7 @@ export default function Formulario() {
 
                 <label htmlFor="idcidade">
                     Cidade
-                    <input value={arrCep.localidade} autoComplete='off' type="text" name="cidade" id="idcidade" />
+                    <input onChange={(ev)=> setLocalidade(ev.target.value)} value={localidade}  autoComplete='off' type="text" name="cidade" id="idcidade" />
                 </label>
 
                 <label htmlFor="idcomplemento">
