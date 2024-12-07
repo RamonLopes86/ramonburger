@@ -475,7 +475,7 @@ export default function ContextProvider({children}){
 
             
 
-            const response = await axios.get(`http://viacep.com.br/ws/${inputCep}/json/`) 
+            const response = await axios.get(`https://viacep.com.br/ws/${inputCep}/json/`) 
             
           
 
