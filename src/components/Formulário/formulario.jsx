@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import estados from '@/dados/dadosEstados';
 import hookContext from '@/hookContext/hookContext';
-import arrayDep from '@/dados/depoimento';
+
 
 
 

@@ -33,8 +33,10 @@ export default function ContextProvider({children}){
     const [localidade , setLocalidade] = useState('')
     const [bairro , setBairro] = useState('')
     const[logradouro , setLogradouro] = useState('')
-   
-   
+    const [animaAlertCep , setAnimaAlertCep] = useState(false)
+    const [msgAlertCep , setMsgAlertCep] = useState('')
+    const [styleMsgCep , setStyleMsgCep] = useState()
+    
    
 
 
@@ -86,13 +88,16 @@ export default function ContextProvider({children}){
        logradouro,
        setBairro,
        setLogradouro,
-       setLocalidade
+       setLocalidade,
+       animaAlertCep,
+       msgAlertCep,
+       styleMsgCep
     
+        }
       
       
        
         
-        }
        
     
     
@@ -485,17 +490,64 @@ export default function ContextProvider({children}){
             setBairro(data.bairro)
             setLogradouro(data.logradouro)
 
+
+            
+
+
+        
             if(data.erro){
 
-                alert('cep nao encontrado')
+                setAnimaAlertCep(true)
+               setLocalidade('')
+               setLogradouro('')
+               setBairro('')
+               setMsgAlertCep('CEP nao encontrado, preencha manualmente')
+               setStyleMsgCep(true)
+
+               setTimeout(()=>{
+
+                setAnimaAlertCep(false)
+
+
+               },2000)
+
 
             }
+
+
             
-          
+
+
+
             
+
+
+         
+
+
+
+
         } catch (error) {
             
-            console.log(error)
+            if(error){
+
+                setAnimaAlertCep(true)
+                setMsgAlertCep('CEP inválido ou em branco')
+                setInputCep('')
+                setStyleMsgCep(false)
+                
+
+
+                setTimeout(()=>{
+
+                    setAnimaAlertCep(false)
+                    setMsgAlertCep('')
+
+                },2000)
+
+            }
+
+            
 
         }   
 

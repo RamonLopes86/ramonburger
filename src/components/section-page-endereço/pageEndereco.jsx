@@ -3,6 +3,7 @@ import estiloEnd from './endereco.module.css';
 import Formulario from '../Formulário/formulario';
 import StatusEndereco from '../statusEndereco/statusEndereco';
 import SubTotal from '../sub-Total/subTotal';
+import AlertCep from '../alertCep/alertCep';
 
 
 
@@ -16,6 +17,9 @@ export default function PageEndereco(){
 
 
         <section className={estiloEnd.boxEndereco}>
+
+
+            <AlertCep/>
 
         
 
