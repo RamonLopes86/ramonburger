@@ -2,11 +2,22 @@ import estiloFor from './formulario.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import estados from '@/dados/dadosEstados';
+import hookContext from '@/hookContext/hookContext';
+
 
 
 
 
 export default function Formulario() {
+
+
+
+    const {inputCep , setInputCep} = hookContext()
+
+
+
+
+
 
     return (
 
@@ -20,7 +31,8 @@ export default function Formulario() {
                 <label htmlFor="idcep">
                     Cep
                     <div className={estiloFor.boxBusca}>
-                        <input type="text" name="cep" id="idcep" />
+
+                        <input value={inputCep} onChange={({target})=> setInputCep(target.value)} autoComplete='off'  type="text" name="cep" id="idcep" />
 
 
                         <FontAwesomeIcon className={estiloFor.iconLupa} icon={faMagnifyingGlass} />
@@ -31,27 +43,27 @@ export default function Formulario() {
 
                 <label htmlFor="idendereco">
                     Endereço
-                    <input type="text" name="endereco" id="idendereco" />
+                    <input autoComplete='off' type="text" name="endereco" id="idendereco" />
                 </label>
 
                 <label htmlFor="idbairro">
                     Bairro
-                    <input type="text" name="endereco" id="idbairro" />
+                    <input autoComplete='off' type="text" name="endereco" id="idbairro" />
                 </label>
 
                 <label htmlFor="idnumero">
                     Número
-                    <input type="text" name="idnumero" id="idnumero" />
+                    <input autoComplete='off' type="text" name="idnumero" id="idnumero" />
                 </label>
 
                 <label htmlFor="idcidade">
                     Cidade
-                    <input type="text" name="cidade" id="idcidade" />
+                    <input autoComplete='off' type="text" name="cidade" id="idcidade" />
                 </label>
 
                 <label htmlFor="idcomplemento">
                     Complemento
-                    <input type="text" name="complemento" id="idcomplemento" />
+                    <input autoComplete='off' type="text" name="complemento" id="idcomplemento" />
                 </label>
 
                 <label htmlFor="iduf">

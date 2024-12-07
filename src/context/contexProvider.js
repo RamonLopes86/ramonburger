@@ -2,6 +2,7 @@ import context from "./context";
 import React , {useEffect, useState} from "react";
 import array from "@/dados/dados";
 import arrayDep from "@/dados/depoimento";
+import axios from "axios";
 
 
 
@@ -27,7 +28,9 @@ export default function ContextProvider({children}){
     const [corBtnDepo , setCorBtnDepo] = useState('')
     const [pgRevisar , setPgRevisar] = useState(false)
     const [pgEndereco , setPageEndereco] = useState(false)
-   
+    const [btnVoltar , setBtnVoltar] = useState(false)
+    const [inputCep , setInputCep] = useState('')
+    
 
 
   
@@ -69,7 +72,12 @@ export default function ContextProvider({children}){
        excluirItemPedido,
        adcionarPageRevisar,
        pgEndereco,
-       goPageEndereco
+       goPageEndereco,
+       btnVoltar,
+       goBack,
+       goBackEndereco,
+       inputCep,
+       setInputCep
       
        
         
@@ -345,7 +353,7 @@ export default function ContextProvider({children}){
             }
 
            
-         
+            
         
         }
             
@@ -377,33 +385,76 @@ export default function ContextProvider({children}){
     function goPageRevisar(){
 
 
-        setPgRevisar(estadoAtual => !estadoAtual)
+      
 
+            setPgRevisar(estadoAtual => !estadoAtual)
+
+            
         
-        setMostrarSacola(carrinho.some((i)=>{
-
-            return i.count > 0
- 
-         }))
-
-         
+            setMostrarSacola(carrinho.some((i)=>{
+    
+                return i.count > 0
+     
+             }))
     
         
 
+
+     
+         
+         
+        setBtnVoltar(false)
+
+        
     }
+
 
     function goPageEndereco(){
 
         setPageEndereco(estadoAtual => !estadoAtual)
+        
+        setBtnVoltar(true)
+
+        
+    }  
+    
+
+    function goBack(){
+
+        if(pgRevisar === false){
+
+            setPgRevisar(true)
+            setBtnVoltar(false)
+
+        }
+        
+        if(pgEndereco){
+
+
+            setPageEndereco(false)
+            setBtnVoltar(false)
+        }
+
+    }
+
+
+    function goBackEndereco(){
+
+        if(pgEndereco){
+
+
+            setPageEndereco(false)
+        }
+
+        if(pgRevisar){
+
+            setPgRevisar(false)
+        }
+
 
     }
     
-
     
-    
-       
-
-
 
 
     function excluirItemPedido(id){

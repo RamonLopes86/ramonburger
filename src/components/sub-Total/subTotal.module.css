@@ -36,10 +36,18 @@
 }
     
    
+.boxBotoes{
 
-.boxSubTotal button{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+}
 
-    position: absolute;
+.boxSubTotal .boxBotoes button{
+
+   
     right: 10px;
     padding: 10px 20px;
     border: none;
@@ -49,7 +57,19 @@
     border-radius: 10px;
     transition: background-color 300ms linear;
     cursor: pointer;
+    width: 150px;
+    
+}
 
+.boxSubTotal .boxBotoes .btnOff{
+
+  visibility: hidden;
+
+}
+
+.boxSubTotal .boxBotoes .btnOn{
+
+    visibility: visible;
 }
 
 .boxSubTotal button:hover{

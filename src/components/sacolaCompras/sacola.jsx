@@ -28,7 +28,7 @@ export default function SacolaCompras(){
 
             mostrarSacola && (
 
-                <button onClick={goPageRevisar} className={estiloSac.btnSacola}>
+                <button onClick={()=>goPageRevisar('revisar')} className={estiloSac.btnSacola}>
                     
                 <FontAwesomeIcon className={estiloSac.iconSacola} icon={faBagShopping}/>
 

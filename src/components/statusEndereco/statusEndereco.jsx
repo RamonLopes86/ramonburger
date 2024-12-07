@@ -5,6 +5,7 @@ import estiloEnde from './statusEnd.module.css'
 export default function StatusEndereco() {
 
 
+    const {goBackEndereco} = hookContext()
     
 
     
@@ -21,7 +22,7 @@ export default function StatusEndereco() {
                 <div className={estiloEnde.numero}>3</div>
             </div>
 
-            <button className={estiloEnde.btnFechar}>Fechar</button>
+            <button onClick={goBackEndereco}  className={estiloEnde.btnFechar}>Fechar</button>
 
         </section>
 
