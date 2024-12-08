@@ -11,7 +11,7 @@ import EnviarPedido from '../sectionEnviarPedido/enviarPedido';
 export default function PageEndereco(){
 
 
-    const {goPageEndereco , goPageRevisar} = hookContext()
+  
 
 
     return(
