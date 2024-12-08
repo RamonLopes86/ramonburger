@@ -432,14 +432,14 @@ export default function ContextProvider({children}){
 
             setEnviarPedido(true)
             
-            if(inputCep === ''){
+            // if(inputCep === ''){
 
-               setPageEndereco(true)
-               setEnviarPedido(false)
-            }
+            //    setPageEndereco(true)
+            //    setEnviarPedido(false)
+            // }
 
 
-          if(!numero || !complemento){
+          if(!numero || !complemento  || !localidade || !bairro || !logradouro){
 
             setAnimaAlertCep(true)
             setMsgAlertCep('Preencha os campos que faltam')
