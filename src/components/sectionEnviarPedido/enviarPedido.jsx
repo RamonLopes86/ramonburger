@@ -3,7 +3,7 @@ import StatusEnviarPedido from '../statusEnviarPedido/statusEnviarPedido';
 import SubTotal from '../sub-Total/subTotal';
 import Image from 'next/image';
 import hookContext from '@/hookContext/hookContext';
-import img1 from '../../../public/carne5.jpg'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import formatarMoeda from '@/funcoesUteis/formatMoeda';
@@ -51,14 +51,11 @@ export default function EnviarPedido() {
 
                                 {
 
-                                    carrinho.map((itens) => {
+                                    carrinho.map((itens , index) => {
 
                                         return (
 
-
-                                            
-
-                                                <section className={estiloEnviarPedido.boxCardPedidos}>
+                                                <section key={index} className={estiloEnviarPedido.boxCardPedidos}>
 
 
                                                     <div  className={estiloEnviarPedido.boxInfoPedido}>
@@ -89,8 +86,8 @@ export default function EnviarPedido() {
                             <div className={estiloEnviarPedido.boxFilhoEntrega}>
                                 <FontAwesomeIcon className={estiloEnviarPedido.iconMapa} icon={faMapLocationDot} />
                                 <div className={estiloEnviarPedido.boxTxEntrega}>
-                                    <h2>{logradouro}</h2>
-                                    <p>salvador /{inputCep}</p>
+                                    <h2>{logradouro} - {bairro}</h2>
+                                    <p>{localidade} /{inputCep}</p>
                                 </div>
                             </div>
                         </section>

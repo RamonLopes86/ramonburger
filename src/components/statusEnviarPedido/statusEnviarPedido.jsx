@@ -9,7 +9,7 @@ import hookContext from '@/hookContext/hookContext';
 export default function StatusEnviarPedido() {
 
 
-    const {goBackEndereco} = hookContext()
+
     
 
     
@@ -26,7 +26,7 @@ export default function StatusEnviarPedido() {
                 <div className={estiloEnviar.numero}>3</div>
             </div>
 
-            <button onClick={goBackEndereco}  className={estiloEnviar.btnFechar}>Fechar</button>
+            <button   className={estiloEnviar.btnFechar}>Fechar</button>
 
         </section>
 
