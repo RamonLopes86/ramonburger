@@ -28,6 +28,7 @@ export default function ContextProvider({children}){
     const [corBtnDepo , setCorBtnDepo] = useState('')
     const [pgRevisar , setPgRevisar] = useState(false)
     const [pgEndereco , setPageEndereco] = useState(false)
+    const[pgEnviarPedido , setEnviarPedido] = useState(false)
     const [btnVoltar , setBtnVoltar] = useState(false)
     const [inputCep , setInputCep] = useState('')
     const [localidade , setLocalidade] = useState('')
@@ -93,9 +94,10 @@ export default function ContextProvider({children}){
        animaAlertCep,
        msgAlertCep,
        styleMsgCep,
-       alterNomeContinuar
+       alterNomeContinuar,
+       pgEnviarPedido
     
-        }
+    }
       
       
        

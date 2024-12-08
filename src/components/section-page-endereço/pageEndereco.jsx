@@ -4,6 +4,7 @@ import Formulario from '../Formulário/formulario';
 import StatusEndereco from '../statusEndereco/statusEndereco';
 import SubTotal from '../sub-Total/subTotal';
 import AlertCep from '../alertCep/alertCep';
+import EnviarPedido from '../sectionEnviarPedido/enviarPedido';
 
 
 
@@ -38,7 +39,7 @@ export default function PageEndereco(){
 
 
            
-
+            <EnviarPedido/>
 
            
 
