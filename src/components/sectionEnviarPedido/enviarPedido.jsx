@@ -6,18 +6,24 @@ import hookContext from '@/hookContext/hookContext';
 import img1 from '../../../public/carne5.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
+import formatarMoeda from '@/funcoesUteis/formatMoeda';
 
 
 
-export default function EnviarPedido(){
+export default function EnviarPedido() {
 
 
-    const {pgEnviarPedido , carrinho} = hookContext()
+    const { pgEnviarPedido, carrinho, inputCep, localidade, bairro, logradouro } = hookContext()
 
 
-    
-    
-    return(
+
+
+
+
+   
+
+
+    return (
 
         pgEnviarPedido && (
 
@@ -25,49 +31,90 @@ export default function EnviarPedido(){
 
 
 
-            <section className={estiloEnviarPedido.boxFilho}>
+                <section className={estiloEnviarPedido.boxFilho}>
 
 
-            <StatusEnviarPedido/>
-           
-                <h1>Pedido</h1>
+                    <StatusEnviarPedido />
 
-                <section className={estiloEnviarPedido.boxItensPedido}>
-                    <h2>Itens do Pedido</h2>
-                    <div className={estiloEnviarPedido.pedidos}>
+                    <h1>Pedido</h1>
 
-                        <div className={estiloEnviarPedido.boxInfoPedido}>
 
-                            <Image alt='imagem' className={estiloEnviarPedido.iconPedidoSend} src={img1}/>
 
-                            <div className={estiloEnviarPedido.boxTxPedido}>
-                                    <h2>nome do item</h2>
-                                    <p>Preço</p>
+
+
+
+                    <section>
+
+                        <section className={estiloEnviarPedido.boxItensPedido}>
+                            <h2>Itens do Pedido</h2>
+                            <div className={estiloEnviarPedido.pedidos}>
+
+                                {
+
+                                    carrinho.map((itens) => {
+
+                                        return (
+
+
+                                            
+
+                                                <section className={estiloEnviarPedido.boxCardPedidos}>
+
+
+                                                    <div  className={estiloEnviarPedido.boxInfoPedido}>
+                                                        <Image alt='imagem' className={estiloEnviarPedido.iconPedidoSend} src={itens.img} />
+                                                        <div className={estiloEnviarPedido.boxTxPedido}>
+                                                            <h2>{itens.nome}</h2>
+                                                            <p>{formatarMoeda(itens.preco , 'BRL')}</p>
+                                                        </div>
+                                                    </div>
+                                                    <p>x{itens.count}</p>
+
+
+                                                </section>
+                                           
+
+                                        )
+
+                                    })
+
+
+                                }
+
+
                             </div>
-                
-                        </div>
-                        <p>x 1</p>
-                    </div>
-                </section>
-                <section className={estiloEnviarPedido.boxLocalEntraga}>
-                    <h2>Local da Entraga</h2>
-                   <div className={estiloEnviarPedido.boxFilhoEntrega}>
-                         <FontAwesomeIcon className={estiloEnviarPedido.iconMapa} icon={faMapLocationDot}/>
-                         <div className={estiloEnviarPedido.boxTxEntrega}>
-                            <h2>rua jayme ...</h2>
-                            <p>salvador / 42720752</p>
-                         </div>
-                   </div>
-                </section>
+                        </section>
+                        <section className={estiloEnviarPedido.boxLocalEntraga}>
+                            <h2>Local da Entraga</h2>
+                            <div className={estiloEnviarPedido.boxFilhoEntrega}>
+                                <FontAwesomeIcon className={estiloEnviarPedido.iconMapa} icon={faMapLocationDot} />
+                                <div className={estiloEnviarPedido.boxTxEntrega}>
+                                    <h2>{logradouro}</h2>
+                                    <p>salvador /{inputCep}</p>
+                                </div>
+                            </div>
+                        </section>
 
 
-                <SubTotal/>
+                    </section>
+
+
+
+
+
+
+
+
+
+
+
+                    <SubTotal />
+
+
+                </section>
 
 
             </section>
-
-
-        </section>
 
 
 

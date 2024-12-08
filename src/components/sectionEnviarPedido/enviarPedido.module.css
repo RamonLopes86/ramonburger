@@ -1,4 +1,4 @@
-.boxPai{
+.boxPai {
 
     position: fixed;
     top: 0;
@@ -8,58 +8,81 @@
     background-color: white;
     font-family: var(--rel);
     color: rgba(0, 0, 0, 0.664);
-    
-}
- 
 
-.boxFilho{
+}
+
+
+.boxFilho {
 
     max-width: 1200px;
     margin: 0px auto;
-   padding: 0px 20px;
+    padding: 0px 20px;
     margin-top: 100px;
-  
-   
-}
-
-
-
-
-.boxItensPedido  h2 {
-
-    font-size: 1.4rem;   
-    
 
 
 }
 
-.iconPedidoSend{
+
+
+
+.boxItensPedido h2 {
+
+    font-size: 1.4rem;
+
+
+
+}
+
+.iconPedidoSend {
 
     width: 60px;
     height: 60px;
     border-radius: 15px;
 }
 
-.pedidos{
+.pedidos {
+
+    border-bottom: 1px solid rgba(128, 128, 128, 0.63);
+    overflow: auto;
+    height: 293px;
+    padding-top: 10px;
+    padding-right: 10px;
+
+}
+
+.pedidos::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+.pedidos::-webkit-scrollbar-thumb {
+
+    background-color: var(--cormos);
+    border-radius: 10px;
+}
+
+
+.boxCardPedidos {
 
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
-    padding:20px 0px 40px 0px;
-    overflow: hidden;
-    min-height: 150px;
+    padding: 20px 0px 40px 0px;
+    
+
+
 }
 
-.pedidos > p {
+
+.boxCardPedidos>p {
 
     font-size: 1.4rem;
-    color:black;
+    color: black;
     font-weight: 700;
 }
 
-.boxInfoPedido{
+.boxInfoPedido {
 
     display: flex;
     flex-direction: row;
@@ -76,40 +99,40 @@
 
 .boxInfoPedido p {
 
-color: var(--cormos);
+    color: var(--cormos);
 
 }
 
 
-.boxLocalEntraga{
+.boxLocalEntraga {
 
-   padding: 40px 0px;
-    border-bottom: 1px solid gray;
-    margin-bottom: 20px;
+    padding: 10px 0px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.63);
+    margin-bottom: 10px;
 }
 
-.boxLocalEntraga > h2 {
+.boxLocalEntraga>h2 {
 
     padding-bottom: 20px;
 }
 
-.iconMapa{
+.iconMapa {
 
     width: 45px;
     height: 45px;
     color: var(--cormos);
 }
 
-.boxFilhoEntrega{
+.boxFilhoEntrega {
 
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    padding-bottom: 80px;
+   
 }
 
-.boxTxEntrega > p {
+.boxTxEntrega>p {
 
     color: black;
     font-weight: 500;
