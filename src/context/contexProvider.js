@@ -97,6 +97,7 @@ export default function ContextProvider({children}){
        styleMsgCep,
        alterNomeContinuar,
        pgEnviarPedido,
+       goBackPedido
       
     
     }
@@ -486,6 +487,20 @@ export default function ContextProvider({children}){
             setPgRevisar(false)
         }
 
+
+    }
+
+
+    function goBackPedido(){
+
+
+        if(pgEnviarPedido){
+
+            setEnviarPedido(false)
+            setPageEndereco(false)
+            setPgRevisar(false)
+
+        }
 
     }
     

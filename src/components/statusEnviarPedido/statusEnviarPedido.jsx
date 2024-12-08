@@ -1,3 +1,4 @@
+
 import estiloEnviar from './statusEnviar.module.css';
 
 import hookContext from '@/hookContext/hookContext';
@@ -10,7 +11,7 @@ export default function StatusEnviarPedido() {
 
 
 
-    
+    const {goBackPedido} = hookContext()
 
     
 
@@ -26,7 +27,7 @@ export default function StatusEnviarPedido() {
                 <div className={estiloEnviar.numero}>3</div>
             </div>
 
-            <button   className={estiloEnviar.btnFechar}>Fechar</button>
+            <button onClick={goBackPedido}   className={estiloEnviar.btnFechar}>Fechar</button>
 
         </section>
 
