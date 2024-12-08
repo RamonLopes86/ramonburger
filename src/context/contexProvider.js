@@ -33,12 +33,15 @@ export default function ContextProvider({children}){
     const [inputCep , setInputCep] = useState('')
     const [localidade , setLocalidade] = useState('')
     const [bairro , setBairro] = useState('')
+    const [numero , setNumero] = useState('')
+    const [complemento , setComplemento] = useState('')
     const[logradouro , setLogradouro] = useState('')
+    const [uf , setUf] = useState('')
     const [animaAlertCep , setAnimaAlertCep] = useState(false)
     const [msgAlertCep , setMsgAlertCep] = useState('')
     const [styleMsgCep , setStyleMsgCep] = useState()
     const [alterNomeContinuar , setAlterNomeContinuar] = useState('Continuar')
-   
+    
     
    
 
@@ -97,7 +100,13 @@ export default function ContextProvider({children}){
        styleMsgCep,
        alterNomeContinuar,
        pgEnviarPedido,
-       goBackPedido
+       goBackPedido,
+       numero, 
+       complemento,
+       setNumero,
+       setComplemento,
+       uf,
+       setUf
       
     
     }
@@ -425,6 +434,34 @@ export default function ContextProvider({children}){
 
             setEnviarPedido(true)
             
+            if(inputCep === ''){
+
+               setPageEndereco(true)
+               setEnviarPedido(false)
+            }
+
+
+          if(!numero || !complemento){
+
+            setAnimaAlertCep(true)
+            setMsgAlertCep('Preencha os campos que faltam')
+            setStyleMsgCep(true)
+           
+
+            setTimeout(()=>{
+
+               setAnimaAlertCep(false)
+
+            },2000)
+          
+
+           setPageEndereco(true)
+           setEnviarPedido(false)
+
+          }  
+            
+
+
            
         }
 

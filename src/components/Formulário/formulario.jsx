@@ -13,7 +13,7 @@ export default function Formulario() {
 
 
 
-    const { inputCep, setInputCep, exibirCep ,  localidade , bairro , logradouro , setLocalidade , setBairro , setLogradouro } = hookContext()
+    const { inputCep, setInputCep, exibirCep ,  localidade , bairro , logradouro , setLocalidade , setBairro , setLogradouro , numero , setNumero , complemento , setComplemento , uf , setUf } = hookContext()
 
 
 
@@ -57,7 +57,7 @@ export default function Formulario() {
 
                 <label htmlFor="idnumero">
                     Número
-                    <input autoComplete='off' type="text" name="idnumero" id="idnumero" />
+                    <input value={numero} onChange={(ev)=> setNumero(ev.target.value)} autoComplete='off' type="text" name="idnumero" id="idnumero" />
                 </label>
 
                 <label htmlFor="idcidade">
@@ -67,7 +67,7 @@ export default function Formulario() {
 
                 <label htmlFor="idcomplemento">
                     Complemento
-                    <input autoComplete='off' type="text" name="complemento" id="idcomplemento" />
+                    <input value={complemento} onChange={(ev)=> setComplemento(ev.target.value)} autoComplete='off' type="text" name="complemento" id="idcomplemento" />
                 </label>
 
                 <label htmlFor="iduf">
