@@ -412,12 +412,10 @@ export default function ContextProvider({children}){
     
         
 
-
-     
-         
-         
         setBtnVoltar(false)
         setAlterNomeContinuar('Continuar')
+         
+         
 
         
     }
@@ -461,6 +459,8 @@ export default function ContextProvider({children}){
           }  
             
 
+
+        
 
            
         }
