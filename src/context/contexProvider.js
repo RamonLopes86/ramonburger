@@ -38,6 +38,7 @@ export default function ContextProvider({children}){
     const [msgAlertCep , setMsgAlertCep] = useState('')
     const [styleMsgCep , setStyleMsgCep] = useState()
     const [alterNomeContinuar , setAlterNomeContinuar] = useState('Continuar')
+   
     
    
 
@@ -95,7 +96,8 @@ export default function ContextProvider({children}){
        msgAlertCep,
        styleMsgCep,
        alterNomeContinuar,
-       pgEnviarPedido
+       pgEnviarPedido,
+      
     
     }
       
@@ -413,12 +415,28 @@ export default function ContextProvider({children}){
 
     function goPageEndereco(){
 
-        setPageEndereco(estadoAtual => !estadoAtual)
+        if(pgEndereco === false){
+
+            setPageEndereco(true)
+        }
+
+        if(pgEndereco){
+
+            setEnviarPedido(true)
+            
+           
+        }
+
+        
+
+        
         
         setBtnVoltar(true)
 
         setAlterNomeContinuar('Revisar pedido')
 
+
+     
         
     }  
     
@@ -441,7 +459,18 @@ export default function ContextProvider({children}){
             setAlterNomeContinuar('Continuar')
         }
 
+        
+        if(pgEnviarPedido){
+
+            setEnviarPedido(false)
+            setPageEndereco(true)
+            setBtnVoltar(true)
+        }
+        
+        
     }
+
+
 
 
     function goBackEndereco(){
