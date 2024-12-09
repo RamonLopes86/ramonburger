@@ -182,104 +182,46 @@
 /* fim do style carrinho */
     
 
-/* 
-@media screen and ( max-width:500px) {
-
-    .boxCarrinho{
 
 
-            height: 300px;
-     }
+@media (orientation:portrait){
 
-    
-    .imgProd{
+    .boxFilho{
 
-        width: 60px;
-        height: 60px;
-        border-radius: 8px;
-        
-        
+        margin-top: 10px;
     }
-
-    .boxNomeItens{
-
-        & h3{
-
-            font-size: 4vw;
-        }
-
-        & p{
-
-            font-size: 4vw;
-        }
-    }
-
-    .boxAddItens{
-
-        width: 80px;
-    }
-
-    .boxCountRevisar > button {
-
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-
-    }
-
-
-}
-
-
-@media screen and (max-width:360px){
-
-    .boxAddItens{
-
-        width: 60px;
-    }
-
-
-} */
-
-
-
-@media (orientation:portrait) and (max-width:600px){
 
     .boxCarrinho{
 
         height: 350px;
+        padding: 0;
 
     }
-
-
-   
 
     .imgProd{
 
         width: 60px;
         height: 60px;
         border-radius: 8px;
+        
+        
     }
-        
-        
-
     .boxNomeItens{
 
         & h3{
 
-            font-size: 3vw;
-            max-width: 120px;
+            font-size: 4vw;
         }
 
         & p{
 
-            font-size: 3vw;
+            font-size: 4vw;
         }
     }
 
     .boxAddItens{
 
-        width: 80px;
+        width: 70px;
     }
 
     .boxCountRevisar > button {
@@ -287,37 +229,14 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-
     }
+
+    .itensCarrinho{
+
+        gap: 20px;
+    }
+
     
 
 }
 
-
-@media (orientation:portrait) and (max-width:440px){
-
-    .boxCarrinho{
-
-        height: 200px;
-
-    }
-
-    .boxAddItens{
-
-        width: 60px;
-    }   
-
-}
-
-
-
-@media (orientation:landscape) and (max-width:1024px){
-
-
-    .boxCarrinho{
-
-        height: 230px;
-
-    }
-
-} 
