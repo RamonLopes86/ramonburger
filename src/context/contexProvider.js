@@ -438,8 +438,18 @@ export default function ContextProvider({ children }) {
         if(carrinho.length === 0){
             setPgRevisar(true)
             setPageEndereco(false)
-            alert('carr vazio')
             setBtnVoltar(false)
+            setAnimaAlertCep(true)
+            setMsgAlertCep('carrinho vazio : (')
+            setStyleMsgCep(false)
+
+
+            setTimeout(()=>{
+
+             setAnimaAlertCep(false)
+
+            },2000)
+            
            
         }else{
 

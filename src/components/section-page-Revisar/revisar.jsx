@@ -6,6 +6,7 @@ import Image from 'next/image';
 import formatarMoeda from '@/funcoesUteis/formatMoeda';
 import CarriinhoVazio from '../carrinhoVazio/carrinhoVazio';
 import PageEndereco from '../section-page-endereço/pageEndereco';
+import AlertCep from '../alertCep/alertCep';
 
 
 
@@ -27,6 +28,8 @@ export default function RevisarPedido() {
         pgRevisar && (
 
             <section className={estiloRev.sectionPaiRevisar}>
+
+                <AlertCep/>
 
                 <section className={estiloRev.boxFilho}>
 
