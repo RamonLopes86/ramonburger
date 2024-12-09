@@ -13,7 +13,7 @@ export default function Formulario() {
 
 
 
-    const { inputCep, setInputCep, exibirCep ,  localidade , bairro , logradouro , setLocalidade , setBairro , setLogradouro , numero , setNumero , complemento , setComplemento , uf , setUf } = hookContext()
+    const { inputCep, setInputCep, exibirCep ,  localidade , bairro , logradouro , setLocalidade , setBairro , setLogradouro , numero , setNumero , complemento , setComplemento , estadosSelect , setEstadosSelect } = hookContext()
 
 
 
@@ -72,7 +72,7 @@ export default function Formulario() {
 
                 <label htmlFor="iduf">
                     UF
-                    <select name="uf" id="iduf">
+                    <select onChange={(ev)=> setEstadosSelect(ev.target.value)} value={estadosSelect}  name="uf" id="iduf">
 
                         {
 
@@ -80,7 +80,7 @@ export default function Formulario() {
 
                                 return (
 
-                                    <option key={index} selected={sigla[28]} className={estiloFor.listaEstados} value={sigla}>{sigla}</option>
+                                    <option key={index}  className={estiloFor.listaEstados} value={sigla}>{sigla}</option>
 
                                 )
 
