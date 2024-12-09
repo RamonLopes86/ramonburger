@@ -48,6 +48,7 @@
     outline: none;
     font-size: 1.2rem;
     color: rgba(0, 0, 0, 0.658);
+    z-index: -1;
 }
 
 .boxFormulario label select{
@@ -114,6 +115,22 @@
 
 
 
+@media screen and (max-width:820px) {
+
+    .boxFormulario .boxFilhoForm{
+
+        grid-template-columns: 1fr;
+        gap:10px;
+        overflow: auto;
+        height: 150px;
+        padding: 0px 10px 20px 10px;
+
+    }
+
+}
+
+
+/* 
 
 
  @media screen and (max-width: 820px) {
@@ -164,5 +181,86 @@
     }
 
  }
+ */
+
+
+
+ 
+ @media (orientation:portrait){
+
+    .boxFormulario{
+
+        height: 400px;
+    }
+
+   .boxFormulario .boxFilhoForm{
+
+      
+        height: 400px;
+    } 
+
+
+        
+
+ }
+ 
+
+
+
+ @media (orientation:portrait) and (max-width:400px) {
+
+    .boxFilhoForm label{
+
+        font-size: 1rem;
+    }
+
+    .boxFilhoForm label input{
+
+        padding:10px;
+        font-size: 1rem;
+    }
+       
+       
+
+    .boxFilhoForm label select{
+
+        padding:10px;
+        z-index: -1;
+
+    }
+
+   .boxFilhoForm label:nth-of-type(1) .boxBusca .iconLupa{
+
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        
+    }
+
+    .boxFormulario{
+
+        height: 300px;
+    }
+
+    .boxFormulario .boxFilhoForm{
+
+      
+        height: 300px;
+    } 
+
+ }
+
+
+ @media (orientation:landscape) {
+
+    .boxFormulario{
+
+        height: 350px;
+    }
+
+    
+}
+  
+
 
 

@@ -81,3 +81,19 @@
     color: var(--corpadrao);
 
 }
+
+
+
+
+
+
+@media (orientation:portrait) and (max-width:400px) {
+
+
+    .boxSubTotal .boxBotoes button {
+
+        font-size: 0.9rem;
+        width: 120px;
+    }
+
+ }
