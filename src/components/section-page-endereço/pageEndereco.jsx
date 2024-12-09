@@ -3,7 +3,7 @@ import estiloEnd from './endereco.module.css';
 import Formulario from '../Formulário/formulario';
 import StatusEndereco from '../statusEndereco/statusEndereco';
 import SubTotal from '../sub-Total/subTotal';
-import AlertCep from '../alertCep/alertCep';
+import AlertCep from '../alert/alert';
 import EnviarPedido from '../sectionEnviarPedido/enviarPedido';
 
 

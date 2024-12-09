@@ -6,7 +6,7 @@ import Image from 'next/image';
 import formatarMoeda from '@/funcoesUteis/formatMoeda';
 import CarriinhoVazio from '../carrinhoVazio/carrinhoVazio';
 import PageEndereco from '../section-page-endereço/pageEndereco';
-import AlertCep from '../alertCep/alertCep';
+import AlertCep from '../alert/alert';
 
 
 

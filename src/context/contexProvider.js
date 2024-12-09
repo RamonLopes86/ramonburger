@@ -440,7 +440,7 @@ export default function ContextProvider({ children }) {
             setPageEndereco(false)
             setBtnVoltar(false)
             setAnimaAlertCep(true)
-            setMsgAlertCep('carrinho vazio : (')
+            setMsgAlertCep('Carrinho vazio : (')
             setStyleMsgCep(false)
 
 
