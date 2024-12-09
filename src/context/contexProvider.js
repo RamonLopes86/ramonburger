@@ -4,7 +4,8 @@ import array from "@/dados/dados";
 import arrayDep from "@/dados/depoimento";
 import axios from "axios";
 import estados from "@/dados/dadosEstados";
-import { faL } from "@fortawesome/free-solid-svg-icons";
+
+
 
 
 
@@ -428,10 +429,23 @@ export default function ContextProvider({ children }) {
 
     function goPageEndereco() {
 
+    
         if (pgEndereco === false) {
 
             setPageEndereco(true)
         }
+
+        if(carrinho.length === 0){
+            setPgRevisar(true)
+            setPageEndereco(false)
+            alert('carr vazio')
+            setBtnVoltar(false)
+           
+        }else{
+
+            setBtnVoltar(true)
+        }
+           
 
         if (pgEndereco) {
 
@@ -519,7 +533,7 @@ export default function ContextProvider({ children }) {
 
 
 
-        setBtnVoltar(true)
+       
 
         setAlterNomeContinuar('Revisar pedido')
 
