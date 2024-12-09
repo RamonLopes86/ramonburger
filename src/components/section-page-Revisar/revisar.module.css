@@ -86,6 +86,12 @@
     color: var(--cormos);
 }
 
+.boxNomeItens > h3{
+
+    max-width:200px;
+
+}
+
 .imgProd{
 
     width: 100px;
@@ -173,15 +179,10 @@
 
 
 
-
-
-
-
-
 /* fim do style carrinho */
     
 
-
+/* 
 @media screen and ( max-width:500px) {
 
     .boxCarrinho{
@@ -238,4 +239,85 @@
     }
 
 
+} */
+
+
+
+@media (orientation:portrait) and (max-width:600px){
+
+    .boxCarrinho{
+
+        height: 350px;
+
+    }
+
+
+   
+
+    .imgProd{
+
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+    }
+        
+        
+
+    .boxNomeItens{
+
+        & h3{
+
+            font-size: 3vw;
+            max-width: 120px;
+        }
+
+        & p{
+
+            font-size: 3vw;
+        }
+    }
+
+    .boxAddItens{
+
+        width: 80px;
+    }
+
+    .boxCountRevisar > button {
+
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+
+    }
+    
+
 }
+
+
+@media (orientation:portrait) and (max-width:440px){
+
+    .boxCarrinho{
+
+        height: 200px;
+
+    }
+
+    .boxAddItens{
+
+        width: 60px;
+    }   
+
+}
+
+
+
+@media (orientation:landscape) and (max-width:1024px){
+
+
+    .boxCarrinho{
+
+        height: 230px;
+
+    }
+
+} 
