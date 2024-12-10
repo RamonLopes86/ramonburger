@@ -154,6 +154,8 @@
     .boxTxAgendamento button{
 
         width: 80%;
+        padding: 23px;
+        font-size: 2.5vw;
         min-width: 200px;
         max-width: 500px;
 
