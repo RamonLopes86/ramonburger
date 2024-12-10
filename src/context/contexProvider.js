@@ -110,11 +110,11 @@ export default function ContextProvider({ children }) {
         setComplemento,
         estadosSelect,
         setEstadosSelect,
-        boxTxRef,
-        boxImgRef,
         animaAgenda,
-        animaImgAgenda
-
+        animaImgAgenda,
+        boxTxRef,
+        boxImgRef
+      
 
 
     }
@@ -227,11 +227,9 @@ export default function ContextProvider({ children }) {
 
                             excluirItemPedido(id)
 
-                            return {
-                                ...it,
-                                count: 0
-                            }
-
+                            return null
+                            
+                           
 
                         } else {
 
@@ -256,7 +254,7 @@ export default function ContextProvider({ children }) {
                 return it;
 
 
-            })
+            }).filter((it)=> it !== null)
 
         )
 
@@ -607,14 +605,15 @@ export default function ContextProvider({ children }) {
 
         setCarrinho(
 
-            carrinho.filter((itens) =>
+            carrinho.filter((itens) =>{
 
-                itens.id !== id
+                
+                return itens.id !== id
+                
 
+             })
 
-            )
-
-
+            
         )
 
 
@@ -781,7 +780,7 @@ export default function ContextProvider({ children }) {
 
         if(boxTxRef.current){
 
-            myObserver.observe(boxTxRef.current)
+             myObserver.observe(boxTxRef.current)
         }
 
 
