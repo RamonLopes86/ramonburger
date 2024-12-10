@@ -3,22 +3,78 @@ import Image from 'next/image';
 import send from '../../../public/send.png';
 import food from '../../../public/food.png';
 import cel from '../../../public/cel.png';
+import React , {useState , useRef , useEffect} from 'react';
+
 
 
 
 
 export default function Servicos(){
 
+    const [animaServ , setAnimaServ] = useState(false)
+
+    const boxRef = useRef()
+
+
+
+    useEffect(()=>{
+
+    
+    const myObserver = new IntersectionObserver((elemento)=>{
+
+            elemento.forEach((el)=>{
+
+                if(el.isIntersecting){
+
+
+                    setAnimaServ(true)
+
+                }else{
+
+                    setAnimaServ(false)
+                }
+
+
+            })
+
+        
+
+    })
+
+
+
+        if(boxRef.current){
+
+            myObserver.observe(boxRef.current)
+
+        }
+
+
+
+        return ()=>{
+
+            if(boxRef.current){
+
+                
+              myObserver.unobserve(boxRef.current)
+
+            }
+
+        }
+
+    },[])
+
+
 
     return(
 
-        <section className={estiloServ.boxServicos}>
+        <section id='idservico'  className={`${estiloServ.boxServicos} `}>
 
             <h1>serviços</h1>
 
             <p>Como são nossos serviços ?</p>
 
-           <section className={estiloServ.boximgServ}>
+           <section ref={boxRef} className={`${estiloServ.boximgServ} ${animaServ ? estiloServ.animaOn : estiloServ.animaOff}`}>
 
                 <div className={estiloServ.boxCardServ}>
 

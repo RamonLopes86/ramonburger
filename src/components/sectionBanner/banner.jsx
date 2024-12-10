@@ -6,20 +6,82 @@ import insta from '../../../public/insta.png';
 import wpp from '../../../public/wpp.png';
 import yt from '../../../public/yt.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone , faQuoteLeft, faQuoteRight , faWhatsapp } from '@fortawesome/free-solid-svg-icons';
+import { faPhone , faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import React , {useState , useRef , useEffect} from 'react';
 
 
 export default function Apresentacao(){
 
-
     let iconRedes = [insta , wpp , yt]
+
+
+    const [animaTx , setAnimaTx] = useState(estiloBanner.animaTxOff)
+    const [animaImg , setAnimaImg ] = useState(estiloBanner.animaImgOff)
+    const imgRef = useRef()
+    const txRef = useRef()
+
+
+    useEffect(()=>{
+
+
+        const myObserver = new IntersectionObserver((elemento)=>{
+
+            elemento.forEach((el)=>{
+
+                if(el.isIntersecting){
+
+                    if(el.target === imgRef.current){
+
+                        setAnimaImg(estiloBanner.animaOn)
+
+                    }
+
+                    if(el.target === txRef.current){
+
+
+                        setAnimaTx(estiloBanner.animaOn)
+
+                    }
+
+
+                }else{
+
+                    if(el.target === imgRef.current){
+
+                        setAnimaImg(estiloBanner.animaImgOff)
+
+                    }
+
+                    if(el.target === txRef.current){
+
+
+                        setAnimaTx(estiloBanner.animaTxOff)
+
+                    }
+
+
+                }
+            })
+
+
+        })
+
+
+
+        
+        myObserver.observe(imgRef.current)
+        myObserver.observe(txRef.current)
+
+    },[])
+
+
 
         return(
 
 
             <section className={estiloBanner.boxBanner}>
 
-                    <section className={estiloBanner.boxTexto}>
+                    <section ref={txRef} className={`${estiloBanner.boxTexto} ${animaTx}`}>
 
                         <h1>Escolha sua comida <strong>favorita</strong></h1>
                         <p>Aproveite nosso cardápio ! Escolha o que desejar e receba em sua casa de forma rápida e segura</p>  
@@ -52,7 +114,7 @@ export default function Apresentacao(){
 
                     </section>
 
-                    <section className={estiloBanner.imgBanner}>
+                    <section ref={imgRef} className={`${estiloBanner.imgBanner} ${animaImg}`}>
 
                             <div className={estiloBanner.boxBack}>
 

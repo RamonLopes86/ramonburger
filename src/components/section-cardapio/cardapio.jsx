@@ -1,11 +1,13 @@
 import estiloCardapio from './cardapio.module.css';
-import React , {useState , useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBurger , faPizzaSlice , faDrumstickBite  ,faBagShopping , faMartiniGlassCitrus , faIceCream , faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import formatarMoeda from '@/funcoesUteis/formatMoeda';
 import hookContext from '@/hookContext/hookContext';
 import Alerta from '../alertAdcionarItem/alerta';
+import React , {useState , useEffect , useRef} from 'react';
+
+
 
 
 
@@ -16,25 +18,59 @@ export default function Cardapio(){
 
    const {lista , exibirCardapio , adicionar , categorias , extendMenu , cond , adcionarAoCarrinho  } = hookContext()
 
-   
-
     
 
+   
+    const [animaBox , setAnimaBox] = useState(estiloCardapio.animaOff)
+    const boxRef = useRef(null)
+
+
+
+
+
+    useEffect(()=>{
+
+        const myOberver = new IntersectionObserver((elemento)=>{
+
+
+            elemento.forEach((el)=>{
+
+                if(el.isIntersecting){
+
+
+                    setAnimaBox(estiloCardapio.animaOn)
+
+                }else{
+
+                    setAnimaBox(estiloCardapio.animaOff)
+                }
+
+            })
+
+
+        })
+          
+       
+         myOberver.observe(boxRef.current)
+        
+    },[])
+                
+          
 
 
     return(
 
-        <section id='idcardapio' className={estiloCardapio.boxCardapio}>
+        <section   className={`${estiloCardapio.boxCardapio}`}>
             
-            <section className={estiloCardapio.boxTitulo}>
+            <section id='idcardapio'   className={`${estiloCardapio.boxTitulo} `}>
 
-                <h1>Cardápio</h1>
+                <h1  >Cardápio</h1>
                 <p>Conheça o nosso cardápio</p>
 
             </section>
 
 
-            <div className={estiloCardapio.boxButton}>
+            <div   className={estiloCardapio.boxButton}>
 
                 <button className={categorias === 'burger' ? estiloCardapio.mudaCor : estiloCardapio.mudaCorOff} onClick={()=>exibirCardapio('burger')}><FontAwesomeIcon className={`${estiloCardapio.iconButton}  `} icon={faBurger}/> Burger</button>
                 <button className={categorias === 'pizza' ? estiloCardapio.mudaCor : estiloCardapio.mudaCorOff}   onClick={()=>exibirCardapio('pizza')}><FontAwesomeIcon className={estiloCardapio.iconButton} icon={faPizzaSlice}/>Pizza</button>
@@ -46,7 +82,7 @@ export default function Cardapio(){
             </div>
 
 
-            <section className={`${estiloCardapio.cardapio}`} >
+            <section ref={boxRef}  className={`${estiloCardapio.cardapio} ${animaBox} `} >
 
                     {
 

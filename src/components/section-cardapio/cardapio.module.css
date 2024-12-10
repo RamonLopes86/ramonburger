@@ -17,6 +17,7 @@
     padding: 40px 20px 40px 20px;
     overflow: hidden;
     transition: all 500ms linear;
+   
     
 }
 
@@ -387,6 +388,33 @@ color: white ;
   transform: rotate(-90deg);
 
 }
+
+
+
+/* intersection anima */
+
+
+.animaOff{
+
+    transform: translateX(-250px);
+    opacity: 0;
+    transition: none;
+    
+    
+    
+
+}
+
+.animaOn{
+
+
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 1s linear;
+  
+
+}
+
 
     
 

@@ -79,6 +79,31 @@ min-height: 500px;
 
 
 
+/* intersectioon anima */
+
+
+.animaOff{
+
+    transform: translateX(-250px);
+    opacity: 0;
+    filter:blur(5px);
+    transition: none;
+
+    
+
+}
+
+.animaOn{
+
+    transform: translate(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: all 800ms ease-in;
+    transition-delay: 200ms;
+    
+}
+
+
 
 
 @media screen and (max-width:1080px) {

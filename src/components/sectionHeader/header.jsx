@@ -44,14 +44,15 @@ export default function Header(){
 
                 <section className={estiloHeader.boxVisibile}>
 
+
                     <Image className={estiloHeader.logo} alt='logo do food on-line' src={logo}/>
                     
                     <nav className={estiloHeader.navMenu}>
                         <ul>
-                            <Link href={''}>
+                            <Link href={'#idagendamento'}>
                                 <li>Reservas</li>
                             </Link>
-                            <Link href={''}>
+                            <Link href={'#idservico'}>
                                 <li>Serviços</li>
                             </Link>
                             <Link href={'#idcardapio'}>

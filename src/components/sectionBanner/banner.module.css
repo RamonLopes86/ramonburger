@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     font-family: var(--rel); 
-
+    overflow: hidden;
     gap: 250px;
    
 
@@ -173,7 +173,7 @@
     bottom: -170px;
     background-color: white;
     max-width: 400px;
-    padding: 8px;
+    padding: 20px;
     border-radius: 10px;
     right: 0;
 
@@ -232,6 +232,41 @@
     transition: all 500ms linear;
 
 }
+
+
+/* animação intersection observer */
+
+
+
+.animaOn{
+
+transform:translate(0);
+transition: all 800ms linear;
+opacity: 1;
+
+
+
+}
+
+.animaTxOff{
+
+transform: translateX(500px);   
+transition: none;
+opacity: 0;
+
+
+}
+
+
+.animaImgOff{
+
+transform: translateX(-500px);
+transition: none;
+opacity: 0;
+
+}
+
+
 
 
 
@@ -331,6 +366,31 @@
         align-items: center;
         justify-content: center;
     }
+
+}
+
+
+
+@media screen and (max-width:835px) {
+
+    .animaTxOff{
+
+        transform: translateX(300px);   
+        transition: none;
+        opacity: 0;
+        
+        }
+        
+        
+        .animaImgOff{
+        
+        transform: translateX(-300px);
+        transition: none;
+        opacity: 0;
+        
+        }
+        
+
 
 }
 
