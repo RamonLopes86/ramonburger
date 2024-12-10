@@ -110,13 +110,15 @@
        flex-direction: column;
        align-items: center;
        justify-content: center;
+       width: 100%;
+        
     }
 
     .boxTxAgendamento{
 
         width: 100%;
         text-align: center;
-        
+
     }
 
    .boxTxAgendamento p:nth-of-type(1) {
@@ -124,13 +126,15 @@
         width: 100%;
         margin: 0px auto;
         font-size: 5vw;
+        
     }
 
     .boxTxAgendamento p:nth-of-type(2) {
 
-        width: 100%;
+        
         margin: 0px auto;
-        font-size: 3vw;
+        font-size: 1.4em;
+        max-width: 100%;
         padding: 40px 20px;
         
     }
@@ -139,9 +143,9 @@
 
     .boxTxAgendamento h1{
 
-        width: 100%;
+        max-width: 100%;
         margin: 0px auto;
-        font-size: 7vw;
+        font-size: 8vw;
         padding: 0px 40px;
         
     }
@@ -189,6 +193,15 @@
     }
 
         
+    .boxTxAgendamento p:nth-of-type(2) {
+
+        
+        margin: 0px auto;
+        font-size: 4vw;
+        max-width: 100%;
+        padding: 40px 20px;
+        
+    }
 
         
 
