@@ -38,6 +38,8 @@ export default function ContextProvider({ children }) {
     const [animaImgAgenda , setAnimaImgAgenda] = useState(false)
     const boxTxRef = useRef()
     const boxImgRef = useRef()
+ 
+   
 
 
 
@@ -771,19 +773,27 @@ export default function ContextProvider({ children }) {
     
     
     
-        myObserver.observe(boxImgRef.current)
-        myObserver.observe(boxTxRef.current)
+        if(boxImgRef.current){
+
+            myObserver.observe(boxImgRef.current)
+        }
+        
+
+        if(boxTxRef.current){
+
+            myObserver.observe(boxTxRef.current)
+        }
 
 
 
          return ()=>{
 
-            if(boxImgRef){
+            if(boxImgRef.current){
 
                 myObserver.unobserve(boxImgRef.current)
             }
 
-            if(boxTxRef){
+            if(boxTxRef.current){
 
                 myObserver.unobserve(boxTxRef.current)
             }
@@ -792,7 +802,9 @@ export default function ContextProvider({ children }) {
 
     
         },[])
-    
+
+
+   
 
 
     return (

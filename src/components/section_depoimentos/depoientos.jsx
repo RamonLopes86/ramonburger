@@ -2,24 +2,111 @@ import estiloDepo from './depo.module.css';
 import Image from 'next/image';
 import pizza from '../../../public/pizzaGrande.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faQuoteLeft, faQuoteRight , faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faQuoteLeft, faQuoteRight, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import hookContext from '@/hookContext/hookContext';
+import React, { useState, useRef, useEffect } from 'react';
 
 
 
 
 export default function Depoimentos() {
 
-    const { arrayDepo , exibirDepoimento , corBtnDepo } = hookContext()
+    const { arrayDepo, exibirDepoimento, corBtnDepo } = hookContext()
 
 
-    const icons = 
+    const icons =
 
-        {
-            Star:faStar,
-            Storke:faStarHalfStroke
+    {
+        Star: faStar,
+        Storke: faStarHalfStroke
 
+    }
+
+
+
+    const boxTxRefDepo = useRef()
+    const boxImgRefDepo = useRef()
+    const [animaTx , setAnimaTx] = useState(estiloDepo.depoOff)
+    const [animaImg , setAnimaImg] = useState(estiloDepo.depoOff)
+
+
+    useEffect(() => {
+
+        const myObserver = new IntersectionObserver((elemento) => {
+
+            elemento.forEach((el) => {
+
+                if (el.isIntersecting) {
+
+                    
+                    if(el.target === boxTxRefDepo.current){
+
+
+                        setAnimaTx(estiloDepo.depoOn)
+                    }
+
+                    if(el.target === boxImgRefDepo.current){
+
+                        setAnimaImg(estiloDepo.depoOn)
+                    }
+
+
+                }else{
+
+                    if(el.target === boxTxRefDepo.current){
+
+
+                        setAnimaTx(estiloDepo.depoOff)
+                    }
+
+                    if(el.target === boxImgRefDepo.current){
+
+                        setAnimaImg(estiloDepo.depoOff)
+                    }
+
+
+                }
+
+            })
+
+
+         
+
+
+        })
+
+
+
+        if(boxTxRefDepo.current){
+
+            myObserver.observe(boxTxRefDepo.current)
         }
+
+        if(boxImgRefDepo){
+
+            myObserver.observe(boxImgRefDepo.current)
+        }
+
+        
+        
+      return ()=>{
+
+            
+        if(boxTxRefDepo.current){
+
+            myObserver.unobserve(boxTxRefDepo.current)
+        }
+
+        if(boxImgRefDepo){
+
+            myObserver.unobserve(boxImgRefDepo.current)
+        }
+
+      }
+
+
+    })
+
 
 
 
@@ -31,7 +118,7 @@ export default function Depoimentos() {
 
 
 
-            <section className={estiloDepo.boxImagePizza}>
+            <section ref={boxImgRefDepo} className={`${estiloDepo.boxImagePizza} ${animaImg}`}>
 
 
                 <Image className={estiloDepo.imgPizza} alt='imagem de uma pizza saborosa' src={pizza} />
@@ -40,17 +127,17 @@ export default function Depoimentos() {
 
 
 
-        
-                {
-                    arrayDepo.map((infos) => {
 
-                        
-                    
-                       
-                       
-                        return (
-                
-                            <section key={infos.id} className={estiloDepo.boxTxDepoimentos}>
+            {
+                arrayDepo.map((infos) => {
+
+
+
+
+
+                    return (
+
+                        <section ref={boxTxRefDepo} key={infos.id} className={`${estiloDepo.boxTxDepoimentos} ${animaTx}`}>
                             <h2>Depoimentos</h2>
                             <p>O que dizem sobre nós ?</p>
                             <div className={estiloDepo.boxAvatarTexto}>
@@ -63,11 +150,11 @@ export default function Depoimentos() {
 
                                             {
 
-                                                infos.stars.map((icone , index)=>{
+                                                infos.stars.map((icone, index) => {
 
-                                                    return(
+                                                    return (
 
-                                                        <FontAwesomeIcon className={estiloDepo.iconStars} key={index} icon={icons[icone]}/>
+                                                        <FontAwesomeIcon className={estiloDepo.iconStars} key={index} icon={icons[icone]} />
                                                     )
 
                                                 })
@@ -75,10 +162,10 @@ export default function Depoimentos() {
                                             }
 
 
-                                        
+
                                         </div>
-                                      
-                                           
+
+
                                         <span>{infos.nota}</span>
                                     </div>
                                 </div>
@@ -89,15 +176,15 @@ export default function Depoimentos() {
                                 <FontAwesomeIcon className={estiloDepo.aspas} icon={faQuoteRight} />
                             </div>
                             <div className={estiloDepo.navegacao}>
-                                <div className={corBtnDepo === 1 ? estiloDepo.corbtn : null}  onClick={()=> exibirDepoimento(1)}>1</div>
-                                <div className={corBtnDepo === 2 ? estiloDepo.corbtn : null} onClick={()=> exibirDepoimento(2)}>2</div>
-                                <div className={corBtnDepo === 3 ? estiloDepo.corbtn : null} onClick={()=> exibirDepoimento(3)}>3</div>
+                                <div className={corBtnDepo === 1 ? estiloDepo.corbtn : null} onClick={() => exibirDepoimento(1)}>1</div>
+                                <div className={corBtnDepo === 2 ? estiloDepo.corbtn : null} onClick={() => exibirDepoimento(2)}>2</div>
+                                <div className={corBtnDepo === 3 ? estiloDepo.corbtn : null} onClick={() => exibirDepoimento(3)}>3</div>
                             </div>
                         </section>
-                        )
-                    })
-                }
-            
+                    )
+                })
+            }
+
 
         </section>
 

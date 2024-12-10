@@ -38,7 +38,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-   
+    
 
 
 }
@@ -190,6 +190,28 @@
 
 
 
+/* intersection anima */
+
+ .boxDepoimentos .depoOn{
+
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 800ms linear;
+    transition-delay: 400ms;
+
+}
+
+ .boxDepoimentos .depoOff{
+
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: none;
+    
+
+}
+
+
+
 @media screen and (max-width:1300px) {
 
    .imgPizza{
@@ -233,6 +255,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+        
     }
 
     .depoimentos{
