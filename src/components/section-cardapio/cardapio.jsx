@@ -64,7 +64,7 @@ export default function Cardapio(){
             
             <section id='idcardapio'   className={`${estiloCardapio.boxTitulo} `}>
 
-                <h1  >Cardápio</h1>
+                <h1 >Cardápio</h1>
                 <p>Conheça o nosso cardápio</p>
 
             </section>

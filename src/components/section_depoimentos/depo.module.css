@@ -7,7 +7,9 @@
     justify-content: center;
     gap: 100px;
     font-family: var(--rel);
-    padding: 80px 10px;
+    padding: 100px 10px;
+    position: relative;
+   
 
 }
 

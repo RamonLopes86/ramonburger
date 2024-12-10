@@ -38,6 +38,7 @@ export default function ContextProvider({ children }) {
     const [animaImgAgenda , setAnimaImgAgenda] = useState(false)
     const boxTxRef = useRef()
     const boxImgRef = useRef()
+    
  
    
 
@@ -455,6 +456,7 @@ export default function ContextProvider({ children }) {
         if (pgEndereco) {
 
             setEnviarPedido(true)
+            setAlterNomeContinuar('Enviar Pedido')
 
             if (inputCep === '') {
 
@@ -534,7 +536,14 @@ export default function ContextProvider({ children }) {
 
         }
 
+
+        
+
     }
+
+       
+
+
 
 
 
@@ -615,6 +624,17 @@ export default function ContextProvider({ children }) {
         )
 
 
+    }
+
+
+    function msgWpp(logr){
+
+        const condMsg = encodeURIComponent(logr)
+        const number = '5571991265530';
+        const url = `https://wa.me/${number}?text=${condMsg}`;
+
+
+        window.open(url, '_Blank')
     }
 
 

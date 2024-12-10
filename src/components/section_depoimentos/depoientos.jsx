@@ -112,13 +112,10 @@ export default function Depoimentos() {
 
     return (
 
-        <section id='iddepoimentos' className={estiloDepo.boxDepoimentos}>
+        <section id='iddepoimentos'  className={estiloDepo.boxDepoimentos}>
 
-
-
-
-
-            <section ref={boxImgRefDepo} className={`${estiloDepo.boxImagePizza} ${animaImg}`}>
+            
+            <section  ref={boxImgRefDepo} className={`${estiloDepo.boxImagePizza} ${animaImg}`}>
 
 
                 <Image className={estiloDepo.imgPizza} alt='imagem de uma pizza saborosa' src={pizza} />
