@@ -423,6 +423,8 @@ export default function ContextProvider({ children }) {
 
     function goPageEndereco() {
 
+      
+
 
         if (pgEndereco === false) {
 
@@ -445,6 +447,7 @@ export default function ContextProvider({ children }) {
 
             }, 2000)
 
+          
 
         } else {
 
@@ -474,6 +477,8 @@ export default function ContextProvider({ children }) {
 
                 }, 2000)
 
+              
+
             }
 
 
@@ -494,7 +499,8 @@ export default function ContextProvider({ children }) {
                 setPageEndereco(true)
                 setEnviarPedido(false)
 
-            }
+               
+            }   
 
 
             if (estadosSelect == '...') {
@@ -511,7 +517,7 @@ export default function ContextProvider({ children }) {
 
                 }, 2000)
 
-
+                
             }
 
 
@@ -530,22 +536,42 @@ export default function ContextProvider({ children }) {
 
                 }, 2000)
 
+
+              
+
             }
-
-
-
         }
 
 
-        
+        if(pgEnviarPedido){
+    
+              
+            const condMsg = encodeURIComponent(`Olá, pedido para rua ${logradouro}, bairro ${bairro}, cidade ${localidade}`);
+            const number = '5571991265530';
+            const url = `https://wa.me/${number}?text=${condMsg}`;
+    
+            console.log(url)
+            
 
+            setTimeout(()=>{
+
+                window.open(url)
+
+            },100)
+
+        }
+
+           
     }
-
        
 
 
 
 
+
+
+
+        
 
     function goBack() {
 
@@ -627,15 +653,6 @@ export default function ContextProvider({ children }) {
     }
 
 
-    function msgWpp(logr){
-
-        const condMsg = encodeURIComponent(logr)
-        const number = '5571991265530';
-        const url = `https://wa.me/${number}?text=${condMsg}`;
-
-
-        window.open(url, '_Blank')
-    }
 
 
     async function exibirCep() {
@@ -652,9 +669,7 @@ export default function ContextProvider({ children }) {
 
             const { data } = response
 
-            setLocalidade(data.localidade)
-            setBairro(data.bairro)
-            setLogradouro(data.logradouro)
+            
 
 
 
@@ -677,6 +692,12 @@ export default function ContextProvider({ children }) {
 
                 }, 2000)
 
+
+            }else{
+
+                setLocalidade(data.localidade)
+                setBairro(data.bairro)
+                setLogradouro(data.logradouro)
 
             }
 
@@ -732,6 +753,10 @@ export default function ContextProvider({ children }) {
         }
 
     }, [])
+
+
+
+ 
 
 
     useEffect(()=>{
@@ -819,6 +844,7 @@ export default function ContextProvider({ children }) {
 
     
         },[])
+
 
 
    

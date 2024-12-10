@@ -36,7 +36,7 @@ export default function Formulario() {
                     Cep
                     <div className={estiloFor.boxBusca}>
 
-                        <input value={inputCep === undefined ? '' : inputCep} onChange={(ev) => setInputCep(ev.target.value)} autoComplete='off' type="text" name="cep" id="idcep" />
+                        <input value={inputCep || ''} onChange={(ev) => setInputCep(ev.target.value)} autoComplete='off' type="text" name="cep" id="idcep" />
 
 
                         <FontAwesomeIcon onClick={exibirCep} className={estiloFor.iconLupa} icon={faMagnifyingGlass} />
@@ -47,12 +47,12 @@ export default function Formulario() {
 
                 <label htmlFor="idendereco">
                     Endereço
-                    <input onChange={(ev)=> setLogradouro(ev.target.value)} value={logradouro}  autoComplete='off' type="text" name="endereco" id="idendereco" />
+                    <input value={logradouro} onChange={(ev)=>setLogradouro(ev.target.value)}   autoComplete='off' type="text" name="endereco" id="idendereco" />
                 </label>
 
                 <label htmlFor="idbairro">
                     Bairro
-                    <input onChange={(ev)=> setBairro(ev.target.value)} value={bairro}    autoComplete='off' type="text" name="endereco" id="idbairro" />
+                    <input value={bairro} onChange={(ev)=> setBairro(ev.target.value)}     autoComplete='off' type="text" name="endereco" id="idbairro" />
                 </label>
 
                 <label htmlFor="idnumero">
@@ -62,7 +62,7 @@ export default function Formulario() {
 
                 <label htmlFor="idcidade">
                     Cidade
-                    <input onChange={(ev)=> setLocalidade(ev.target.value)} value={localidade}  autoComplete='off' type="text" name="cidade" id="idcidade" />
+                    <input  value={localidade} onChange={(ev)=> setLocalidade(ev.target.value)}  autoComplete='off' type="text" name="cidade" id="idcidade" />
                 </label>
 
                 <label htmlFor="idcomplemento">
