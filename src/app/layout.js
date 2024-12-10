@@ -4,6 +4,7 @@ import "./globals.css";
 
 
 export const metadata = {
+  
   title: "Ramon Burger",
   description: "Hamburgeria Ramon Burger",
 

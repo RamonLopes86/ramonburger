@@ -137,3 +137,70 @@
     color: black;
     font-weight: 500;
 }
+
+
+
+
+@media (orientation:portrait) {
+
+    .boxFilho{
+
+        margin-top: 10px;
+
+    }
+
+    .boxLocalEntraga > h2 {
+
+        font-size: 1.3rem;
+    }
+
+
+    .boxFilhoEntrega{
+
+        align-items: flex-start;
+
+    }
+
+
+    .boxTxEntrega{
+
+        font-size: 0.78rem;
+    }
+
+    .pedidos{
+
+        height: 200px;
+    }
+
+    .boxTxPedido > h2 {
+
+       font-size: 5vw;
+    }
+
+
+    .iconMapa{
+
+        width: 35px;
+        height: 35px;
+    }
+
+}
+
+@media (orientation:landscape){
+
+
+    .boxFilho{
+
+        margin-top: 10px;
+
+    }
+
+
+    .pedidos{
+
+       height: 250px;
+    }
+
+
+}
+
