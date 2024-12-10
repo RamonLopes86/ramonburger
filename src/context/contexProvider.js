@@ -442,6 +442,7 @@ export default function ContextProvider({ children }) {
             setAnimaAlertCep(true)
             setMsgAlertCep('Carrinho vazio : (')
             setStyleMsgCep(false)
+            setAlterNomeContinuar('Continuar')
 
 
             setTimeout(()=>{
@@ -454,6 +455,7 @@ export default function ContextProvider({ children }) {
         }else{
 
             setBtnVoltar(true)
+            setAlterNomeContinuar('Revisar pedido')
         }
            
 
@@ -545,7 +547,7 @@ export default function ContextProvider({ children }) {
 
        
 
-        setAlterNomeContinuar('Revisar pedido')
+       
 
 
     }
