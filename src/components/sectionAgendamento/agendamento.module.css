@@ -119,17 +119,40 @@
         
     }
 
-    .boxTxAgendamento p {
+   .boxTxAgendamento p:nth-of-type(1) {
 
         width: 100%;
         margin: 0px auto;
+        font-size: 5vw;
     }
+
+    .boxTxAgendamento p:nth-of-type(2) {
+
+        width: 100%;
+        margin: 0px auto;
+        font-size: 3vw;
+        padding: 40px 20px;
+        
+    }
+      
+        
 
     .boxTxAgendamento h1{
 
         width: 100%;
         margin: 0px auto;
+        font-size: 7vw;
+        padding: 0px 40px;
         
+    }
+
+
+    .boxTxAgendamento button{
+
+        width: 80%;
+        min-width: 200px;
+        max-width: 500px;
+
     }
 
 
@@ -147,11 +170,17 @@
         justify-content: center;
    }
 
-    .boxImageAgendamentoFilho{
 
-        
+   .boxImageAgendamentoFilho{
 
-    }
+    
+        width: calc(100% - 60px);
+        height: 100%;
+        margin: 0px 30px;
+
+   }
+
+   
 
     .imgCalendario {
 
