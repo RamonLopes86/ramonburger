@@ -3,16 +3,6 @@ import React, { useEffect, useState } from "react";
 import array from "@/dados/dados";
 import arrayDep from "@/dados/depoimento";
 import axios from "axios";
-import estados from "@/dados/dadosEstados";
-
-
-
-
-
-
-
-
-
 
 export default function ContextProvider({ children }) {
 
@@ -115,12 +105,6 @@ export default function ContextProvider({ children }) {
 
 
     }
-
-
-
-
-
-
 
 
 
@@ -429,13 +413,13 @@ export default function ContextProvider({ children }) {
 
     function goPageEndereco() {
 
-    
+
         if (pgEndereco === false) {
 
             setPageEndereco(true)
         }
 
-        if(carrinho.length === 0){
+        if (carrinho.length === 0) {
             setPgRevisar(true)
             setPageEndereco(false)
             setBtnVoltar(false)
@@ -445,19 +429,19 @@ export default function ContextProvider({ children }) {
             setAlterNomeContinuar('Continuar')
 
 
-            setTimeout(()=>{
+            setTimeout(() => {
 
-             setAnimaAlertCep(false)
+                setAnimaAlertCep(false)
 
-            },2000)
-            
-           
-        }else{
+            }, 2000)
+
+
+        } else {
 
             setBtnVoltar(true)
             setAlterNomeContinuar('Revisar pedido')
         }
-           
+
 
         if (pgEndereco) {
 
@@ -541,17 +525,7 @@ export default function ContextProvider({ children }) {
 
         }
 
-
-
-
-
-       
-
-       
-
-
     }
-
 
 
 
@@ -585,8 +559,6 @@ export default function ContextProvider({ children }) {
     }
 
 
-
-
     function goBackEndereco() {
 
         if (pgEndereco) {
@@ -616,8 +588,6 @@ export default function ContextProvider({ children }) {
         }
 
     }
-
-
 
 
     function excluirItemPedido(id) {
@@ -715,7 +685,6 @@ export default function ContextProvider({ children }) {
     }
 
 
-
     useEffect(() => {
 
         window.addEventListener('resize', recolherMenu)
@@ -737,6 +706,7 @@ export default function ContextProvider({ children }) {
 
     return (
 
+    
         <context.Provider
             value={value}
         >

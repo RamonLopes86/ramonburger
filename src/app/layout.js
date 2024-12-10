@@ -3,6 +3,7 @@ import "./globals.css";
 
 
 
+
 export const metadata = {
   
   title: "Ramon Burger",
@@ -22,6 +23,8 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body>
         {children}
+        
+
       </body>
     </html>
   );

@@ -12,6 +12,7 @@ import BtnTopo from "@/components/buttonTopo/buttonTopo";
 import SacolaCompras from "@/components/sacolaCompras/sacola";
 import Depoimentos from "@/components/section_depoimentos/depoientos";
 import RevisarPedido from "@/components/section-page-Revisar/revisar";
+import Agendamento from "@/components/sectionAgendamento/agendamento";
 
 
 export default function Home() {
@@ -32,6 +33,9 @@ export default function Home() {
                   <Servicos/>
                   <Cardapio/>
                   <Depoimentos/>
+                  <Agendamento/>
+
+
                   <BtnTopo/>
                   <SacolaCompras/>
         
