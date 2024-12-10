@@ -1,20 +1,34 @@
+
+
 import estiloAgend from './agendamento.module.css';
 import Image from 'next/image';
 import calendario from '../../../public/calendario.png'
+import hookContext from '@/hookContext/hookContext';
+
+
 
 
 
 export default function Agendamento(){
+
+    const {boxTxRef , boxImgRef, animaAgenda , animaImgAgenda} = hookContext()
+ 
+
+
+
+ 
+
+
 
     return(
 
         <section className={estiloAgend.boxAgendamento}>
 
 
-                <section className={estiloAgend.agendamentoInfo}>
+                <section  className={estiloAgend.agendamentoInfo}>
 
 
-                    <div className={estiloAgend.boxTxAgendamento} >
+                    <div ref={boxTxRef} className={`${estiloAgend.boxTxAgendamento} ${animaAgenda ? estiloAgend.agendaOn : estiloAgend.agendaTx}`} >
 
                         <p>Reserva</p>
                         <h1>Quer reservar um horário ?</h1>
@@ -28,7 +42,7 @@ export default function Agendamento(){
                     </div>
 
 
-                    <div className={estiloAgend.boxImagemAgendamento}>
+                    <div ref={boxImgRef}  className={`${estiloAgend.boxImagemAgendamento} ${animaImgAgenda ? estiloAgend.animaImgOn : estiloAgend.agendaImg}`}>
 
                         <div className={estiloAgend.boxImageAgendamentoFilho}>
 
@@ -36,7 +50,7 @@ export default function Agendamento(){
                         </div>
 
 
-                    
+
 
                     </div>
 

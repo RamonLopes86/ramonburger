@@ -1,5 +1,5 @@
 import context from "./context";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useRef } from "react";
 import array from "@/dados/dados";
 import arrayDep from "@/dados/depoimento";
 import axios from "axios";
@@ -34,6 +34,10 @@ export default function ContextProvider({ children }) {
     const [styleMsgCep, setStyleMsgCep] = useState()
     const [alterNomeContinuar, setAlterNomeContinuar] = useState('Continuar')
     const [estadosSelect, setEstadosSelect] = useState('...')
+    const [animaAgenda , setAnimaAgenda] = useState(false)
+    const [animaImgAgenda , setAnimaImgAgenda] = useState(false)
+    const boxTxRef = useRef()
+    const boxImgRef = useRef()
 
 
 
@@ -45,6 +49,9 @@ export default function ContextProvider({ children }) {
         height: menuOpen ? '200px' : '0px',
         transition: 'all 200ms linear'
     }
+
+
+   
 
 
 
@@ -100,7 +107,11 @@ export default function ContextProvider({ children }) {
         setNumero,
         setComplemento,
         estadosSelect,
-        setEstadosSelect
+        setEstadosSelect,
+        boxTxRef,
+        boxImgRef,
+        animaAgenda,
+        animaImgAgenda
 
 
 
@@ -702,6 +713,69 @@ export default function ContextProvider({ children }) {
         }
 
     }, [])
+
+
+    useEffect(()=>{
+
+        const myObserver = new IntersectionObserver((elemento)=>{
+    
+    
+            elemento.forEach((el)=>{
+    
+                if(el.isIntersecting){
+    
+    
+                    if(el.target === boxTxRef.current){
+    
+    
+                       setAnimaAgenda(true)
+    
+                    }
+    
+                    if(el.target === boxImgRef.current){
+    
+                        setAnimaImgAgenda(true)
+    
+                    }
+    
+                }else{
+
+
+                    if(el.target === boxTxRef.current){
+    
+    
+                        setAnimaAgenda(false)
+     
+                     }
+     
+                     if(el.target === boxImgRef.current){
+     
+                         setAnimaImgAgenda(false)
+     
+                     }
+
+
+
+                }
+    
+    
+            })
+    
+    
+    
+        })
+    
+    
+    
+    
+    
+    
+    
+        myObserver.observe(boxImgRef.current)
+        myObserver.observe(boxTxRef.current)
+    
+        },[])
+    
 
 
     return (
