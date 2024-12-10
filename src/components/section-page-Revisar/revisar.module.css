@@ -186,9 +186,16 @@
 
 @media (orientation:portrait){
 
+    .boxCarrinho h2 {
+
+        font-size: 1.3rem;
+
+    }
+
     .boxFilho{
 
         margin-top: 10px;
+        
     }
 
     .boxCarrinho{
@@ -210,7 +217,7 @@
 
         & h3{
 
-            font-size: 4vw;
+            font-size: 3.5vw;
         }
 
         & p{
@@ -239,4 +246,40 @@
     
 
 }
+
+
+@media (orientation:landscape){
+
+
+    .boxFilho{
+
+        margin-top: 10px;
+        
+    }
+
+    .boxCarrinho{
+
+        height: 300px;
+        padding: 0;
+
+    }
+
+    .boxNomeItens{
+
+        & h3{
+
+            font-size: 1.4rem;
+        }
+
+        & p{
+
+            font-size: 1.4rem;
+        }
+    }
+
+
+}
+
+
+
 
