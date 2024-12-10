@@ -773,6 +773,23 @@ export default function ContextProvider({ children }) {
     
         myObserver.observe(boxImgRef.current)
         myObserver.observe(boxTxRef.current)
+
+
+
+         return ()=>{
+
+            if(boxImgRef){
+
+                myObserver.unobserve(boxImgRef.current)
+            }
+
+            if(boxTxRef){
+
+                myObserver.unobserve(boxTxRef.current)
+            }
+
+         }   
+
     
         },[])
     
