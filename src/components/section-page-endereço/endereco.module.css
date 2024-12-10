@@ -44,9 +44,15 @@
 
  @media (orientation:landscape){
 
+    .boxFilho h1 {
+
+        padding: 0px 10px 15px 10px;
+        font-size: 1.3rem;
+    }
+
     .boxFilho{
 
-        margin-top: 50px;
+        margin-top: 10px;
 
     }
 
