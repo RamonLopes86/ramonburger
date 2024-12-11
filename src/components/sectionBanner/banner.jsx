@@ -89,8 +89,8 @@ export default function Apresentacao(){
 
                         <div className={estiloBanner.boxBtn}>
 
-                                <button>Ver cardápio</button>
-                                <Link className={estiloBanner.link} href={"https://wa.me/5571991265530"} target='_Blank'><button><FontAwesomeIcon className={estiloBanner.iconPhone} icon={faPhone}/> 7199126-5530</button></Link>
+                                <Link className={estiloBanner.linkCardapio} href={'#idcardapio'}><button>Ver cardápio</button></Link>
+                                <Link className={estiloBanner.link} href={"https://wa.me/5571991265530?text=Quero Saber Mais Informações!!!"} target='_Blank'><button><FontAwesomeIcon className={estiloBanner.iconPhone} icon={faPhone}/> 7199126-5530</button></Link>
                           
                         </div>  
 

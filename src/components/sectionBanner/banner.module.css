@@ -72,7 +72,7 @@
     font-size: 1.5rem;
 }
 
-.boxBtn > button{
+.boxBtn .linkCardapio > button{
 
     background-color:var(--corpadrao);
     color: white;
@@ -84,6 +84,7 @@
 .boxBtn .link{
 
     text-decoration: none;
+    
     
 }
 
@@ -106,7 +107,7 @@
     
 }
 
-.boxBtn > button:hover{
+.boxBtn > .linkCardapio button:hover{
 
     outline: 2px solid var(--corpadrao);
     transition: all 500ms;

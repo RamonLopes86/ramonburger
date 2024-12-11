@@ -6,6 +6,7 @@ import formatarMoeda from '@/funcoesUteis/formatMoeda';
 import hookContext from '@/hookContext/hookContext';
 import Alerta from '../alertAdcionarItem/alerta';
 import React , {useState , useEffect , useRef} from 'react';
+import Link from 'next/link';
 
 
 
@@ -65,6 +66,7 @@ export default function Cardapio(){
             <section id='idcardapio'   className={`${estiloCardapio.boxTitulo} `}>
 
                 <h1 >Cardápio</h1>
+               
                 <p>Conheça o nosso cardápio</p>
 
             </section>
