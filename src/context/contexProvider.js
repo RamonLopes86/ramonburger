@@ -544,13 +544,26 @@ export default function ContextProvider({ children }) {
 
 
         if(pgEnviarPedido){
-    
+            
+           
+            const tot = carrinho.reduce((acc , itens)=>  { return acc + itens.preco * itens.count},0)
+            
               
-            const condMsg = encodeURIComponent(`Olá, pedido para rua ${logradouro}, bairro ${bairro}, cidade ${localidade}`);
+            const condMsg = encodeURIComponent(`Olá, pedido para Rua ${logradouro}, Bairro ${bairro}, Cidade ${localidade} , PF : ${complemento} , 
+                
+            ${carrinho.map((itens)=> 
+            
+                `pedido - ${itens.nome} - R$ ${itens.preco}`,
+            )},
+            sub-total - ${tot}
+            total + taxa de entrega - ${tot + 5}
+              
+            `);
+                
             const number = '5571991265530';
             const url = `https://wa.me/${number}?text=${condMsg}`;
     
-            console.log(url)
+            
             
 
             setTimeout(()=>{
@@ -558,12 +571,17 @@ export default function ContextProvider({ children }) {
                 window.open(url)
 
             },100)
-
+            
         }
 
            
     }
        
+                
+
+                
+                
+
 
 
 
