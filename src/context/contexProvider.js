@@ -291,6 +291,7 @@ export default function ContextProvider({ children }) {
 
 
         setCarrinho((carrinho) => {
+            
             // Verificar se o item já está no carrinho
 
             const itemCarrinho = carrinho.find((produtos) => produtos.id === itemCarrinhoInicial.id);
@@ -305,6 +306,7 @@ export default function ContextProvider({ children }) {
                                 count: produtos.count + itemCarrinhoInicial.count
                             };
                         }
+
                         return produtos;
                     })
                 );
