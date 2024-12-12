@@ -13,6 +13,7 @@ import SacolaCompras from "@/components/sacolaCompras/sacola";
 import Depoimentos from "@/components/section_depoimentos/depoientos";
 import RevisarPedido from "@/components/section-page-Revisar/revisar";
 import Agendamento from "@/components/sectionAgendamento/agendamento";
+import Footer from "@/components/footer/fotter";
 
 
 export default function Home() {
@@ -34,7 +35,7 @@ export default function Home() {
                   <Cardapio/>
                   <Depoimentos/>
                   <Agendamento/>
-
+                  <Footer/>
 
                   <BtnTopo/>
                   <SacolaCompras/>

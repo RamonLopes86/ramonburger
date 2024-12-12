@@ -1,0 +1,23 @@
+.boxFooter{
+
+    align-content: center;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.fotterParagrafo{
+
+    font-size: 1rem;
+    font-family: var(--rel);
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.699);
+
+
+    & span{
+
+        color: var(--corpadrao);
+        font-weight: 700;
+
+    }
+
+}
