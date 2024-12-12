@@ -143,6 +143,9 @@
 
 @media (orientation:portrait) {
 
+
+   
+
     .boxFilho{
 
         margin-top: 10px;
@@ -174,7 +177,8 @@
 
     .boxTxPedido > h2 {
 
-       font-size: 5vw;
+       font-size: 3vw;
+       max-width: 200px;
     }
 
 
@@ -184,9 +188,16 @@
         height: 35px;
     }
 
+    .boxCardPedidos{
+        
+        align-items: flex-start;
+    }
+
 }
 
 @media (orientation:landscape){
+
+   
 
 
     .boxFilho{

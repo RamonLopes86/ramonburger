@@ -414,8 +414,15 @@ export default function ContextProvider({ children }) {
 
 
 
+       
+
+
+
         setBtnVoltar(false)
         setAlterNomeContinuar('Continuar')
+
+
+
 
 
 
@@ -431,6 +438,7 @@ export default function ContextProvider({ children }) {
         if (pgEndereco === false) {
 
             setPageEndereco(true)
+           
         }
 
         if (carrinho.length === 0) {
@@ -454,23 +462,25 @@ export default function ContextProvider({ children }) {
         } else {
 
             setBtnVoltar(true)
-            setAlterNomeContinuar('Revisar pedido')
+            
         }
 
 
         if (pgEndereco) {
 
+           
             setEnviarPedido(true)
-            setAlterNomeContinuar('Enviar Pedido')
+            setAlterNomeContinuar('Enviar pedido')  
 
             if (inputCep === '') {
 
                 setPageEndereco(true)
                 setEnviarPedido(false)
-
                 setAnimaAlertCep(true)
                 setMsgAlertCep('Preencha um CEP')
                 setStyleMsgCep(true)
+                setAlterNomeContinuar('Continuar')
+
 
 
                 setTimeout(() => {
@@ -489,6 +499,7 @@ export default function ContextProvider({ children }) {
                 setAnimaAlertCep(true)
                 setMsgAlertCep('Preencha os campos que faltam')
                 setStyleMsgCep(true)
+                setAlterNomeContinuar('Continuar')
 
 
                 setTimeout(() => {
@@ -502,8 +513,7 @@ export default function ContextProvider({ children }) {
                 setEnviarPedido(false)
 
                
-            }   
-
+            }
 
             if (estadosSelect == '...') {
 
@@ -512,6 +522,7 @@ export default function ContextProvider({ children }) {
                 setStyleMsgCep(true)
                 setPageEndereco(true)
                 setEnviarPedido(false)
+                setAlterNomeContinuar('Continuar')
 
                 setTimeout(() => {
 
@@ -531,6 +542,7 @@ export default function ContextProvider({ children }) {
                 setStyleMsgCep(true)
                 setPageEndereco(true)
                 setEnviarPedido(false)
+                setAlterNomeContinuar('Continuar')
 
                 setTimeout(() => {
 
@@ -539,11 +551,13 @@ export default function ContextProvider({ children }) {
                 }, 2000)
 
 
+            }
               
 
-            }
+
         }
 
+        
 
         if(pgEnviarPedido){
             
@@ -555,7 +569,7 @@ export default function ContextProvider({ children }) {
                 
             ${carrinho.map((itens)=> 
             
-                `pedido - ${itens.nome} - R$ ${itens.preco}`,
+                `pedido - ${itens.nome} -  qtd ${itens.count} - R$ ${itens.preco} `,
             )},
             sub-total - ${tot}
             total + taxa de entrega - ${tot + 5}
@@ -573,6 +587,11 @@ export default function ContextProvider({ children }) {
                 window.open(url)
 
             },100)
+
+
+            
+          
+            
             
         }
 

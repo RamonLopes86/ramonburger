@@ -59,7 +59,7 @@ export default function EnviarPedido() {
 
 
                                                     <div  className={estiloEnviarPedido.boxInfoPedido}>
-                                                        <Image alt='imagem' className={estiloEnviarPedido.iconPedidoSend} src={itens.img} />
+                                                        <Image alt='imagem do lanche' className={estiloEnviarPedido.iconPedidoSend} src={itens.img} />
                                                         <div className={estiloEnviarPedido.boxTxPedido}>
                                                             <h2>{itens.nome}</h2>
                                                             <p>{formatarMoeda(itens.preco , 'BRL')}</p>
